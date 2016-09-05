@@ -6,8 +6,8 @@
 </description>
     <link>http://testcookbook.com/</link>
     <atom:link href="http://testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Sep 2016 07:40:27 -0500</pubDate>
-    <lastBuildDate>Mon, 05 Sep 2016 07:40:27 -0500</lastBuildDate>
+    <pubDate>Mon, 05 Sep 2016 22:06:00 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Sep 2016 22:06:00 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -18,7 +18,7 @@
 
 &lt;p&gt;Currently we have a few examples on github to do basic selenium tests using Ruby, Java, Python and PHP.  Please enjoy and happy learning.&lt;/p&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 06:22:12 -0500</pubDate>
+        <pubDate>Mon, 05 Sep 2016 11:22:12 +0000</pubDate>
         <link>http://testcookbook.com/welcome/2016/09/05/welcome.html</link>
         <guid isPermaLink="true">http://testcookbook.com/welcome/2016/09/05/welcome.html</guid>
         
