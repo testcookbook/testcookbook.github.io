@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/lib/w3.css" />
+  </head>
+
+  <body>  
+    <div class="w3-container w3-teal">
+      <h1><a href="/">Test Cookbook</a></h1>
+    </div>
+
+    <nav class="w3-sidenav w3-collapse w3-white" style="width:200px" id="mySidenav">
+      <a href="#" onclick="w3_close()" class="w3-closenav w3-hide-large">Close &times;</a>
+      <a href="/lang/java.html">Java</a>
+<a href="/lang/ruby.html">Ruby</a>
+<a href="/lang/php.html">PHP</a>
+<a href="/lang/python.html">Python</a>
+
+    </nav>
+
+    <div class="w3-main" style="margin-left:200px">
+      <span class="w3-opennav w3-hide-large" onclick="w3_open()">&#9776;</span>
+      <a href="https://github.com/testcookbook/php-phpunit-selenium">PHPUnit selenium test example</a>
+
+    </div>
+
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+    </script>
+  </body>
+</html>
