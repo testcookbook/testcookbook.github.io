@@ -26,4 +26,4 @@ github_username: testcookbook
 
 # Build settings
 markdown: kramdown
-theme: minima
+highlight: rouge

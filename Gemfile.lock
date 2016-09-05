@@ -134,6 +134,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  rouge
 
 RUBY VERSION
    ruby 2.3.0p0
