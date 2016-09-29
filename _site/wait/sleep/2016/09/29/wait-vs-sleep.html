@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/lib/w3.css" />
+    <link rel="stylesheet" href="/lib/style.css" />
+    <link rel="stylesheet" href="/lib/highlight.css" />
+  </head>
+
+  <body>  
+    <div class="w3-container w3-blue">
+      <h1>
+        <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>
+        <a class="w3-btn w3-blue" href="/">Test Cookbook</a>
+      </h1>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m4 l3 w3-green w3-center">
+        <nav class="w3-sidebar w3-collapse" id="mySidenav">
+          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
+          <a href="/lang/java.html">Java</a>
+<a href="/lang/javascript.html">JavaScript</a>
+<a href="/lang/ruby.html">Ruby</a>
+<a href="/lang/php.html">PHP</a>
+<a href="/lang/python.html">Python</a>
+
+        </nav>
+      </div>
+      <div class="w3-col m8 l9">
+        <div class="w3-container">
+          <h1 id="wait-vs-sleep">Wait VS Sleep</h1>
+
+<p>Chances are you work for a big company and you are testing many things but you
+have some instances which are either flaky or you need to just pause for a bit.
+With automation, especially on browser applications pausing is a good thing to
+understand.  In general there are 2 kinds of pausing that work.  Wait and Sleep.</p>
+
+<h2 id="sleep">Sleep</h2>
+
+<p>The sleep statement has been around for quite a long time in the world of
+software development.  As a tester sometimes it seems like the easiest way to
+delay whatever is going on so that the rest of your test may pass.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'#someElement'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">browser</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#someOtherElement'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span></code></pre></figure>
+
+<p>You might have something that looks similar to the code above.  You try to click
+on an element, sleep for 3 seconds and then try to click on another element. The
+pros of this is that you have control over how long you wanna delay as long as
+you are in front of the code that has that specific value.  But what are the
+cons. One issue is you do not know if you might can delay 2 seconds instead of 3.
+Why would you care?  Well if you always put a 3 second delay on tests and you
+happen to have 100 tests you added 5 minutes or 300 seconds of delay time.  If
+at some point they could be 1 second less you could save up to 100 seconds. The
+other side to this coin is that maybe if you run your browser tests against a
+remote selenium grid you might need a delay of longer than 3 seconds.</p>
+
+<p>It would sure be nice to have a way that would automatically continue if the
+element was present.  In most automation frameworks there exists some form of
+a waitForPresence.  If there isn’t one they are generally not to complicated to
+make your own.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">'#someElement'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#someOtherElement'</span><span class="p">).</span><span class="nx">waitForPresence</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'#someOtherElement'</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span></code></pre></figure>
+
+<p>In this example instead of sleeping for 3 seconds, we wait for the element to
+be present.  This can be really cool.  For example a pro for this type of delay
+is that whether it takes 1 seconds or a few seconds the test can finish in its
+most opportune time.  However there is a potential con to waits.  That is the
+max time.  Most selenium tools have a max wait time from 10 to 30 seconds.  In
+the case of failures at the wait statement each test can take up to that max
+time.  Just think if you had 100 tests all with wait failures.  If max time is
+30 seconds and 100 tests thats 3000 seconds or 50 minutes.  That is not fun.
+At least you know if your tests are taking way to long all of a sudden you
+either have a big issue with you code or you have quite a bit of refactoring to
+do on your tests.</p>
+
+<p>Happy Testing.</p>
+
+        </div>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+    </script>
+    
+
+  </body>
+</html>
