@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/lib/w3.css" />
+    <link rel="stylesheet" href="/lib/style.css" />
+    <link rel="stylesheet" href="/lib/highlight.css" />
+  </head>
+
+  <body>
+    <div class="w3-container w3-blue">
+      <h1>
+        <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>
+        <a class="w3-btn w3-blue" href="/">Test Cookbook</a>
+      </h1>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m4 l3 w3-green w3-center">
+        <nav class="w3-sidebar w3-collapse" id="mySidenav">
+          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
+          <a href="/blog.html">Blog</a>
+<a href="/book">Book</a>
+<a href="/lang/java.html">Java</a>
+<a href="/lang/javascript.html">JavaScript</a>
+<a href="/lang/ruby.html">Ruby</a>
+<a href="/lang/php.html">PHP</a>
+<a href="/lang/python.html">Python</a>
+
+        </nav>
+      </div>
+      <div class="w3-col m8 l9">
+        <div class="w3-container">
+          <h1 id="cucumber--selenium-web-driver-for-java">Cucumber + Selenium Web Driver for Java</h1>
+
+<h2 id="creating-maven-pomxml">Creating Maven pom.xml</h2>
+<p>Initialize a pom.xml file either using the generate function or on your own.
+Then add the dependencies below.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>info.cukes<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>cucumber-junit<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.2.4<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>info.cukes<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>cucumber-java<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.2.4<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.seleniumhq.selenium<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>selenium-java<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.53.1<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span></code></pre></figure>
+
+<h2 id="files-structure">Files Structure</h2>
+<p>Once you have created a pom.xml file the next important step is the Structure
+of the files. You will need 2 main folders to start out.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">src/test/java/com/program/test/step_definitions
+src/test/resources/features</code></pre></figure>
+
+<p>Notice on the step definitions folder.  It says “/com/program/test/”.  This can
+and probably should be changed to your actual program structure.  If just using
+as standalone tests then it should be fine.</p>
+
+<h2 id="creating-a-feature">Creating a feature.</h2>
+<p>In the “resources/features” directory you will add your feature files in Gherkin
+format.  In the case of this exercise we can use.</p>
+
+<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
+
+  <span class="kn">Scenario</span><span class="p">:</span> Test Cookbook Title Description
+    <span class="nf">Given</span> I visit Test Cookbook website
+    <span class="nf">Then</span> I see title Test Cookbook</code></pre></figure>
+
+<p>For more information about Gherkin you can refer back to the Gherkin chapter.</p>
+
+<h2 id="writing-code-to-make-things-pass">Writing code to make things pass.</h2>
+
+<p>In order to make use of the Gherkin feature is to write some code that will do
+3 very important things.</p>
+
+<ol>
+  <li>Build a runner to tell Cucumber how to act and report.</li>
+  <li>Create a hook to start the browser instance.</li>
+  <li>Build step definitions to translate the plain english Gherkin to actual code.</li>
+</ol>
+
+<h3 id="runner">Runner</h3>
+<hr />
+<p>Simple enough right?  Well lets start with step 1 and create the runner. For my
+example I create a file called RunCukesTest.java within the step_definitions
+directory.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">cucumber.api.junit.Cucumber</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cucumber.api.CucumberOptions</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
+
+<span class="nd">@RunWith</span><span class="o">(</span><span class="n">Cucumber</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@CucumberOptions</span><span class="o">(</span>
+  <span class="n">features</span> <span class="o">=</span> <span class="s">"classpath:features"</span><span class="o">,</span>
+  <span class="n">plugin</span> <span class="o">=</span> <span class="o">{</span><span class="s">"pretty"</span><span class="o">,</span> <span class="s">"html:target/cucumber-html-report"</span><span class="o">},</span>
+  <span class="n">tags</span> <span class="o">=</span> <span class="o">{}</span>
+<span class="o">)</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RunCukesTest</span> <span class="o">{}</span></code></pre></figure>
+
+<h3 id="hooks">Hooks</h3>
+<hr />
+<p>After creating the runner, we need to build some hooks.  These hooks will help
+us along they way for setup and tear down for out tests. Lets create a file
+called Hooks.java</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.MalformedURLException</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.OutputType</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.TakesScreenshot</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriverException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.chrome.ChromeDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.firefox.FirefoxDriver</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">cucumber.api.Scenario</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cucumber.api.java.After</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cucumber.api.java.Before</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hooks</span><span class="o">{</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
+
+
+  <span class="nd">@Before</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openBrowser</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">MalformedURLException</span> <span class="o">{</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FirefoxDriver</span><span class="o">();</span>
+    <span class="n">driver</span><span class="o">.</span><span class="na">manage</span><span class="o">().</span><span class="na">deleteAllCookies</span><span class="o">();</span>
+    <span class="n">driver</span><span class="o">.</span><span class="na">manage</span><span class="o">().</span><span class="na">window</span><span class="o">().</span><span class="na">maximize</span><span class="o">();</span>
+  <span class="o">}</span>
+
+  <span class="nd">@After</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">embedScreenshot</span><span class="o">(</span><span class="n">Scenario</span> <span class="n">scenario</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="k">if</span><span class="o">(</span><span class="n">scenario</span><span class="o">.</span><span class="na">isFailed</span><span class="o">())</span> <span class="o">{</span>
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Current Page URL is "</span> <span class="o">+</span> <span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">());</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">screenshot</span> <span class="o">=</span> <span class="o">((</span><span class="n">TakesScreenshot</span><span class="o">)</span><span class="n">driver</span><span class="o">).</span><span class="na">getScreenshotAs</span><span class="o">(</span><span class="n">OutputType</span><span class="o">.</span><span class="na">BYTES</span><span class="o">);</span>
+        <span class="n">scenario</span><span class="o">.</span><span class="na">embed</span><span class="o">(</span><span class="n">screenshot</span><span class="o">,</span> <span class="s">"image/png"</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">WebDriverException</span> <span class="n">somePlatformsDontSupportScreenshots</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">somePlatformsDontSupportScreenshots</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+      <span class="o">}</span>
+
+    <span class="o">}</span>
+    <span class="n">driver</span><span class="o">.</span><span class="na">quit</span><span class="o">();</span>
+  <span class="o">}</span>
+
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="step-definitions">Step Definitions</h3>
+<hr />
+<p>Last but certainly not the least we need a step definition called
+TestCookbookPage.java</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.WebDriver</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.openqa.selenium.support.PageFactory</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">cucumber.api.java.en.Given</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cucumber.api.java.en.Then</span><span class="o">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestCookbookPage</span><span class="o">{</span>
+  <span class="kd">public</span> <span class="n">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">TestCookbookPage</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="n">driver</span> <span class="o">=</span> <span class="n">Hooks</span><span class="o">.</span><span class="na">driver</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="nd">@Given</span><span class="o">(</span><span class="s">"^I visit Test Cookbook website$"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_visit_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+      <span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://www.testcookbook.com"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+  <span class="nd">@Then</span><span class="o">(</span><span class="s">"^I see title Test Cookbook$"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_see_title_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+      <span class="n">assertTrue</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"Test Cookbook"</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="working-example">Working Example</h2>
+<p><a href="https://github.com/testcookbook/java-cucumber-selenium">https://github.com/testcookbook/java-cucumber-selenium</a></p>
+
+        </div>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+    </script>
+
+
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/lib/highlight.css" />
   </head>
 
-  <body>  
+  <body>
     <div class="w3-container w3-blue">
       <h1>
         <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>
@@ -19,7 +19,9 @@
       <div class="w3-col m4 l3 w3-green w3-center">
         <nav class="w3-sidebar w3-collapse" id="mySidenav">
           <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
-          <a href="/lang/java.html">Java</a>
+          <a href="/blog.html">Blog</a>
+<a href="/book">Book</a>
+<a href="/lang/java.html">Java</a>
 <a href="/lang/javascript.html">JavaScript</a>
 <a href="/lang/ruby.html">Ruby</a>
 <a href="/lang/php.html">PHP</a>
@@ -29,11 +31,43 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h1 id="welcome-to-test-cookbook">Welcome to Test Cookbook</h1>
-
-<p>Welcome to the Test Cookbook.  Things are under major construction and we are working on building awesome recipies to get you started on your tests.</p>
-
-<p>Currently we have a few examples on github to do basic selenium tests using Ruby, Java, Python and PHP.  Please enjoy and happy learning.</p>
+          <ol>
+  <li>Introduction</li>
+  <li>Testing Frameworks
+    <ul>
+      <li>Styles of Frameworks</li>
+    </ul>
+  </li>
+  <li>Web Testing
+    <ul>
+      <li>Java
+        <ol>
+          <li><a href="/book/web_testing/java/cucumber_selenium.html">Cucumber + Selenium Web Driver</a></li>
+        </ol>
+      </li>
+      <li>Javascript
+        <ol>
+          <li><a href="">CucumberJS + Selenium Web Driver</a></li>
+        </ol>
+      </li>
+      <li>PHP
+        <ol>
+          <li><a href="">PHPunit + Selenium Web Driver</a></li>
+        </ol>
+      </li>
+      <li>Python
+        <ol>
+          <li><a href="">Lettuce + Selenium Web Driver</a></li>
+        </ol>
+      </li>
+      <li>Ruby
+        <ol>
+          <li><a href="">Cucumber + Watir + Selenium</a></li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+</ol>
 
         </div>
       </div>
@@ -46,7 +80,7 @@ function w3_close() {
   document.getElementById("mySidenav").style.display = "none";
 }
     </script>
-    
+
 
   </body>
 </html>
