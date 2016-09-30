@@ -165,7 +165,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 
-public class TestCookbookPage{
+public class TestCookbookPage {
   public WebDriver driver;
 
   public TestCookbookPage() {
@@ -174,7 +174,7 @@ public class TestCookbookPage{
   }
 
   @Given("^I visit Test Cookbook website$")
-    public void i_visit_Test_Cookbook() throws Throwable {
+    public void i_visit_Test_Cookbook_website() throws Throwable {
       driver.get("http://www.testcookbook.com");
     }
 
@@ -182,6 +182,7 @@ public class TestCookbookPage{
     public void i_see_title_Test_Cookbook() throws Throwable {
       assertTrue(driver.getTitle().contains("Test Cookbook"));
     }
+
 }
 {% endhighlight %}
 
