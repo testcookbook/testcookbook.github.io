@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Test Cookbook - Blog
 ---
 
 <h1 class="w3-container">Blog</h1>

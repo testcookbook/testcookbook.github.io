@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/jasmine-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.5.2/boot.min.js"></script>
   </head>
 
   <body>
@@ -15,18 +19,8 @@
         <a class="w3-btn w3-blue" href="/">Test Cookbook</a>
       </h1>
     </div>
-    <div class="w3-row">
-      <div class="w3-col m4 l3 w3-green w3-center">
-        <nav class="w3-sidebar w3-collapse" id="mySidenav">
-          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
-          {% include menu.html %}
-        </nav>
-      </div>
-      <div class="w3-col m8 l9">
-        <div class="w3-container">
-          {{ content }}
-        </div>
-      </div>
+    <div class="w3-container">
+      {{ content }}
     </div>
     <script>
 function w3_open() {

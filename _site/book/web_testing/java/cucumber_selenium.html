@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test Cookbook</title>
+    <title>Cucumber + Selenium Web Driver for Java</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
@@ -21,11 +21,13 @@
           <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
           <a href="/blog.html">Blog</a>
 <a href="/book">Book</a>
+<!--
 <a href="/lang/java.html">Java</a>
 <a href="/lang/javascript.html">JavaScript</a>
 <a href="/lang/ruby.html">Ruby</a>
 <a href="/lang/php.html">PHP</a>
 <a href="/lang/python.html">Python</a>
+-->
 
         </nav>
       </div>
@@ -185,7 +187,7 @@ TestCookbookPage.java</p>
 <span class="kn">import</span> <span class="nn">cucumber.api.java.en.Then</span><span class="o">;</span>
 
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestCookbookPage</span><span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestCookbookPage</span> <span class="o">{</span>
   <span class="kd">public</span> <span class="n">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
 
   <span class="kd">public</span> <span class="nf">TestCookbookPage</span><span class="o">()</span> <span class="o">{</span>
@@ -194,7 +196,7 @@ TestCookbookPage.java</p>
   <span class="o">}</span>
 
   <span class="nd">@Given</span><span class="o">(</span><span class="s">"^I visit Test Cookbook website$"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_visit_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_visit_Test_Cookbook_website</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
       <span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://www.testcookbook.com"</span><span class="o">);</span>
     <span class="o">}</span>
 
@@ -202,6 +204,7 @@ TestCookbookPage.java</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_see_title_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
       <span class="n">assertTrue</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"Test Cookbook"</span><span class="o">));</span>
     <span class="o">}</span>
+
 <span class="o">}</span></code></pre></figure>
 
 <h2 id="working-example">Working Example</h2>

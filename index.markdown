@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Test Cookbook
 ---
 
 # Welcome to Test Cookbook

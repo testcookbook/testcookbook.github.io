@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jasmine tests inline with HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/lib/w3.css" />
+    <link rel="stylesheet" href="/lib/style.css" />
+    <link rel="stylesheet" href="/lib/highlight.css" />
+  </head>
+
+  <body>
+    <div class="w3-container w3-blue">
+      <h1>
+        <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>
+        <a class="w3-btn w3-blue" href="/">Test Cookbook</a>
+      </h1>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m4 l3 w3-green w3-center">
+        <nav class="w3-sidebar w3-collapse" id="mySidenav">
+          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
+          <a href="/blog.html">Blog</a>
+<a href="/book">Book</a>
+<!--
+<a href="/lang/java.html">Java</a>
+<a href="/lang/javascript.html">JavaScript</a>
+<a href="/lang/ruby.html">Ruby</a>
+<a href="/lang/php.html">PHP</a>
+<a href="/lang/python.html">Python</a>
+-->
+
+        </nav>
+      </div>
+      <div class="w3-col m8 l9">
+        <div class="w3-container">
+          <h1 id="jasmine-tests-inline-with-html">Jasmine Tests inline with HTML</h1>
+
+<p>Sometimes it can be nice to run tests within a browser.  You might could use it
+to present a point or to validate how something works.  Whatever the case might
+be Jasmine offers a simple way to run some tests within your browser.</p>
+
+<p>To start off we need to include some external resources.  You can get these
+files from either the NPM registry or you could link to the files on a CDN.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  //within head tags
+  <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"jasmine.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jasmine.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jasmine-html.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"boot.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span></code></pre></figure>
+
+<p>Now that we have all of our dependencies lets create a new function that adds
+2 numbers and see if the output is correct.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;script&gt;</span>
+      <span class="kd">function</span> <span class="nx">adder</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="p">;</span>
+      <span class="p">}</span>
+
+
+      <span class="nx">describe</span><span class="p">(</span><span class="s1">'adder function'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">it</span><span class="p">(</span><span class="s1">'2 + 2 should equal 4'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+          <span class="nx">expect</span><span class="p">(</span><span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="p">})</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span></code></pre></figure>
+
+<p><a href="/lang/javascript/example/jasmineInline.html">http://www.testcookbook.com/lang/javascript/example/jasmineInline.html</a></p>
+
+        </div>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+    </script>
+
+
+  </body>
+</html>
