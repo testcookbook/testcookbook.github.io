@@ -6,8 +6,8 @@
 </description>
     <link>http://testcookbook.com/</link>
     <atom:link href="http://testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 03 Oct 2016 14:28:34 -0500</pubDate>
-    <lastBuildDate>Mon, 03 Oct 2016 14:28:34 -0500</lastBuildDate>
+    <pubDate>Mon, 03 Oct 2016 20:01:35 +0000</pubDate>
+    <lastBuildDate>Mon, 03 Oct 2016 20:01:35 +0000</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -63,7 +63,7 @@ do on your tests.&lt;/p&gt;
 
 &lt;p&gt;Happy Testing.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 29 Sep 2016 06:22:12 -0500</pubDate>
+        <pubDate>Thu, 29 Sep 2016 11:22:12 +0000</pubDate>
         <link>http://testcookbook.com/wait/sleep/2016/09/29/wait-vs-sleep.html</link>
         <guid isPermaLink="true">http://testcookbook.com/wait/sleep/2016/09/29/wait-vs-sleep.html</guid>
         
@@ -119,7 +119,7 @@ and reliable documentation for you application.&lt;/p&gt;
   &lt;li&gt;Lettuce&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Mon, 05 Sep 2016 06:22:12 -0500</pubDate>
+        <pubDate>Mon, 05 Sep 2016 11:22:12 +0000</pubDate>
         <link>http://testcookbook.com/gherkin/2016/09/05/gherkin.html</link>
         <guid isPermaLink="true">http://testcookbook.com/gherkin/2016/09/05/gherkin.html</guid>
         
