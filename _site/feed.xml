@@ -4,10 +4,10 @@
     <title>Test Cookbook</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>http://testcookbook.com/</link>
-    <atom:link href="http://testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 Oct 2016 13:58:10 -0500</pubDate>
-    <lastBuildDate>Tue, 04 Oct 2016 13:58:10 -0500</lastBuildDate>
+    <link>https://testcookbook.github.io/</link>
+    <atom:link href="https://testcookbook.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Tue, 04 Oct 2016 14:10:09 -0500</pubDate>
+    <lastBuildDate>Tue, 04 Oct 2016 14:10:09 -0500</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -64,8 +64,8 @@ do on your tests.&lt;/p&gt;
 &lt;p&gt;Happy Testing.&lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Sep 2016 06:22:12 -0500</pubDate>
-        <link>http://testcookbook.com/wait/sleep/2016/09/29/wait-vs-sleep.html</link>
-        <guid isPermaLink="true">http://testcookbook.com/wait/sleep/2016/09/29/wait-vs-sleep.html</guid>
+        <link>https://testcookbook.github.io/wait/sleep/2016/09/29/wait-vs-sleep.html</link>
+        <guid isPermaLink="true">https://testcookbook.github.io/wait/sleep/2016/09/29/wait-vs-sleep.html</guid>
         
         
         <category>wait</category>
@@ -120,8 +120,8 @@ and reliable documentation for you application.&lt;/p&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 05 Sep 2016 06:22:12 -0500</pubDate>
-        <link>http://testcookbook.com/gherkin/2016/09/05/gherkin.html</link>
-        <guid isPermaLink="true">http://testcookbook.com/gherkin/2016/09/05/gherkin.html</guid>
+        <link>https://testcookbook.github.io/gherkin/2016/09/05/gherkin.html</link>
+        <guid isPermaLink="true">https://testcookbook.github.io/gherkin/2016/09/05/gherkin.html</guid>
         
         
         <category>gherkin</category>
