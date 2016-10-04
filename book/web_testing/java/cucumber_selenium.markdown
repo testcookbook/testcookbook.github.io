@@ -52,14 +52,7 @@ as standalone tests then it should be fine.
 ## Creating a feature.
 In the "resources/features" directory you will add your feature files in Gherkin
 format.  In the case of this exercise we can use.
-
-{% highlight Gherkin %}
-Feature: Test Cookbook Home Page
-
-  Scenario: Test Cookbook Title Description
-    Given I visit Test Cookbook website
-    Then I see title Test Cookbook
-{% endhighlight %}
+{% include testCookbookFeature.html %}
 
 For more information about Gherkin you can refer back to the Gherkin chapter.
 
@@ -77,7 +70,13 @@ In order to make use of the Gherkin feature is to write some code that will do
 Simple enough right?  Well lets start with step 1 and create the runner. For my
 example I create a file called RunCukesTest.java within the step_definitions
 directory.
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      {% include fileIcon.html %}
+      RunCukesTest.java
+    </header>
 
+    <div class="w3-container">
 {% highlight Java %}
 package step_definitions;
 
@@ -95,13 +94,21 @@ import org.junit.runner.RunWith;
 
 public class RunCukesTest {}
 {% endhighlight %}
+  </div>
+</div>
 
 ### Hooks
 ---
 After creating the runner, we need to build some hooks.  These hooks will help
 us along they way for setup and tear down for out tests. Lets create a file
 called Hooks.java
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      {% include fileIcon.html %}
+      RunCukesTest.java
+    </header>
 
+    <div class="w3-container">
 {% highlight Java %}
 package step_definitions;
 
@@ -147,12 +154,21 @@ public static WebDriver driver;
 
 }
 {% endhighlight %}
+</div>
+</div>
 
 ### Step Definitions
 ---
 Last but certainly not the least we need a step definition called
 TestCookbookPage.java
 
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      {% include fileIcon.html %}
+      TestCookbookPage.java
+    </header>
+
+    <div class="w3-container">
 {% highlight Java %}
 package step_definitions;
 
@@ -185,6 +201,7 @@ public class TestCookbookPage {
 
 }
 {% endhighlight %}
-
+  </div>
+</div>
 ## Working Example
 [https://github.com/testcookbook/java-cucumber-selenium](https://github.com/testcookbook/java-cucumber-selenium)

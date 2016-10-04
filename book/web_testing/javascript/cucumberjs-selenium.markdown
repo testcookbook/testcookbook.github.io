@@ -5,6 +5,13 @@ title:  "CucumberJS and Selenium"
 # CucumberJS + Selenium Web Driver
 
 ## Create a CucumberJS project
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      {% include cliIcon.html%}
+      Command Line
+    </header>
+
+    <div class="w3-container">
 {% highlight bash %}
 # install Cucumber and Selenium webdriver
 $ npm install cucumber selenium-webdriver
@@ -15,13 +22,15 @@ $ npm install chromedriver geckodriver
 # install an assertion tool
 $ npm install assert
 {% endhighlight %}
+</div>
+</div>
 
 If you are using a package.json file you will probably want to save all of these
 modules to dev dependencies.  to do that when running npm install add a switch
 --save-dev to the command.  
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
-<img alt="tip image" src="/lib/images/tip25.png" />
+{% include tipIcon.html%}
   Another nice thing to do with a package.json file is to add test script.
 
 {% highlight json %}
@@ -43,25 +52,47 @@ typing in "npm test" on the command line.
 First off we need to create a place for all of our feature files written in
 Gherkin.  Within this folder you will create files with an extension of feature.
 For example "testFile.feature".
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      {% include cliIcon.html%}
+      Command Line
+    </header>
 
+    <div class="w3-container">
 {% highlight bash %}
 mkdir features
 {% endhighlight %}
-
+</div>
+</div>
 After creating the features directory we need a place to store our code that
 runs the features and does the assertions.  We call these step definitions.
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      {% include cliIcon.html%}
+      Command Line
+    </header>
 
+    <div class="w3-container">
 {% highlight bash %}
 cd features
 mkdir step_definitions
 {% endhighlight %}
-
+</div>
+</div>
 Last but not least we need to create a support directory that handles
 initializing the World object for Cucumber and other enhancements for Cucumber.
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      {% include cliIcon.html%}
+      Command Line
+    </header>
 
+    <div class="w3-container">
 {% highlight bash %}
 mkdir support
 {% endhighlight %}
+</div>
+</div>
 
 Once done you should have a folder stucture like this.
 
@@ -78,6 +109,13 @@ Once done you should have a folder stucture like this.
 Within the support directory create a file named "world.js".  In this file we
 can require some libraries, select browser to test with and set some timeouts.
 
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      {% include fileIcon.html %}
+      world.js
+    </header>
+
+    <div class="w3-container">
 {% highlight javascript %}
 var seleniumWebdriver = require('selenium-webdriver');
 
@@ -94,6 +132,8 @@ module.exports = function() {
   this.setDefaultTimeout(30 * 1000);
 };
 {% endhighlight %}
+</div>
+</div>
 
 ---
 
@@ -102,13 +142,7 @@ module.exports = function() {
 Create a feature file like "test_cookbook.feature".  Within the file describe
 the behavior that you would like.
 
-{% highlight Gherkin %}
-Feature: Test Cookbook Home Page
-
-  Scenario: Test Cookbook Title Description
-    Given I visit Test Cookbook website
-    Then I see title Test Cookbook
-{% endhighlight %}
+{% include testCookbookFeature.html %}
 
 ---
 
@@ -152,7 +186,7 @@ If you were to run the tests at this point you should see a browser pop up and
 goto "www.testcookbook.com".  
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
-<img alt="tip image" src="/lib/images/tip25.png" />
+{% include tipIcon.html%}
 At this point you may still see a browser on the screen.  While starting out its
 not a big deal to close the window by hand.  However we can add a hooks.js file
 within the step_definitions folder to handle that for us.

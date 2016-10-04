@@ -47,6 +47,14 @@
           <h1 id="cucumberjs--selenium-web-driver">CucumberJS + Selenium Web Driver</h1>
 
 <h2 id="create-a-cucumberjs-project">Create a CucumberJS project</h2>
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+      Command Line
+    </header>
+
+    <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># install Cucumber and Selenium webdriver</span>
 <span class="gp">$ </span>npm install cucumber selenium-webdriver
@@ -57,12 +65,16 @@
 <span class="c"># install an assertion tool</span>
 <span class="gp">$ </span>npm install assert</code></pre></figure>
 
+</div>
+</div>
+
 <p>If you are using a package.json file you will probably want to save all of these
 modules to dev dependencies.  to do that when running npm install add a switch
 –save-dev to the command.</p>
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
-<img alt="tip image" src="/lib/images/tip25.png" />
+<img alt="tip image" src="/lib/images/tip100.png" class="icon" />
+
   Another nice thing to do with a package.json file is to add test script.
 
 
@@ -84,19 +96,50 @@ typing in “npm test” on the command line.</p>
 <p>First off we need to create a place for all of our feature files written in
 Gherkin.  Within this folder you will create files with an extension of feature.
 For example “testFile.feature”.</p>
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+      Command Line
+    </header>
+
+    <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir features</code></pre></figure>
 
+</div>
+</div>
 <p>After creating the features directory we need a place to store our code that
 runs the features and does the assertions.  We call these step definitions.</p>
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+      Command Line
+    </header>
+
+    <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>features
 mkdir step_definitions</code></pre></figure>
 
+</div>
+</div>
 <p>Last but not least we need to create a support directory that handles
 initializing the World object for Cucumber and other enhancements for Cucumber.</p>
+<div class="w3-card">
+    <header class="w3-container w3-grey">
+      <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+      Command Line
+    </header>
+
+    <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir support</code></pre></figure>
+
+</div>
+</div>
 
 <p>Once done you should have a folder stucture like this.</p>
 
@@ -110,6 +153,15 @@ initializing the World object for Cucumber and other enhancements for Cucumber.<
 
 <p>Within the support directory create a file named “world.js”.  In this file we
 can require some libraries, select browser to test with and set some timeouts.</p>
+
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+      world.js
+    </header>
+
+    <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">seleniumWebdriver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selenium-webdriver'</span><span class="p">);</span>
 
@@ -126,6 +178,9 @@ can require some libraries, select browser to test with and set some timeouts.</
   <span class="k">this</span><span class="p">.</span><span class="nx">setDefaultTimeout</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
 <span class="p">};</span></code></pre></figure>
 
+</div>
+</div>
+
 <hr />
 
 <h2 id="describe-your-behavior">Describe your behavior.</h2>
@@ -133,11 +188,23 @@ can require some libraries, select browser to test with and set some timeouts.</
 <p>Create a feature file like “test_cookbook.feature”.  Within the file describe
 the behavior that you would like.</p>
 
+<div class="w3-card">
+    <header class="w3-container w3-blue">
+      <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+      testCookbook.feature
+    </header>
+
+    <div class="w3-container">
+
 <figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
 
   <span class="kn">Scenario</span><span class="p">:</span> Test Cookbook Title Description
     <span class="nf">Given</span> I visit Test Cookbook website
     <span class="nf">Then</span> I see title Test Cookbook</code></pre></figure>
+
+    </div>
+</div>
 
 <hr />
 
@@ -175,7 +242,8 @@ Lets have it take us to “www.testcookbook.com”.</p>
 goto “www.testcookbook.com”.</p>
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
-<img alt="tip image" src="/lib/images/tip25.png" />
+<img alt="tip image" src="/lib/images/tip100.png" class="icon" />
+
 At this point you may still see a browser on the screen.  While starting out its
 not a big deal to close the window by hand.  However we can add a hooks.js file
 within the step_definitions folder to handle that for us.

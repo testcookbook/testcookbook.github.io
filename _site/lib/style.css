@@ -4,3 +4,5 @@
 .w3-sidebar .w3-dropdown-hover,.w3-sidebar .w3-dropdown-click {width:100%}.w3-sidebar .w3-dropdown-hover .w3-dropdown-content,.w3-sidebar .w3-dropdown-click .w3-dropdown-content{min-width:100%}
 @media screen and (max-width:600px){.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}}
 @media screen and (min-width:601px){.w3-sidebar.w3-collapse{display:block!important}}
+
+.icon {width: 25px}
