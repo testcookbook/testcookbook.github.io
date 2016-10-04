@@ -16,4 +16,4 @@ title:  "Table of Contents"
   * Python
     1. [Lettuce + Selenium Web Driver]()
   * Ruby
-    1. [Cucumber + Watir + Selenium]()
+    1. [Cucumber + Watir + Selenium](/book/web_testing/ruby/cucumber-ruby-watir-selenium.html)
