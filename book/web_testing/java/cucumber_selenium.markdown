@@ -5,6 +5,7 @@ title:  "Cucumber + Selenium Web Driver for Java"
 # Cucumber + Selenium Web Driver for Java
 
 ## Creating Maven pom.xml
+---
 Initialize a pom.xml file either using the generate function or on your own.
 Then add the dependencies below.
 
@@ -37,6 +38,7 @@ Then add the dependencies below.
 {% endhighlight %}
 
 ## Files Structure
+---
 Once you have created a pom.xml file the next important step is the Structure
 of the files. You will need 2 main folders to start out.  
 
@@ -50,6 +52,7 @@ and probably should be changed to your actual program structure.  If just using
 as standalone tests then it should be fine.
 
 ## Creating a feature.
+---
 In the "resources/features" directory you will add your feature files in Gherkin
 format.  In the case of this exercise we can use.
 {% include testCookbookFeature.html %}
@@ -57,7 +60,7 @@ format.  In the case of this exercise we can use.
 For more information about Gherkin you can refer back to the Gherkin chapter.
 
 ## Writing code to make things pass.
-
+---
 In order to make use of the Gherkin feature is to write some code that will do
 3 very important things.  
 
@@ -203,5 +206,7 @@ public class TestCookbookPage {
 {% endhighlight %}
   </div>
 </div>
+
 ## Working Example
+---
 [https://github.com/testcookbook/java-cucumber-selenium](https://github.com/testcookbook/java-cucumber-selenium)
