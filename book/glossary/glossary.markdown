@@ -13,6 +13,14 @@ from the application.  In most cases these will come from user stories.  From
 the result of the tests the Customer can make informed decisions on what is
 deployed and when.
 
+Behavior Driven Development
+: This is a software development process in which you describe the behavior of
+what your application will complete and then you write code and steps to
+determine the status of those behaviors.
+
+BDD
+: see Behavior Driven Development
+
 Black Box
 : Black box testing is a form of testing where you test an application
 without knowing how everything is accomplished underneath.  
