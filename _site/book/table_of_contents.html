@@ -27,18 +27,49 @@
       </h1>
     </div>
     <div class="w3-row">
-      <div class="w3-col m4 l3 w3-green w3-center">
+      <div class="w3-col m4 l3 w3-green">
         <nav class="w3-sidebar w3-collapse" id="mySidenav">
           <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
           <a href="/blog.html">Blog</a>
-<a href="/book/table_of_contents.html">Book</a>
-<!--
-<a href="/lang/java.html">Java</a>
-<a href="/lang/javascript.html">JavaScript</a>
-<a href="/lang/ruby.html">Ruby</a>
-<a href="/lang/php.html">PHP</a>
-<a href="/lang/python.html">Python</a>
--->
+<a href="/index.html">Introduction</a>
+<a href="" class="w3-pale-blue">Test Strategy - Todo</a>
+<!--<a href="/book/table_of_contents.html">Book</a>-->
+<span class="tc-menu-label">Testing Frameworks</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/cucumber/about_cucumber.html">Cucumber</a>
+  <a href="" class="w3-pale-blue">Gauge - Todo</a>
+  <a href="" class="w3-pale-blue">Lettuce - Todo</a>
+  <a href="" class="w3-pale-blue">Jasmine - Todo</a>
+  <a href="" class="w3-pale-blue">JUnit - Todo</a>
+  <a href="" class="w3-pale-blue">PHPunit - Todo</a>
+  <a href="" class="w3-pale-blue">RedwoodHQ - Todo</a>
+  <a href="" class="w3-pale-blue">RobotFramework - Todo</a>
+  <a href="" class="w3-pale-blue">RSpec - Todo</a>
+  <a href="" class="w3-pale-blue">Sahi - Todo</a>
+</div>
+
+<span class="tc-menu-label">Web Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/web_testing/java/cucumber_selenium.html">Java JVM Cucumber with Selenium Web Driver</a>
+  <a href="/book/web_testing/javascript/cucumberjs-selenium.html">CucumberJS with Selenium Web Driver</a>
+  <a href="/book/web_testing/javascript/jasmine_inline_html.html">Jasmine inline with HTML</a>
+  <a href="https://github.com/testcookbook/php-phpunit-selenium">PHPunit with Selenium Web Driver</a>
+  <a href="https://github.com/testcookbook/python-lettuce-selenium">Python Lettuce with Selenium</a>
+  <a href="/book/web_testing/ruby/cucumber-ruby-watir-selenium.html">Ruby Cucumber with Watir and Selenium</a>
+</div>
+
+<span class="tc-menu-label">UX and UI Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="" class="w3-pale-blue">Galen Framework - Todo</a>
+</div>
+
+<span class="tc-menu-label">Rest API Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="" class="w3-pale-blue">JSON Schema</a>
+</div>
+
+
+<a href="/book/glossary/glossary.html">Glossary</a>
 
         </nav>
       </div>
@@ -46,9 +77,19 @@
         <div class="w3-container">
           <ol>
   <li>Introduction</li>
+  <li>Test Automation Strategy</li>
   <li>Testing Frameworks
     <ul>
       <li><a href="/book/cucumber/about_cucumber.html">Cucumber</a></li>
+      <li>Gauge - Todo</li>
+      <li>Lettuce - Todo</li>
+      <li>Jasmine - Todo</li>
+      <li>JUnit - Todo</li>
+      <li>PHPunit - Todo</li>
+      <li>RedwoodHQ - Todo</li>
+      <li>RobotFramework - Todo</li>
+      <li>RSpec - Todo</li>
+      <li>Sahi - Todo</li>
     </ul>
   </li>
   <li>Web Testing
@@ -81,6 +122,11 @@
       </li>
     </ul>
   </li>
+  <li>UX and UI Testing
+    <ul>
+      <li>Galen Framework - Todo</li>
+    </ul>
+  </li>
   <li><a href="/book/glossary/glossary.html">Glossary</a></li>
 </ol>
 
@@ -93,6 +139,17 @@ function w3_open() {
 }
 function w3_close() {
   document.getElementById("mySidenav").style.display = "none";
+}
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-green", "");
+    }
 }
     </script>
   <br /><br />

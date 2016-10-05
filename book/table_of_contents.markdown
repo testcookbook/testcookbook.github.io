@@ -3,10 +3,20 @@ layout: default
 title:  "Table of Contents"
 ---
 1. Introduction
-2. Testing Frameworks
+2. Test Automation Strategy
+3. Testing Frameworks
   * [Cucumber](/book/cucumber/about_cucumber.html)
+  * Gauge - Todo
+  * Lettuce - Todo
+  * Jasmine - Todo
+  * JUnit - Todo
+  * PHPunit - Todo
+  * RedwoodHQ - Todo
+  * RobotFramework - Todo
+  * RSpec - Todo
+  * Sahi - Todo
 
-3. Web Testing
+4. Web Testing
   * Java
     1. [Cucumber + Selenium Web Driver](/book/web_testing/java/cucumber_selenium.html)
   * Javascript
@@ -18,4 +28,6 @@ title:  "Table of Contents"
     1. [Lettuce + Selenium Web Driver](https://github.com/testcookbook/python-lettuce-selenium)
   * Ruby
     1. [Cucumber + Watir + Selenium](/book/web_testing/ruby/cucumber-ruby-watir-selenium.html)
-4. [Glossary](/book/glossary/glossary.html)
+5. UX and UI Testing
+  * Galen Framework - Todo
+6. [Glossary](/book/glossary/glossary.html)

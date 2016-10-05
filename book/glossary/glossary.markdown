@@ -4,6 +4,16 @@ title:  "Glossary"
 ---
 # Glossary
 
+AC - see Acceptance tests
+
+Acceptance Tests - are usually black box tests that represent expected results
+from the application.  In most cases these will come from user stories.  From
+the result of the tests the Customer can make informed decisions on what is
+deployed and when.
+
+Black Box - Black box testing is a form of testing where you test an application
+without knowing how everything is accomplished underneath.  
+
 Cucumber - A popular BDD testing framework.
 
 DRY - Don't Repeat Yourself

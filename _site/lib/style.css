@@ -6,3 +6,7 @@
 @media screen and (min-width:601px){.w3-sidebar.w3-collapse{display:block!important}}
 
 .icon {width: 25px}
+
+.tc-indent {margin-left: 15px; margin-right: 0px;}
+.tc-menu-label {padding:4px 2px 4px 16px; display:block}
+a {text-decoration: none}
