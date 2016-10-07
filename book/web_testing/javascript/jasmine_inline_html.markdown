@@ -43,4 +43,4 @@ Now that we have all of our dependencies lets create a new function that adds
   </body>
 {% endhighlight %}
 
-[http://www.testcookbook.com/lang/javascript/example/jasmineInline.html](/lang/javascript/example/jasmineInline.html)
+[http://www.testcookbook.com/book/web_testing/javascript/jasmine_inline_html.html](/book/web_testing/javascript/jasmine_inline_html.html)
