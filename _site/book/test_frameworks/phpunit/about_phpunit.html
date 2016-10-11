@@ -41,9 +41,9 @@
   <a href="/book/lettuce/about_lettuce.html">Lettuce</a>
   <a href="/book/test_frameworks/jasmine/about_jasmine.html">Jasmine</a>
   <a href="/book/test_frameworks/junit/about_junit.html">JUnit</a>
-  <a href="/book/test_frameworks/phpunit/about_phpunit.html" class="w3-pale-blue">PHPunit - Todo</a>
-  <a href="/book/test_frameworks/redwoodhq/about_redwoodhq.html" class="w3-pale-blue">RedwoodHQ - Todo</a>
-  <a href="/book/test_frameworks/robotframework/about_robot_framework.html" class="w3-pale-blue">RobotFramework - Todo</a>
+  <a href="/book/test_frameworks/phpunit/about_phpunit.html">PHPunit</a>
+  <!--<a href="/book/test_frameworks/redwoodhq/about_redwoodhq.html" class="w3-pale-blue">RedwoodHQ - Todo</a>-->
+  <a href="/book/test_frameworks/robotframework/about_robot_framework.html">RobotFramework</a>
   <a href="/book/test_frameworks/rspec/about_rspec.html" class="w3-pale-blue">RSpec - Todo</a>
   <a href="/book/test_frameworks/sahi/about_sahi.html" class="w3-pale-blue">Sahi - Todo</a>
 </div>
@@ -77,7 +77,140 @@
         <div class="w3-container">
           <h1 id="php-unit">PHP Unit</h1>
 
-<p>TODO</p>
+<p>PHPUnit is a unit testing framework in a XUnit architecture.</p>
+
+<h2 id="getting-started">Getting Started.</h2>
+
+<p>The first thing you will need is PHPUnit installed locally.  I recommend using
+composer.  This will allow you to download other dependencies if needed.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  composer.json
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testcookbook/phpunit"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.5"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>To install you can run.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>composer install
+<span class="gp">$ </span><span class="c"># or</span>
+<span class="gp">$ </span>php composer.phar install</code></pre></figure>
+
+</div>
+</div>
+
+<p>After installing your dependencies you can begin to write some tests.  Lets
+start by writing some unit tests for a class that adds 2 numbers called Adder.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  adder_tests.php
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">require</span><span class="p">(</span><span class="s1">'adder.php'</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">AdderTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">numberCanBeAdded</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="nv">$adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$adder</span><span class="o">-&gt;</span><span class="na">getTotal</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$total</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>Now lets create a basic class to make the test pass.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  adder.php
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Adder</span>
+<span class="p">{</span>
+  <span class="k">private</span> <span class="nv">$a</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nv">$b</span><span class="p">;</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">=</span> <span class="nv">$a</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span> <span class="o">=</span> <span class="nv">$b</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">getTotal</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">+</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>To run your tests.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>vendor/bin/phpunit adder_tests.php</code></pre></figure>
+
+</div>
+</div>
 
         </div>
       </div>

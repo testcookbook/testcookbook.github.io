@@ -41,9 +41,9 @@
   <a href="/book/lettuce/about_lettuce.html">Lettuce</a>
   <a href="/book/test_frameworks/jasmine/about_jasmine.html">Jasmine</a>
   <a href="/book/test_frameworks/junit/about_junit.html">JUnit</a>
-  <a href="/book/test_frameworks/phpunit/about_phpunit.html" class="w3-pale-blue">PHPunit - Todo</a>
-  <a href="/book/test_frameworks/redwoodhq/about_redwoodhq.html" class="w3-pale-blue">RedwoodHQ - Todo</a>
-  <a href="/book/test_frameworks/robotframework/about_robot_framework.html" class="w3-pale-blue">RobotFramework - Todo</a>
+  <a href="/book/test_frameworks/phpunit/about_phpunit.html">PHPunit</a>
+  <!--<a href="/book/test_frameworks/redwoodhq/about_redwoodhq.html" class="w3-pale-blue">RedwoodHQ - Todo</a>-->
+  <a href="/book/test_frameworks/robotframework/about_robot_framework.html">RobotFramework</a>
   <a href="/book/test_frameworks/rspec/about_rspec.html" class="w3-pale-blue">RSpec - Todo</a>
   <a href="/book/test_frameworks/sahi/about_sahi.html" class="w3-pale-blue">Sahi - Todo</a>
 </div>
@@ -77,7 +77,229 @@
         <div class="w3-container">
           <h1 id="robot-framework">Robot Framework</h1>
 
-<p>TODO</p>
+<p>Robot Framework is a Test driven development framework.  You can utilize it by
+a keyword driven approach or a more BDD approach using a Gherkin style test.</p>
+
+<h2 id="getting-started">Getting started.</h2>
+
+<p>First off we need to setup a little environment stuff.  Hopefully starting out
+you have some basic Python skills.  Lets install Robot Framework.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>pip install robotframework</code></pre></figure>
+
+</div>
+</div>
+
+<h2 id="your-first-test">Your First Test.</h2>
+<p>Once it is installed we can now start examining how we can create some tests.
+Lets assume we want to test adding up a couple of numbers.  For the first test
+we will focus on a keyword driven development.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  keyword.robot
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-robot" data-lang="robot">*** Settings ***
+Documentation     Example Keyword Test
+
+Library    AdderLibrary.py
+
+*** Test Cases ***
+Addition
+    Add input    3    5
+    Total    8</code></pre></figure>
+
+</div>
+</div>
+
+<p>You will notices from the keyword.robot file that there are 2 main headings,
+surrounded by three asterisks. The first section covers what the settings needed
+are and the other is a section for test cases.</p>
+
+<p>Within the Settings we want to document what the tests are about, and we also
+need to include a library. This library will be a Python script that will
+run to automate the specific tests.</p>
+
+<p>The last section is the Test Cases.  Here you can have a descriptive test case.
+In this case it says Addition.  Followed by 2 keyword lines. Add input and Total.</p>
+
+<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
+<img alt="tip image" src="/lib/images/tip100.png" class="icon" />
+
+if you are rather new to Python keep in mind that spacing is very important. It
+is also important in the robot files as well.  While you are looking at the
+code presented, the large spaced areas are 4 spaces wide.
+</div>
+
+<h2 id="define-your-tests">Define your tests.</h2>
+
+<p>Once you have test file to describe what you are doing. Then its time to write
+code to actually test what was described.  Create a file “AdderLibrary.py”.
+You might remember it from the settings of the robot file we created.</p>
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  AdderLibrary.py
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""
+    Tests for AdderLibrary
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="o">=</span><span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">add_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">expected</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">AssertionError</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">s != </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>For this example we will test within just this file to demonstrate how keywords
+work.  Normally the actual functionality would be in its own class file.</p>
+
+<p>Take a look at the add_input definition.  When you used the keyword “Add input”
+in the robot file it will be translated to “add_test”.  The first word will
+be capitalized and the underscore will become a space.  After add_test we
+also have 3 arguments. Self, a and b which will be the numbers that we want to
+add.</p>
+
+<p>Finally take a look at the total function.  This does 2 distinct things.  First
+it adds up the 2 numbers and returns the value to “self._result”. Secondly we
+have an if block. This does a simple comparison to validate if the expected
+value matches that which we added up.  If it is equal we are fine.  However if
+things are not equal then we need to assert an error followed by some message
+that describes what the issue is.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+  Command Line
+</header>
+
+<div class="w3-container">
+<figure class="highlight">
+<pre><code class="language-text" data-lang="text">
+$ robot keyword.robot
+==============================================================================
+Keyword :: Example Keyword Test                                               
+==============================================================================
+Addition                                                              | <span style="color:#0A0">PASS</span> |
+------------------------------------------------------------------------------
+Keyword :: Example Keyword Test                                       | <span style="color:#0A0">PASS</span> |
+1 critical test, 1 passed, 0 failed
+1 test total, 1 passed, 0 failed
+==============================================================================
+Output:  /home/user/robotframework/output.xml
+Log:     /home/user/robotframework/log.html
+Report:  /home/user/robotframework/report.html
+
+</code></pre>
+</figure>
+</div>
+</div>
+
+<h2 id="gherkin">Gherkin</h2>
+
+<p>You have completed your first test using keywords.  But what if we wanted to
+write using a Gherkin format?  Well your in luck.  Lets create a file called
+“gherkin.robot”.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <img alt="file icon image" src="/lib/images/file.png" class="icon" />
+
+  gherkin.robot
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-language" data-lang="language">*** Settings ***
+Documentation     Example Gherkin Style Test
+
+Library    AdderLibrary.py
+
+*** Test Cases ***
+Addition
+    Given two numbers "3" and "5"
+    Then total of result is "8"
+
+*** Keywords ***
+two numbers "${a}" and "${b}"
+    Add input    ${a}    ${b}
+total of result is "${total}"
+    Total    ${total}</code></pre></figure>
+
+</div>
+</div>
+
+<p>Within this file you will see a new header called Keywords, and the Test Cases
+will look like Given, When and Then.  The new section Keywords is a little
+different than you might expect from something like Cucumber.  With Robot
+Framework your step definition translation is happening within the test file
+not the step definition.</p>
+
+<p>Take note from the Given we want to get 2 different numbers and add them.  On
+the parts that we want to get numbers from we have this “${a}” and “${b}”.  The
+dollar sign and the brackets tells the framework that these particular arguments
+could change and we might want to reuse that functionality later.</p>
+
+<p>Once the step definition is described we can then add keyword functions just
+like we did on the keyword.robot file.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <img alt="tip image" src="/lib/images/cli.png" class="icon" />
+
+  Command Line
+</header>
+
+<div class="w3-container">
+<figure class="highlight">
+<pre><code class="language-text" data-lang="text">
+$ robot gherkin.robot
+==============================================================================
+Gherkin :: Example Gherkin Style Test                                         
+==============================================================================
+Addition                                                              | <span style="color:#0A0">PASS</span> |
+------------------------------------------------------------------------------
+Gherkin :: Example Gherkin Style Test                                 | <span style="color:#0A0">PASS</span> |
+1 critical test, 1 passed, 0 failed
+1 test total, 1 passed, 0 failed
+==============================================================================
+Output:  /home/user/robotframework/output.xml
+Log:     /home/user/robotframework/log.html
+Report:  /home/user/robotframework/report.html
+
+</code></pre>
+</figure>
+</div>
+</div>
 
         </div>
       </div>
