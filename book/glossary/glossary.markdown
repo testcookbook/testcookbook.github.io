@@ -32,6 +32,9 @@ Cucumber
 DRY
 : Don't Repeat Yourself
 
+Gemfile
+: A configuration file used to maintain the packages within a Ruby project.
+
 Gherkin
 : A readable format to write acceptance tests.  This format is commonly
 used in feature files for testing frameworks like Cucumber and Lettuce.
@@ -47,9 +50,20 @@ Javascript
 : A programming language that gained popularity for ability to modify
 website on the browser.
 
+RSpec
+: A framework for testing using Ruby
+
 Ruby
 : A programming language
 
 Selenium
 : A webdriver framework that allows simple commands to be sent to the
 browser.
+
+TDD
+: see Test Driven Development
+
+Test Driven Development
+: This is a software development process where you would write a test for the
+function you want to complete.  Then you would write code to make that test pass.
+This will allow you quickly validate if your code is working as intended.

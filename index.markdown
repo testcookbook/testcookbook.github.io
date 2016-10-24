@@ -10,4 +10,6 @@ Welcome to the Test Cookbook.  Things are under major construction and we are wo
 
 Currently we have a few examples on github to do basic selenium tests using Ruby, Java, Python and PHP.  Please enjoy and happy learning.
 
+Do you have something that you would like to know more about or see added.  Please click the feedback button on the bottom left of screen. 
+
 <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
