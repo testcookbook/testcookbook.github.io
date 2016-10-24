@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "About Cucumber"
+description: "Getting started with cucumber testing."
 ---
 # Cucumber
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Cucumber using Ruby and Watir"
+description: "Cucumber Ruby and Watir implementation."
 ---
 
 # Cucumber using Ruby and Watir

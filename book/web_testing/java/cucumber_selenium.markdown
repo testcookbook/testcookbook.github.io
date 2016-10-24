@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Cucumber + Selenium Web Driver for Java"
+description: "Running Cucumber with Java JVM and Selenium Web Driver."
 ---
 # Cucumber + Selenium Web Driver for Java
 

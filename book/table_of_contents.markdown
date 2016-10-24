@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Table of Contents"
+description: "Table of Contents for Test Cookbook"
 ---
 1. Introduction
 2. Test Automation Strategy

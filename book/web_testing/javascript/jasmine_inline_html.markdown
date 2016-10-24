@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Jasmine tests inline with HTML"
+description: "Inline HTML Jasmine tests"
 ---
 
 # Jasmine Tests inline with HTML

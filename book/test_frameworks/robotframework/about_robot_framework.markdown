@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Robot Framework"
+description: "Getting started with the Robot Framework."
 ---
 # Robot Framework
 

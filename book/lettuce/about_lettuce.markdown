@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "All about Lettuce"
+description: "Intro to the Python Lettuce framework for testing."
 ---
 # All about Lettuce
 

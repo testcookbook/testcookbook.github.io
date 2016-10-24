@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "JSON Schema"
+description: "Introduction to JSON schema."
 ---
 # JSON Schema
 

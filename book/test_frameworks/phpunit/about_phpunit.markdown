@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "PHP Unit"
+description: "Getting started with PHPUnit tests."
 ---
 # PHP Unit
 

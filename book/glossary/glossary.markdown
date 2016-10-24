@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Glossary"
+description: "Glossary for testing terms in Test Cookbook"
 ---
 # Glossary
 

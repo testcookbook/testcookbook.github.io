@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "JUnit"
+description: "How to start building JUnit tests."
 ---
 # JUnit
 

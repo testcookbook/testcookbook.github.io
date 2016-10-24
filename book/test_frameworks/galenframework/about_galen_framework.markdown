@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Galen Framework"
+description: "Introduction to the Galen Framework"
 ---
 # Galen Framework
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "RSpec"
+description: "Introduction to RSpec and Ruby"
 ---
 # RSpec
 

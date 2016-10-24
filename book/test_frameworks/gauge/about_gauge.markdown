@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Gauge Test Framework"
+description: "Introduction to the Gauge Test Framework"
 ---
 # Gauge Test Framework
 

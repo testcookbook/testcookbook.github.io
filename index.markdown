@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Test Cookbook
+description: "Test Cookbook home page."
 ---
 
 # Welcome to Test Cookbook

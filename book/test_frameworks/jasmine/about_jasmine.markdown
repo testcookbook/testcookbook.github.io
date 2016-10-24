@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "About Jasmine"
+description: "Introduction to Jasmine testing in Javascript"
 ---
 # Jasmine
 

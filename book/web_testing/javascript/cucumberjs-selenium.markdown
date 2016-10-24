@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "CucumberJS and Selenium"
+description: "Cucumber testing suite using Javascript and Selenium Web Driver"
 ---
 # CucumberJS + Selenium Web Driver
 
