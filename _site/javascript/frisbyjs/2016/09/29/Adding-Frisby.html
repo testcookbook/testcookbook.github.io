@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gherkin</title>
+    <title>Adding FrisbyJS Docs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+    <meta name="description" content="Adding FrisbyJS Docs">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
@@ -32,9 +32,9 @@
       <div class="w3-col m4 l3 w3-green">
         <nav class="w3-sidebar w3-collapse" id="mySidenav">
           <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
-          <a href="/blog.html">Blog</a>
+          <a href="/news.html">News</a>
 <a href="/index.html">Introduction</a>
-<a href="" class="w3-pale-blue">Test Strategy - Todo</a>
+<!--<a href="" class="w3-pale-blue">Test Strategy - Todo</a>-->
 <!--<a href="/book/table_of_contents.html">Book</a>-->
 <span class="tc-menu-label">Testing Frameworks</span>
 <div class="tc-indent w3-pale-green">
@@ -73,6 +73,8 @@
 <span class="tc-menu-label">Basic Programming</span>
 <div class="tc-indent w3-pale-green">
   <a href="/book/programming/javascript/npm_project.html">Create Node Project</a>
+  <a href="/book/programming/wait-vs-sleep.html">Wait vs Sleep</a>
+  <a href="/book/programming/gherkin.html">Gherkin</a>
 </div>
 <a href="/book/glossary/glossary.html">Glossary</a>
 
@@ -80,48 +82,10 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h1 id="what-is-gherkin">What is Gherkin</h1>
+          <h1 id="adding-frisbyjs-docs">Adding FrisbyJS Docs</h1>
 
-<p>Gherkin is a business formatted DSL (Domain Specific Language) that is used to 
-describe how somethings behaves without actually implementing that functionality.</p>
-
-<p>The format for a Gherkin file is done by defining a Feature, then a Scenario.
-For Example.</p>
-
-<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Describe what this feature is about.
-
-  <span class="kn">Scenario</span><span class="p">:</span> Describe what the scenario will be about.
-    <span class="nf">Given</span> I do something
-    <span class="nf">And</span> do something else
-    <span class="nf">When</span> this happens
-    <span class="nf">Then</span> I get to do something new</code></pre></figure>
-
-<p>Why would you ever want to write the Gherkin?  In a buisness format the Gherkin
-file can be used in a variety of ways.  One of those ways is to have a common 
-language between the developer and the business. A business minded person can
-use this format to describe a behavior that they would like out of the product.
-Or the reverse can be true a developer can describe the functionality that they
-will be implementing where the business person can understand.</p>
-
-<p>Now that I have this Gherkin file what can I do with it besides communicate with
-the business people.  Once you have a behavior in mind that you need, you can 
-start the BDD process.  Write some step definitions to test your new application
-based on the description on the DSL then write code to make it pass that behavior.</p>
-
-<p>Once you have written steps and built your application based on those tests, now
-you will have a living documentation for your application.  Depending on the 
-framework and language you use, you can create some interesting artifacts to go
-along with the Gherkin.  For example by automating these tests you can record the 
-video of functionality or capture screenshots to help describe what is going on.<br />
-These tools can be quite valuable to a new user of your application or maybe a new
-team member.  As long as you keep up with your tests then you should have current 
-and reliable documentation for you application.</p>
-
-<h2 id="tools-where-you-can-use-gherkin">Tools where you can use Gherkin</h2>
-<ul>
-  <li>Cucumber</li>
-  <li>Lettuce</li>
-</ul>
+<p>Learn how to get started using Frisby.js. Read more in the
+cookbook <a href="/book/rest/javascript/frisbyjs.html">here</a>.</p>
 
         </div>
       </div>

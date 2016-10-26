@@ -1,9 +1,9 @@
 ---
 layout: default
-title:  "FrisbyJS"
-description: "Testing REST services with FrisbyJS"
+title:  "Frisby.js"
+description: "Testing REST services with Frisby.js"
 ---
-# Testing REST services with FrisbyJS
+# Testing REST services with Frisby.js
 
 Frisby is a testing framework for testing a REST api. It has built in matchers
 and Jasmine built into its core.  This allows you to have a clean and concise
@@ -38,7 +38,7 @@ $ mkdir specs
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
 {% include tipIcon.html%}
-  On the FrisbyJS webpage it says to install jasmine-node like.
+  On the Frisby.js webpage it says to install jasmine-node like.
   "npm install -g jasmine-node" The -g means global.  This would allow you to
   run jasmine-node from anywhere.  I prefer to put it in the save-dev so that
   all of the packages are contained within the node_modules folder within the

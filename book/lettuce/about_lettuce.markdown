@@ -52,7 +52,7 @@ $ mkdir features
 </div>
 </div>
 
-Lets create a feature file within the features folder.
+Lets create a feature file using [Gherkin](/book/programming/gherkin.html) within the features folder.
 
 <div class="w3-card">
 <header class="w3-container w3-blue">

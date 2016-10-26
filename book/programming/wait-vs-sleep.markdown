@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Wait VS Sleep"
+description: "Wait VS Sleep"
 date:   2016-09-29 06:22:12 -0500
 categories: [wait, sleep]
 ---
@@ -56,5 +57,3 @@ time.  Just think if you had 100 tests all with wait failures.  If max time is
 At least you know if your tests are taking way to long all of a sudden you
 either have a big issue with you code or you have quite a bit of refactoring to
 do on your tests.
-
-Happy Testing.

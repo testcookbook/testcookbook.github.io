@@ -6,7 +6,7 @@ description: "Getting started with the Robot Framework."
 # Robot Framework
 
 Robot Framework is a Test driven development framework.  You can utilize it by
-a keyword driven approach or a more BDD approach using a Gherkin style test.
+a keyword driven approach or a more BDD approach using a [Gherkin](/book/programming/gherkin.html) style test.
 
 ## Getting started.
 
@@ -90,7 +90,7 @@ also have 3 arguments. Self, a and b which will be the numbers that we want to
 add.
 
 Finally take a look at the total function.  This does 2 distinct things.  First
-it adds up the 2 numbers and returns the value to "self._result". Secondly we
+it adds up the 2 numbers and returns the value to "self.\_result". Secondly we
 have an if block. This does a simple comparison to validate if the expected
 value matches that which we added up.  If it is equal we are fine.  However if
 things are not equal then we need to assert an error followed by some message
@@ -128,8 +128,8 @@ Report:  /home/user/robotframework/report.html
 ## Gherkin
 
 You have completed your first test using keywords.  But what if we wanted to
-write using a Gherkin format?  Well your in luck.  Lets create a file called
-"gherkin.robot".
+write using a [Gherkin](/book/programming/gherkin.html) format?  Well your in
+luck.  Lets create a file called "gherkin.robot".
 
 <div class="w3-card">
 <header class="w3-container w3-blue">

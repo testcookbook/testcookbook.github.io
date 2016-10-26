@@ -18,7 +18,7 @@ in a format that is both readable to you and the other members of the team.
 
 ## Gherkin
 ---
-Gherkin is readable formatted file that will allow other members of the team,
+[Gherkin](/book/programming/gherkin.html) is readable formatted file that will allow other members of the team,
 to understand what the acceptance criteria is, and also provide that living
 documentation of your application.  Once this file or feature is written, you
 can run the tests with Cucumber and determine how far along you have come with
@@ -51,7 +51,7 @@ normal directory setup would look something like.
 {% endhighlight %}
 
 The features directory would contain your feature files.  These feature files
-will be written in a Gherkin style format.  
+will be written in a [Gherkin](/book/programming/gherkin.html) style format.  
 
 Step definitions will be code that executes the different steps described in the
 feature files.  In this case we are making a 'steps.rb'.  You could name it

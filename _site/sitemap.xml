@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://testcookbook.github.io/wait/sleep/2016/09/29/wait-vs-sleep.html</loc>
+<loc>https://testcookbook.github.io/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</loc>
 <lastmod>2016-09-29T06:22:12-05:00</lastmod>
-</url>
-<url>
-<loc>https://testcookbook.github.io/gherkin/2016/09/05/gherkin.html</loc>
-<lastmod>2016-09-05T06:22:12-05:00</lastmod>
 </url>
 <url>
 <loc>https://testcookbook.github.io/about/</loc>
@@ -39,9 +35,6 @@
 <loc>https://testcookbook.github.io/book/test_frameworks/rspec/about_rspec.html</loc>
 </url>
 <url>
-<loc>https://testcookbook.github.io/blog.html</loc>
-</url>
-<url>
 <loc>https://testcookbook.github.io/book/web_testing/ruby/cucumber-ruby-watir-selenium.html</loc>
 </url>
 <url>
@@ -52,6 +45,9 @@
 </url>
 <url>
 <loc>https://testcookbook.github.io/book/rest/javascript/frisbyjs.html</loc>
+</url>
+<url>
+<loc>https://testcookbook.github.io/book/programming/gherkin.html</loc>
 </url>
 <url>
 <loc>https://testcookbook.github.io/book/glossary/glossary.html</loc>
@@ -69,6 +65,9 @@
 <loc>https://testcookbook.github.io/book/rest/json_schema.html</loc>
 </url>
 <url>
+<loc>https://testcookbook.github.io/news.html</loc>
+</url>
+<url>
 <loc>https://testcookbook.github.io/book/programming/javascript/npm_project.html</loc>
 </url>
 <url>
@@ -76,5 +75,8 @@
 </url>
 <url>
 <loc>https://testcookbook.github.io/book/rest/ruby/validate_json_ruby.html</loc>
+</url>
+<url>
+<loc>https://testcookbook.github.io/book/programming/wait-vs-sleep.html</loc>
 </url>
 </urlset>
