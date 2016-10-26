@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test Cookbook</title>
+    <title>Initializing a NodeJS project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+    <meta name="description" content="Initializing a NodeJS project">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
@@ -80,9 +80,50 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <p><img src="/lib/images/cookbooklogo.png" alt="alt text" title="Logo Title Text 1" /></p>
+          <h1 id="initializing-a-nodejs-project">Initializing a NodeJS project</h1>
 
-<p><a href="/book/table_of_contents.html">Table of Contents</a></p>
+<p>Basic steps to creating a NodeJS package.json file.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ mkdir test
+$ npm init
+name: (test)
+version: (1.0.0)
+description:
+entry point: (index.js)
+test command:
+git repository:
+keywords:
+author:
+license: (ISC)
+About to write to /home/user/test/package.json:
+
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this ok? (yes)</code></pre></figure>
+
+</div>
+</div>
 
         </div>
       </div>

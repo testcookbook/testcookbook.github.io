@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PHP Unit</title>
+    <title>FrisbyJS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Getting started with PHPUnit tests.">
+    <meta name="description" content="Testing REST services with FrisbyJS">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
@@ -80,44 +80,85 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h1 id="php-unit">PHP Unit</h1>
+          <h1 id="testing-rest-services-with-frisbyjs">Testing REST services with FrisbyJS</h1>
 
-<p>PHPUnit is a unit testing framework in a XUnit architecture.</p>
+<p>Frisby is a testing framework for testing a REST api. It has built in matchers
+and Jasmine built into its core.  This allows you to have a clean and concise
+way to implement and run your tests.</p>
 
 <h2 id="getting-started">Getting Started.</h2>
 
-<p>The first thing you will need is PHPUnit installed locally.  I recommend using
-composer.  This will allow you to download other dependencies if needed.</p>
+<p>As with any framework or testing tool that you may use a little setup is
+required.  If you haven’t already install NodeJS on your system.  Once that is
+installed you can create a basic npm project and install some packages.  If you
+have never initialized a npm project. Check out the chapter on <a href="/book/programming/javascript/npm_project.html">Initializing a
+NodeJS project.</a></p>
+
+<p>Now you should have a package.json in your test directory similar to the one
+above.  Chances are you already have some sort of package json that you could
+install packages too.  If so you can skip the init part and start installing
+required packages.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install --save-dev frisby jasmine-node
+$ mkdir specs</code></pre></figure>
+
+</div>
+</div>
+
+<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/tip100.png" class="icon"/>-->
+
+  On the FrisbyJS webpage it says to install jasmine-node like.
+  "npm install -g jasmine-node" The -g means global.  This would allow you to
+  run jasmine-node from anywhere.  I prefer to put it in the save-dev so that
+  all of the packages are contained within the node_modules folder within the
+  project.
+</div>
+
+<p>Since we installed jasmine-node using the –save-dev flag we should update the
+test task on the package json.  This will allow for a clean way to run the tests.</p>
 
 <div class="w3-card">
 <header class="w3-container w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-  composer.json
+  steps.py
 </header>
 
 <div class="w3-container">
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testcookbook/phpunit"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.5"</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/jasmine-node specs"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"frisby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.5"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"jasmine-node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.14.5"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
 </div>
 </div>
 
-<p>To install you can run.</p>
+<p>You can now run your specs using npm test.</p>
 
 <div class="w3-card">
 <header class="w3-container w3-grey">
@@ -126,87 +167,49 @@ composer.  This will allow you to download other dependencies if needed.</p>
 
   Command Line
 </header>
-
 <div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>composer install
-<span class="gp">$ </span><span class="c"># or</span>
-<span class="gp">$ </span>php composer.phar install</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm test
+&gt; test@1.0.0 test /home/ben/exp/test
+&gt; jasmine-node specs
+
+Finished in 0.001 seconds
+0 tests, 0 assertions, 0 failures, 0 skipped</code></pre></figure>
 
 </div>
 </div>
 
-<p>After installing your dependencies you can begin to write some tests.  Lets
-start by writing some unit tests for a class that adds 2 numbers called Adder.</p>
+<p>Once you have a basic running test suite its time to write our first spec.</p>
+
+<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/tip100.png" class="icon"/>-->
+
+  All spec files must end in "spec.js" like "test_spec.js" or "yourTestspec.js"
+</div>
+
+<h2 id="your-first-spec">Your first spec</h2>
 
 <div class="w3-card">
 <header class="w3-container w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-  adder_tests.php
+  first_spec.js
 </header>
 
 <div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
-
-<span class="k">require</span><span class="p">(</span><span class="s1">'adder.php'</span><span class="p">);</span>
-
-<span class="k">class</span> <span class="nc">AdderTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
-<span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">numberCanBeAdded</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="nv">$adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
-    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$adder</span><span class="o">-&gt;</span><span class="na">getTotal</span><span class="p">();</span>
-
-    <span class="c1">// Assert
-</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$total</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">frisby</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'frisby'</span><span class="p">);</span>
+<span class="nx">frisby</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'Get Brightbit Twitter feed'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">expectStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="p">.</span><span class="nx">toss</span><span class="p">();</span></code></pre></figure>
 
 </div>
 </div>
 
-<p>Now lets create a basic class to make the test pass.</p>
-
-<div class="w3-card">
-<header class="w3-container w3-blue">
-  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
-
-  adder.php
-</header>
-
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-<span class="k">class</span> <span class="nc">Adder</span>
-<span class="p">{</span>
-  <span class="k">private</span> <span class="nv">$a</span><span class="p">;</span>
-  <span class="k">private</span> <span class="nv">$b</span><span class="p">;</span>
-
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">=</span> <span class="nv">$a</span><span class="p">;</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span> <span class="o">=</span> <span class="nv">$b</span><span class="p">;</span>
-  <span class="p">}</span>
-
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">getTotal</span><span class="p">()</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">+</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span><span class="p">;</span>
-  <span class="p">}</span>
-
-<span class="p">}</span>
-<span class="cp">?&gt;</span></code></pre></figure>
-
-</div>
-</div>
-
-<p>To run your tests.</p>
-
+<p>Now try running your tests with “npm test”</p>
 <div class="w3-card">
 <header class="w3-container w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
@@ -214,10 +217,17 @@ start by writing some unit tests for a class that adds 2 numbers called Adder.</
 
   Command Line
 </header>
-
 <div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>vendor/bin/phpunit adder_tests.php</code></pre></figure>
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm test
+
+&gt; test@1.0.0 test /home/ben/exp/test
+&gt; jasmine-node specs
+
+.
+
+Finished in 0.452 seconds
+1 test, 1 assertion, 0 failures, 0 skipped</code></pre></figure>
 
 </div>
 </div>
