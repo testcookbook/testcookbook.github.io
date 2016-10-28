@@ -55,7 +55,7 @@ require 'json-schema'
 
 def validate(schema, file)
   begin
-    JSON::Validator.validate(schemaJson, fileJson)
+    JSON::Validator.validate!(schemaJson, fileJson)
     return true
   rescue
       JSON::Schema::ValidationError => e
@@ -81,7 +81,7 @@ require 'json-schema'
 
 def validate(schema, file)
   begin
-    JSON::Validator.validate(schemaJson, fileJson)
+    JSON::Validator.validate!(schemaJson, fileJson)
     return true
   rescue
       JSON::Schema::ValidationError => e
