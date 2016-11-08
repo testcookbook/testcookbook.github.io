@@ -60,6 +60,9 @@ Selenium
 : A webdriver framework that allows simple commands to be sent to the
 browser.
 
+<a name="string">String</a>
+: A string is a programming data type that is a collection of characters.
+
 TDD
 : see Test Driven Development
 
