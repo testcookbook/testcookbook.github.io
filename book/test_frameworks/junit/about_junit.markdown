@@ -10,77 +10,21 @@ be unit tests, however you can bend it to your particular needs.
 
 ## Getting Started
 
-When working with most Java projects and Maven you generally have a standard
-directory structure like.
+When working with most Java projects you generally want to use a build tool.
+For JUnit tests there are a couple of build tools that you are most likely to
+see and use.  For this exercise feel free to try out either Maven or Gradle.  If
+this is your first Java project check out the section on initializing
+[Maven](/book/programming/java/maven.html) or
+[Gradle](/book/programming/java/gradle.html).
 
-{% highlight text %}
-.
-├── pom.xml
-└── src
-    ├── main
-    │   └── java
-    │       └── AddNumber.java
-    └── test
-        └── java
-            └── AddNumberTest.java
-{% endhighlight %}
 
-Under src you will see main and test.  Main will store you application or
-classes.  Test will store your tests for those classes.  The easiest way to get
-dependencies is to add some info to a "pom.xml" file for Maven.  For this
-example the dependency that we care about it junit.
 
+Once you have created a new Java project, create a new file within the
+'src/main/java/path/to/app' directory called 'AddNumberTest.java'.
 <div class="w3-card">
 <header class="w3-container w3-blue">
   {% include fileIcon.html%}
-  pom.xml
-</header>
-
-<div class="w3-container">
-{% highlight xml %}
-<project
-  xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>junit-test-example</groupId>
-  <artifactId>junit-test-example</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0</version>
-  <name>junit-test-example</name>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
- </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.5.1</version>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-{% endhighlight %}
-</div>
-</div>
-
-Once you have prepared your Maven configuration you can start writing a basic
-unit test that can validate adding 2 numbers.
-
-<div class="w3-card">
-<header class="w3-container w3-blue">
-  {% include fileIcon.html%}
-  AddNumberTest.java
+  src/main/java/path/to/app/AddNumberTest.java
 </header>
 
 <div class="w3-container">
@@ -109,7 +53,11 @@ You should now be ready to run your tests.
 
 <div class="w3-container">
 {% highlight shell %}
+# Maven User
 $ mvn test
+
+# Gradle User
+$ gradle test
 {% endhighlight %}
 </div>
 </div>
@@ -141,13 +89,13 @@ public class AddNumberTest {
 </div>
 </div>
 
-If you were to run "mvn test" now you would get an error since AddNumber has
+If you were to run the tests now you would get an error since AddNumber has
 not been created.  Lets see if we can make this test pass with some code.
 
 <div class="w3-card">
 <header class="w3-container w3-blue">
   {% include fileIcon.html%}
-  src/main/java/AddNumber.java
+  src/main/java/path/to/app/AddNumber.java
 </header>
 
 <div class="w3-container">
@@ -170,7 +118,7 @@ public class AddNumber {
 </div>
 </div>
 
-Now try running "mvn test".  You should get something like.
+Now try running the tests.  You should get something like.
 
 <div class="w3-card">
 <header class="w3-container w3-grey">

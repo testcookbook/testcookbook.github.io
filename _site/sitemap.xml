@@ -53,6 +53,9 @@
 <loc>https://testcookbook.github.io/book/glossary/glossary.html</loc>
 </url>
 <url>
+<loc>https://testcookbook.github.io/book/programming/java/gradle.html</loc>
+</url>
+<url>
 <loc>https://testcookbook.github.io/book/</loc>
 </url>
 <url>
@@ -63,6 +66,9 @@
 </url>
 <url>
 <loc>https://testcookbook.github.io/book/rest/json_schema.html</loc>
+</url>
+<url>
+<loc>https://testcookbook.github.io/book/programming/java/maven.html</loc>
 </url>
 <url>
 <loc>https://testcookbook.github.io/news.html</loc>

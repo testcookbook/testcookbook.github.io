@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Table of Contents</title>
+    <title>Gradle</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Table of Contents for Test Cookbook">
+    <meta name="description" content="Create a Gradle project">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
@@ -85,60 +85,62 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <ol>
-  <li>Introduction</li>
-  <li>Test Automation Strategy</li>
-  <li>Testing Frameworks
-    <ul>
-      <li><a href="/book/cucumber/about_cucumber.html">Cucumber</a></li>
-      <li>Gauge - Todo</li>
-      <li>Lettuce - Todo</li>
-      <li>Jasmine - Todo</li>
-      <li>JUnit - Todo</li>
-      <li>PHPunit - Todo</li>
-      <li>RedwoodHQ - Todo</li>
-      <li>RobotFramework - Todo</li>
-      <li>RSpec - Todo</li>
-      <li>Sahi - Todo</li>
-    </ul>
-  </li>
-  <li>Web Testing
-    <ul>
-      <li>Java
-        <ol>
-          <li><a href="/book/web_testing/java/cucumber_selenium.html">Cucumber + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Javascript
-        <ol>
-          <li><a href="/book/web_testing/javascript/cucumberjs-selenium.html">CucumberJS + Selenium Web Driver</a></li>
-          <li><a href="/book/web_testing/javascript/jasmine_inline_html.html">Jasmine inline with HTML</a></li>
-        </ol>
-      </li>
-      <li>PHP
-        <ol>
-          <li><a href="https://github.com/testcookbook/php-phpunit-selenium">PHPunit + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Python
-        <ol>
-          <li><a href="https://github.com/testcookbook/python-lettuce-selenium">Lettuce + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Ruby
-        <ol>
-          <li><a href="/book/web_testing/ruby/cucumber-ruby-watir-selenium.html">Cucumber + Watir + Selenium</a></li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-  <li>UX and UI Testing
-    <ul>
-      <li>Galen Framework - Todo</li>
-    </ul>
-  </li>
-  <li><a href="/book/glossary/glossary.html">Glossary</a></li>
-</ol>
+          <h1 id="create-a-gradle-jvm-project">Create a Gradle JVM Project</h1>
+
+<p>Gradle is a build tool that allows package dependency resolutions as well as
+tasks to complete and test your application.</p>
+
+<p>When getting started it is recommended that you download the latest version of
+gradle from <a href="https://gradle.org/">https://gradle.org/</a>.  You will also need
+Java on your system too.  You can get the jdk from Oracle.  Once you have
+installed Java and downloaded Gradle you can update your paths and init a project.</p>
+
+<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/tip100.png" class="icon"/>-->
+
+If you chose Maven open up the 'pom.xml' and change to the latest version of
+JUnit which at this time is '4.12'.  Older versions of JUnit work a little
+different and may not compile as expected for these lessons.
+</div>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/gradle/bin
+<span class="gp">$ </span>mkdir YourProject
+<span class="gp">$ </span>gradle init --type<span class="o">=</span>java-library</code></pre></figure>
+
+</div>
+</div>
+
+<p>Gradle will now build a basic project structure for Java.  If you look in the
+directory you will have a src directory.  This is where you can put your
+application source files and tests.</p>
+
+<p>To run the tests</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>gradle <span class="nb">test</span></code></pre></figure>
+
+</div>
+</div>
 
         </div>
       </div>

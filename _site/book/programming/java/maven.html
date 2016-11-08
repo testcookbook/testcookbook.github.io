@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Table of Contents</title>
+    <title>Maven</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Table of Contents for Test Cookbook">
+    <meta name="description" content="Create a Maven project?">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/highlight.css" />
@@ -85,60 +85,76 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <ol>
-  <li>Introduction</li>
-  <li>Test Automation Strategy</li>
-  <li>Testing Frameworks
-    <ul>
-      <li><a href="/book/cucumber/about_cucumber.html">Cucumber</a></li>
-      <li>Gauge - Todo</li>
-      <li>Lettuce - Todo</li>
-      <li>Jasmine - Todo</li>
-      <li>JUnit - Todo</li>
-      <li>PHPunit - Todo</li>
-      <li>RedwoodHQ - Todo</li>
-      <li>RobotFramework - Todo</li>
-      <li>RSpec - Todo</li>
-      <li>Sahi - Todo</li>
-    </ul>
-  </li>
-  <li>Web Testing
-    <ul>
-      <li>Java
-        <ol>
-          <li><a href="/book/web_testing/java/cucumber_selenium.html">Cucumber + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Javascript
-        <ol>
-          <li><a href="/book/web_testing/javascript/cucumberjs-selenium.html">CucumberJS + Selenium Web Driver</a></li>
-          <li><a href="/book/web_testing/javascript/jasmine_inline_html.html">Jasmine inline with HTML</a></li>
-        </ol>
-      </li>
-      <li>PHP
-        <ol>
-          <li><a href="https://github.com/testcookbook/php-phpunit-selenium">PHPunit + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Python
-        <ol>
-          <li><a href="https://github.com/testcookbook/python-lettuce-selenium">Lettuce + Selenium Web Driver</a></li>
-        </ol>
-      </li>
-      <li>Ruby
-        <ol>
-          <li><a href="/book/web_testing/ruby/cucumber-ruby-watir-selenium.html">Cucumber + Watir + Selenium</a></li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-  <li>UX and UI Testing
-    <ul>
-      <li>Galen Framework - Todo</li>
-    </ul>
-  </li>
-  <li><a href="/book/glossary/glossary.html">Glossary</a></li>
-</ol>
+          <h1 id="create-a-maven-project">Create a Maven Project</h1>
+
+<p>Maven is a build tool for the Java ecosystem.  It provides package management
+along with tasks to help you with the build process.  If you are starting out
+a new project you can initialize your project with a few steps.</p>
+
+<p>You will need to install a couple of dependencies first.  You will need the Java
+JDK from Oracle, and Maven.  You can download Maven and get more documentation
+about it from <a href="https://maven.apache.org/">https://maven.apache.org/</a>.  Once they
+are installed you also need to make sure that your PATH is updated appropriately.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/jdk/bin:/path/to/maven/bin
+<span class="gp">$ </span>mvn archetype:generate
+    -DgroupId<span class="o">=</span>project
+    -DartifactId<span class="o">=</span>project
+    -DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart</code></pre></figure>
+
+</div>
+</div>
+
+<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
+<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/tip100.png" class="icon"/>-->
+
+On a small note you may see documentation that says to use
+'mvn archetype:create'.  As of Maven v3 that has depreciated and you should use
+'mvn archetype:generate'.
+</div>
+
+<p>This will create a basic directory structure for your new project and a few
+sample files. There will be a pom.xml, app source and an app test file.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ tree
+.
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    │       └── project
+    │           └── App.java
+    └── test
+        └── java
+            └── project
+                └── AppTest.java
+                </code></pre></figure>
+
+</div>
+</div>
+
+<p>To run your first tests run ‘mvn test’.</p>
 
         </div>
       </div>

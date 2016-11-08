@@ -73,6 +73,8 @@
 
 <span class="tc-menu-label">Basic Programming</span>
 <div class="tc-indent w3-pale-green">
+  <a href="/book/programming/java/gradle.html">Create Gradle Project</a>
+  <a href="/book/programming/java/maven.html">Create Maven Project</a>
   <a href="/book/programming/javascript/npm_project.html">Create Node Project</a>
   <a href="/book/programming/wait-vs-sleep.html">Wait vs Sleep</a>
   <a href="/book/programming/gherkin.html">Gherkin</a>
@@ -138,7 +140,7 @@ json-schema.</p>
 
 <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
   <span class="k">begin</span>
-    <span class="no">JSON</span><span class="o">::</span><span class="no">Validator</span><span class="p">.</span><span class="nf">validate</span><span class="p">(</span><span class="n">schemaJson</span><span class="p">,</span> <span class="n">fileJson</span><span class="p">)</span>
+    <span class="no">JSON</span><span class="o">::</span><span class="no">Validator</span><span class="p">.</span><span class="nf">validate!</span><span class="p">(</span><span class="n">schemaJson</span><span class="p">,</span> <span class="n">fileJson</span><span class="p">)</span>
     <span class="k">return</span> <span class="kp">true</span>
   <span class="k">rescue</span>
       <span class="no">JSON</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">ValidationError</span> <span class="o">=&gt;</span> <span class="n">e</span>
@@ -163,7 +165,7 @@ information you would like to deal with.</p>
 
 <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="n">schema</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
   <span class="k">begin</span>
-    <span class="no">JSON</span><span class="o">::</span><span class="no">Validator</span><span class="p">.</span><span class="nf">validate</span><span class="p">(</span><span class="n">schemaJson</span><span class="p">,</span> <span class="n">fileJson</span><span class="p">)</span>
+    <span class="no">JSON</span><span class="o">::</span><span class="no">Validator</span><span class="p">.</span><span class="nf">validate!</span><span class="p">(</span><span class="n">schemaJson</span><span class="p">,</span> <span class="n">fileJson</span><span class="p">)</span>
     <span class="k">return</span> <span class="kp">true</span>
   <span class="k">rescue</span>
       <span class="no">JSON</span><span class="o">::</span><span class="no">Schema</span><span class="o">::</span><span class="no">ValidationError</span> <span class="o">=&gt;</span> <span class="n">e</span>

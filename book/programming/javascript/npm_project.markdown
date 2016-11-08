@@ -1,9 +1,10 @@
 ---
 layout: default
-title:  "Initializing a NodeJS project"
-description: "Initializing a NodeJS project"
+title:  "Create a NodeJS project"
+description: "Create a NodeJS project"
+date:   2016-11-08 08:52:00 -0500
 ---
-# Initializing a NodeJS project
+# Create a NodeJS project
 
 Basic steps to creating a NodeJS package.json file.  
 

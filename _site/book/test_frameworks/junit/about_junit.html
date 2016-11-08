@@ -73,6 +73,8 @@
 
 <span class="tc-menu-label">Basic Programming</span>
 <div class="tc-indent w3-pale-green">
+  <a href="/book/programming/java/gradle.html">Create Gradle Project</a>
+  <a href="/book/programming/java/maven.html">Create Maven Project</a>
   <a href="/book/programming/javascript/npm_project.html">Create Node Project</a>
   <a href="/book/programming/wait-vs-sleep.html">Wait vs Sleep</a>
   <a href="/book/programming/gherkin.html">Gherkin</a>
@@ -90,79 +92,21 @@ be unit tests, however you can bend it to your particular needs.</p>
 
 <h2 id="getting-started">Getting Started</h2>
 
-<p>When working with most Java projects and Maven you generally have a standard
-directory structure like.</p>
+<p>When working with most Java projects you generally want to use a build tool.
+For JUnit tests there are a couple of build tools that you are most likely to
+see and use.  For this exercise feel free to try out either Maven or Gradle.  If
+this is your first Java project check out the section on initializing
+<a href="/book/programming/java/maven.html">Maven</a> or
+<a href="/book/programming/java/gradle.html">Gradle</a>.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">.
-├── pom.xml
-└── src
-    ├── main
-    │   └── java
-    │       └── AddNumber.java
-    └── test
-        └── java
-            └── AddNumberTest.java</code></pre></figure>
-
-<p>Under src you will see main and test.  Main will store you application or
-classes.  Test will store your tests for those classes.  The easiest way to get
-dependencies is to add some info to a “pom.xml” file for Maven.  For this
-example the dependency that we care about it junit.</p>
-
+<p>Once you have created a new Java project, create a new file within the
+‘src/main/java/path/to/app’ directory called ‘AddNumberTest.java’.</p>
 <div class="w3-card">
 <header class="w3-container w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-  pom.xml
-</header>
-
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;project</span>
-  <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
-  <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
-  <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>junit-test-example<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>junit-test-example<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;packaging&gt;</span>jar<span class="nt">&lt;/packaging&gt;</span>
-  <span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
-  <span class="nt">&lt;name&gt;</span>junit-test-example<span class="nt">&lt;/name&gt;</span>
-  <span class="nt">&lt;dependencies&gt;</span>
-    <span class="nt">&lt;dependency&gt;</span>
-      <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
-      <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
-      <span class="nt">&lt;version&gt;</span>4.12<span class="nt">&lt;/version&gt;</span>
-      <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
-    <span class="nt">&lt;/dependency&gt;</span>
- <span class="nt">&lt;/dependencies&gt;</span>
-  <span class="nt">&lt;build&gt;</span>
-    <span class="nt">&lt;plugins&gt;</span>
-      <span class="nt">&lt;plugin&gt;</span>
-        <span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
-        <span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
-        <span class="nt">&lt;version&gt;</span>3.5.1<span class="nt">&lt;/version&gt;</span>
-        <span class="nt">&lt;configuration&gt;</span>
-          <span class="nt">&lt;source&gt;</span>1.6<span class="nt">&lt;/source&gt;</span>
-          <span class="nt">&lt;target&gt;</span>1.6<span class="nt">&lt;/target&gt;</span>
-        <span class="nt">&lt;/configuration&gt;</span>
-      <span class="nt">&lt;/plugin&gt;</span>
-    <span class="nt">&lt;/plugins&gt;</span>
-  <span class="nt">&lt;/build&gt;</span>
-<span class="nt">&lt;/project&gt;</span></code></pre></figure>
-
-</div>
-</div>
-
-<p>Once you have prepared your Maven configuration you can start writing a basic
-unit test that can validate adding 2 numbers.</p>
-
-<div class="w3-card">
-<header class="w3-container w3-blue">
-  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
-
-  AddNumberTest.java
+  src/main/java/path/to/app/AddNumberTest.java
 </header>
 
 <div class="w3-container">
@@ -193,7 +137,11 @@ unit test that can validate adding 2 numbers.</p>
 
 <div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>mvn <span class="nb">test</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="c"># Maven User</span>
+<span class="gp">$ </span>mvn <span class="nb">test</span>
+
+<span class="c"># Gradle User</span>
+<span class="gp">$ </span>gradle <span class="nb">test</span></code></pre></figure>
 
 </div>
 </div>
@@ -227,7 +175,7 @@ AddNumberTest.java so that it looks like.</p>
 </div>
 </div>
 
-<p>If you were to run “mvn test” now you would get an error since AddNumber has
+<p>If you were to run the tests now you would get an error since AddNumber has
 not been created.  Lets see if we can make this test pass with some code.</p>
 
 <div class="w3-card">
@@ -235,7 +183,7 @@ not been created.  Lets see if we can make this test pass with some code.</p>
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-  src/main/java/AddNumber.java
+  src/main/java/path/to/app/AddNumber.java
 </header>
 
 <div class="w3-container">
@@ -257,7 +205,7 @@ not been created.  Lets see if we can make this test pass with some code.</p>
 </div>
 </div>
 
-<p>Now try running “mvn test”.  You should get something like.</p>
+<p>Now try running the tests.  You should get something like.</p>
 
 <div class="w3-card">
 <header class="w3-container w3-grey">
