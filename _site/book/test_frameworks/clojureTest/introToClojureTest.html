@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Introduction to Clojure Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Introduction to Clojure Test">
+    <link rel="stylesheet" href="/lib/w3.css" />
+    <link rel="stylesheet" href="/lib/style.css" />
+    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85156207-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+  </head>
+
+  <body>
+    <div class="w3-container w3-blue">
+      <h1>
+        <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>
+        <a class="w3-btn w3-blue" href="/">
+          <i class="fa fa-book" aria-hidden="true"></i>
+          Test Cookbook</a>
+      </h1>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m4 l3 w3-green">
+        <nav class="w3-sidebar w3-collapse" id="mySidenav">
+          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
+          <a href="/news.html">News</a>
+<a href="/index.html">Introduction</a>
+<!--<a href="" class="w3-pale-blue">Test Strategy - Todo</a>-->
+<!--<a href="/book/table_of_contents.html">Book</a>-->
+<span class="tc-menu-label">Testing Frameworks</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/cucumber/about_cucumber.html">Cucumber</a>
+  <a href="/book/test_frameworks/clojureTest/introToClojureTest.html">Clojure.Test</a>
+  <a href="/book/test_frameworks/gauge/about_gauge.html">Gauge</a>
+  <a href="/book/lettuce/about_lettuce.html">Lettuce</a>
+  <a href="/book/test_frameworks/jasmine/about_jasmine.html">Jasmine</a>
+  <a href="/book/test_frameworks/junit/about_junit.html">JUnit</a>
+  <a href="/book/test_frameworks/phpunit/about_phpunit.html">PHPunit</a>
+  <a href="/book/test_frameworks/robotframework/about_robot_framework.html">RobotFramework</a>
+  <a href="/book/test_frameworks/rspec/about_rspec.html">RSpec</a>
+</div>
+
+<span class="tc-menu-label">Web Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/web_testing/java/cucumber_selenium.html">Java JVM Cucumber with Selenium Web Driver</a>
+  <a href="/book/web_testing/javascript/cucumberjs-selenium.html">CucumberJS with Selenium Web Driver</a>
+  <a href="/book/web_testing/javascript/jasmine_inline_html.html">Jasmine inline with HTML</a>
+  <a href="https://github.com/testcookbook/php-phpunit-selenium">PHPunit with Selenium Web Driver</a>
+  <a href="https://github.com/testcookbook/python-lettuce-selenium">Python Lettuce with Selenium</a>
+  <a href="/book/web_testing/ruby/cucumber-ruby-watir-selenium.html">Ruby Cucumber with Watir and Selenium</a>
+</div>
+
+<span class="tc-menu-label">UX and UI Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/test_frameworks/galenframework/about_galen_framework.html">Galen Framework</a>
+</div>
+
+<span class="tc-menu-label">Rest API Testing</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/rest/json_schema.html">JSON Schema</a>
+  <a href="/book/rest/postman/postman.html">Intro to Postman</a>
+  <a href="/book/rest/ruby/validate_json_ruby.html">Validating JSON with Ruby</a>
+  <a href="/book/rest/python/validate_json_python.html">Validating JSON with Python</a>
+  <a href="/book/rest/javascript/frisbyjs.html">REST with Frisby.js</a>
+</div>
+
+<span class="tc-menu-label">Basic Programming</span>
+<div class="tc-indent w3-pale-green">
+  <a href="/book/programming/java/gradle.html">Create Gradle Project</a>
+  <a href="/book/programming/java/maven.html">Create Maven Project</a>
+  <a href="/book/programming/javascript/npm_project.html">Create Node Project</a>
+  <a href="/book/programming/wait-vs-sleep.html">Wait vs Sleep</a>
+  <a href="/book/programming/gherkin.html">Gherkin</a>
+</div>
+<a href="/book/glossary/glossary.html">Glossary</a>
+
+        </nav>
+      </div>
+      <div class="w3-col m8 l9">
+        <div class="w3-container">
+          <h1 id="introduction-to-clojure-test">Introduction to Clojure Test</h1>
+
+<p><strong>Create a new App</strong></p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>lein new funapp</code></pre></figure>
+
+</div>
+</div>
+
+<p>Leiningen will create a basic starting project for you that will look like the
+structure below.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.
+├── CHANGELOG.md
+├── LICENSE
+├── README.md
+├── doc
+│   └── intro.md
+├── project.clj
+├── resources
+├── src
+│   └── funapp
+│       └── core.clj
+└── test
+    └── funapp
+        └── core_test.clj
+</code></pre>
+</div>
+
+<p>Leiningen is package manage tool that will allow us a clean run and test
+interface. If you change into the funapp directory you can run “lein test”.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+
+lein test funapp.core-test
+
+lein test :only funapp.core-test/a-test
+
+FAIL in (a-test) (core_test.clj:7)
+FIXME, I fail.
+expected: (= 0 1)
+  actual: (not (= 0 1))
+
+Ran 1 tests containing 1 assertions.
+1 failures, 0 errors.
+Tests failed.</code></pre></figure>
+
+</div>
+</div>
+
+<p>Notice that when you run the project you start immediately with a failed test.
+The tests is in the core_test.clj file and simply stating that it is expecting
+0 to be equal to 1.  Lets fix this test.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  test/funapp/core_test.clj
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
+  </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">clojure.test</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]</span><span class="w">
+            </span><span class="p">[</span><span class="n">funapp.core</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]))</span><span class="w">
+
+</span><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">a-test</span><span class="w">
+  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"FIXME, I fail."</span><span class="w">
+    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>Check out the last line of the test.</p>
+
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Witihin the last line there is a function “is” that asserts whether a its next
+argument resolves to true or false.  If it is false it will result in a failing
+test.  Let’s change that last line to look like.</p>
+
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>This time when you run your tests you should see an output like.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+
+lein test funapp.core-test
+
+Ran 1 tests containing 1 assertions.
+0 failures, 0 errors.</code></pre></figure>
+
+</div>
+</div>
+
+<h2 id="test-a-function">Test a function</h2>
+
+<p>Now that you have a basic build that is passing its tests we need to make it
+a little more useful.  Lets say that in this funapp that I a function that will
+add up all the numbers in a list.  We will start with a list of (1 2 3).</p>
+
+<p>As with any TDD process lets write a basic failing test and add it to
+“core_test.clj”.</p>
+
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">addList-test</span><span class="w">
+  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"Function should add up all numbers in the list"</span><span class="w">
+    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">(</span><span class="nf">addList</span><span class="w"> </span><span class="p">(</span><span class="nf">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))))))</span><span class="w">
+</span></code></pre>
+</div>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)</code></pre></figure>
+
+</div>
+</div>
+
+<p>Failing is good.  This particular failure is telling us that the function</p>
+
+<p>Remember back from the tree diagram there is a src folder and underneath it is
+“funapp/core.clj”.  Lets open that file up.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  funapp/core.clj
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core</span><span class="p">)</span><span class="w">
+
+</span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">foo</span><span class="w">
+  </span><span class="s">"I don't do a whole lot."</span><span class="w">
+  </span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w">
+  </span><span class="p">(</span><span class="nb">println</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"Hello, World!"</span><span class="p">))</span></code></pre></figure>
+
+</div>
+</div>
+
+<p>Within that file add a new function called addList that will sum up all the
+numbers in the list.</p>
+
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">addList</span><span class="w">
+  </span><span class="s">"This will add all the numbers in a list"</span><span class="w">
+  </span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w">
+  </span><span class="p">(</span><span class="nb">reduce</span><span class="w"> </span><span class="nb">+</span><span class="w"> </span><span class="n">x</span><span class="p">))</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>Try running your tests now.</p>
+
+<div class="w3-card">
+<header class="w3-container w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
+<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+
+  Command Line
+</header>
+
+<div class="w3-container">
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+
+lein test funapp.core-test
+
+Ran 2 tests containing 2 assertions.
+0 failures, 0 errors.</code></pre></figure>
+
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-green", "");
+    }
+}
+    </script>
+  <br /><br />
+  <script id='pp-cfp' data-env='beta' data-token='0500ba510ce50288684513e5494598a81faed684cb49441bb716e20ac72703b5'>(function(d){var s=d.createElement('script'),c=d.createElement('link');s.src='https://beta.prodpad.com/static/js/prodpad-cfp.js';s.async=1;c.href='https://beta.prodpad.com/static/css/prodpad-cfp.css';c.rel='stylesheet';document.head.appendChild(c);document.head.appendChild(s);})(document);</script>
+  </body>
+</html>

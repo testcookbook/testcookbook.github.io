@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>https://testcookbook.github.io/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</loc>
+<lastmod>2016-09-29T06:22:12-05:00</lastmod>
+</url>
+<url>
 <loc>https://testcookbook.github.io/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</loc>
 <lastmod>2016-09-29T06:22:12-05:00</lastmod>
 </url>
@@ -56,10 +60,13 @@
 <loc>https://testcookbook.github.io/book/programming/java/gradle.html</loc>
 </url>
 <url>
+<loc>https://testcookbook.github.io/</loc>
+</url>
+<url>
 <loc>https://testcookbook.github.io/book/</loc>
 </url>
 <url>
-<loc>https://testcookbook.github.io/</loc>
+<loc>https://testcookbook.github.io/book/test_frameworks/clojureTest/introToClojureTest.html</loc>
 </url>
 <url>
 <loc>https://testcookbook.github.io/book/web_testing/javascript/jasmine_inline_html.html</loc>

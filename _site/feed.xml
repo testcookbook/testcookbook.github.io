@@ -6,9 +6,30 @@
 </description>
     <link>https://testcookbook.github.io/</link>
     <atom:link href="https://testcookbook.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 08 Nov 2016 14:22:23 -0600</pubDate>
-    <lastBuildDate>Tue, 08 Nov 2016 14:22:23 -0600</lastBuildDate>
+    <pubDate>Tue, 15 Nov 2016 10:43:00 -0600</pubDate>
+    <lastBuildDate>Tue, 15 Nov 2016 10:43:00 -0600</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Clojure.Test</title>
+        <description>&lt;h1 id=&quot;added-basic-introduction-to-testing-with-clojure-using-clojuretest&quot;&gt;Added basic introduction to testing with Clojure using Clojure.Test&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/lib/images/clojure.png&quot; alt=&quot;Clojure logo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Get started with a basic Clojure project and Leiningen.  Start your learning
+experience off right with TDD as you learn the language.
+&lt;a href=&quot;/book/test_frameworks/clojureTest/introToClojureTest.html&quot;&gt;Introduction to Clojure.Test&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Sep 2016 06:22:12 -0500</pubDate>
+        <link>https://testcookbook.github.io/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</link>
+        <guid isPermaLink="true">https://testcookbook.github.io/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</guid>
+        
+        
+        <category>clojure</category>
+        
+        <category>Clojure.Test</category>
+        
+      </item>
     
       <item>
         <title>Adding FrisbyJS Docs</title>
