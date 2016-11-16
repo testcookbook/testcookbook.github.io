@@ -28,5 +28,7 @@ github_username: testcookbook
 markdown: kramdown
 highlight: rouge
 
+exclude: ["_scripts"]
+
 gems:
   - jekyll-sitemap

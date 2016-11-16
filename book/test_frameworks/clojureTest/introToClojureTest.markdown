@@ -139,7 +139,7 @@ As with any TDD process lets write a basic failing test and add it to
 ```clojure
 (deftest addList-test
   (testing "Function should add up all numbers in the list"
-    (is (= 6 (addList (1 2 3))))))
+    (is (= 6 (addList [1 2 3])))))
 ```
 
 <div class="w3-card">
@@ -185,12 +185,7 @@ Remember back from the tree diagram there is a src folder and underneath it is
 Within that file add a new function called addList that will sum up all the
 numbers in the list.
 
-```clojure
-(defn addList
-  "This will add all the numbers in a list"
-  [x]
-  (reduce + x))
-```
+{% include clojure/introClojureTest/addList.markdown %}
 
 Try running your tests now.
 
