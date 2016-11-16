@@ -13,36 +13,28 @@ a keyword driven approach or a more BDD approach using a [Gherkin](/book/program
 First off we need to setup a little environment stuff.  Hopefully starting out
 you have some basic Python skills.  Lets install Robot Framework.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+```
 $ pip install robotframework
-{% endhighlight %}
-</div>
-</div>
+```
 
 ## Your First Test.
 Once it is installed we can now start examining how we can create some tests.
 Lets assume we want to test adding up a couple of numbers.  For the first test
 we will focus on a keyword driven development.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   keyword.robot
 </header>
 
-<div class="w3-container">
-{% highlight robot %}
+```robot
 {% include robotframework/about/keyword.robot %}
-{% endhighlight %}
-</div>
-</div>
+```
 
 You will notices from the keyword.robot file that there are 2 main headings,
 surrounded by three asterisks. The first section covers what the settings needed
@@ -67,18 +59,18 @@ code presented, the large spaced areas are 4 spaces wide.
 Once you have test file to describe what you are doing. Then its time to write
 code to actually test what was described.  Create a file "AdderLibrary.py".
 You might remember it from the settings of the robot file we created.
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   AdderLibrary.py
 </header>
 
-<div class="w3-container">
-{% highlight python %}
+
+```python
 {% include robotframework/about/AdderLibrary.py %}
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 For this example we will test within just this file to demonstrate how keywords
 work.  Normally the actual functionality would be in its own class file.
@@ -96,34 +88,27 @@ value matches that which we added up.  If it is equal we are fine.  However if
 things are not equal then we need to assert an error followed by some message
 that describes what the issue is.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-<figure class="highlight">
-<pre><code class="language-text" data-lang="text">
+```
 $ robot keyword.robot
 ==============================================================================
 Keyword :: Example Keyword Test                                               
 ==============================================================================
-Addition                                                              | <span style="color:#0A0">PASS</span> |
+Addition                                                              | PASS |
 ------------------------------------------------------------------------------
-Keyword :: Example Keyword Test                                       | <span style="color:#0A0">PASS</span> |
+Keyword :: Example Keyword Test                                       | PASS |
 1 critical test, 1 passed, 0 failed
 1 test total, 1 passed, 0 failed
 ==============================================================================
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-
-</code></pre>
-</figure>
-</div>
-</div>
-
+```
 
 ## Gherkin
 
@@ -131,18 +116,14 @@ You have completed your first test using keywords.  But what if we wanted to
 write using a [Gherkin](/book/programming/gherkin.html) format?  Well your in
 luck.  Lets create a file called "gherkin.robot".
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   gherkin.robot
 </header>
 
-<div class="w3-container">
-{% highlight language %}
+```
 {% include robotframework/about/gherkin.robot %}
-{% endhighlight %}
-</div>
-</div>
+```
 
 Within this file you will see a new header called Keywords, and the Test Cases
 will look like Given, When and Then.  The new section Keywords is a little
@@ -158,30 +139,23 @@ could change and we might want to reuse that functionality later.
 Once the step definition is described we can then add keyword functions just
 like we did on the keyword.robot file.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-<figure class="highlight">
-<pre><code class="language-text" data-lang="text">
+```
 $ robot gherkin.robot
 ==============================================================================
 Gherkin :: Example Gherkin Style Test                                         
 ==============================================================================
-Addition                                                              | <span style="color:#0A0">PASS</span> |
+Addition                                                              | PASS |
 ------------------------------------------------------------------------------
-Gherkin :: Example Gherkin Style Test                                 | <span style="color:#0A0">PASS</span> |
+Gherkin :: Example Gherkin Style Test                                 | PASS |
 1 critical test, 1 passed, 0 failed
 1 test total, 1 passed, 0 failed
 ==============================================================================
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-
-</code></pre>
-</figure>
-</div>
-</div>
+```

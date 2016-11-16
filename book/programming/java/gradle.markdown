@@ -21,20 +21,20 @@ JUnit which at this time is '4.12'.  Older versions of JUnit work a little
 different and may not compile as expected for these lessons.
 </div>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 $ export PATH=$PATH:/path/to/gradle/bin
 $ mkdir YourProject
 $ gradle init --type=java-library
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Gradle will now build a basic project structure for Java.  If you look in the
 directory you will have a src directory.  This is where you can put your
@@ -42,15 +42,13 @@ application source files and tests.
 
 To run the tests
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 $ gradle test
-{% endhighlight %}
-</div>
-</div>
+```

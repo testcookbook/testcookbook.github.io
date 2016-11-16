@@ -21,14 +21,14 @@ this is your first Java project check out the section on initializing
 
 Once you have created a new Java project, create a new file within the
 'src/main/java/path/to/app' directory called 'AddNumberTest.java'.
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   src/main/java/path/to/app/AddNumberTest.java
 </header>
 
-<div class="w3-container">
-{% highlight java %}
+
+```java
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -39,41 +39,41 @@ public class AddNumberTest {
   }
 
 }
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 You should now be ready to run your tests.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 # Maven User
 $ mvn test
 
 # Gradle User
 $ gradle test
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Now that we have a real basic test lets try a small amount of TDD and build a
 class that adds up 2 numbers.  Making some modifications to the
 AddNumberTest.java so that it looks like.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   AddNumberTest.java
 </header>
 
-<div class="w3-container">
-{% highlight java %}
+
+```java
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
@@ -85,21 +85,21 @@ public class AddNumberTest {
   }
 
 }
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 If you were to run the tests now you would get an error since AddNumber has
 not been created.  Lets see if we can make this test pass with some code.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   src/main/java/path/to/app/AddNumber.java
 </header>
 
-<div class="w3-container">
-{% highlight java %}
+
+```java
 public class AddNumber {
 
   public int num1;
@@ -114,20 +114,20 @@ public class AddNumber {
 
 }
 
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Now try running the tests.  You should get something like.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 -------------------------------------------------------
  T E S T S
 -------------------------------------------------------
@@ -145,6 +145,6 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Finished at: 2016-10-07T11:41:55-05:00
 [INFO] Final Memory: 15M/166M
 [INFO] ------------------------------------------------------------------------
-{% endhighlight %}
-</div>
-</div>
+```
+
+

@@ -17,7 +17,7 @@ scope is but you will get there.  Once you have the criteria you write them
 in a format that is both readable to you and the other members of the team.
 
 ## Gherkin
----
+
 [Gherkin](/book/programming/gherkin.html) is readable formatted file that will allow other members of the team,
 to understand what the acceptance criteria is, and also provide that living
 documentation of your application.  Once this file or feature is written, you
@@ -27,7 +27,7 @@ a given criteria. For example.
 {% include testCookbookFeature.html %}
 
 ## How to get started?
----
+
 Getting started with Cucumber is not usually a complicated feat.  The first step
 is picking a programming language that is appropriate for you.  In some cases
 this could be a programming language that you are strong in, or in other cases
@@ -37,7 +37,7 @@ same language.
 To get started with this example we will use Ruby and layout some basics. A
 normal directory setup would look something like.
 
-{% highlight text%}
+```
 .
 ├── features
 │   ├── test1.feature
@@ -48,7 +48,7 @@ normal directory setup would look something like.
 │       ├── env.rb
 │       └── hooks.rb
 └── Gemfile
-{% endhighlight %}
+```
 
 The features directory would contain your feature files.  These feature files
 will be written in a [Gherkin](/book/programming/gherkin.html) style format.  
@@ -79,72 +79,59 @@ Now lets create some directories and try out some Cucumber.  You will also need
 Ruby for these examples to work.  If you have never installed or used Ruby,
 check out. [https://www.ruby-lang.org/](https://www.ruby-lang.org/)
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line - Mac / Linux
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+```
 $ mkdir cucumber
 $ cd cucumber
 $ gem install cucumber
 $ cucumber --init
-{% endhighlight %}
-</div>
-</div>
+```
 
 Windows is similar but you need to make sure that your slashes face the right
 direction.  The homedir below will be your Windows user name.  You can create
 the cucumber directory where ever you would like.  You will also need to make
 sure on windows that 'cucumber' and 'gem' binaries are in your PATH variable.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line - Windows
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+```
 C:\Users\homedir> mkdir cucumber
 C:\Users\homedir\cucumber> cd cucumber
 C:\Users\homedir\cucumber> gem install cucumber
 C:\Users\homedir\cucumber> cucumber --init
-{% endhighlight %}
-</div>
-</div>
+```
 
 Now create a new file within the features directory called 'test1.feature'
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   test1.feature
 </header>
 
-<div class="w3-container">
-{% highlight Gherkin %}
+```gherkin
 Feature: Test 1
 
   Scenario: Add 2 Numbers
     Given There are numbers 2 and 3
     When added together
     Then they equal 5
-{% endhighlight %}
-</div>
-</div>
+```
 
 Lets try running cucumber. You should get an output similar to this below.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+```
 $ cucumber
 
 Feature: Test 1
@@ -171,9 +158,7 @@ end
 Then(/^they equal (\d+)$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
-{% endhighlight %}
-</div>
-</div>
+```
 
 More than likely when you ran cucumber it printed the text above and much of it
 should be yellow.  Some terminals may not support ascii color so it might be all
@@ -181,14 +166,14 @@ the same color.  The yellow text signifies steps within the defined feature that
 are not yet implemented yet.  When using cucumber in Ruby we can actually copy
 the suggested code and put them into a 'steps.rb' file.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   steps.rb
 </header>
 
-<div class="w3-container">
-{% highlight ruby %}
+
+```ruby
 Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
   pending # Write code here that turns the phrase above into concrete actions
 end
@@ -200,20 +185,17 @@ end
 Then(/^they equal (\d+)$/) do |arg1|
   pending # Write code here that turns the phrase above into concrete actions
 end
-{% endhighlight %}
-</div>
-</div>
+```
 
 Try running cucumber again.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+```
 $ cucumber
 
 Feature: Test 1
@@ -229,9 +211,9 @@ Feature: Test 1
 1 scenario (1 pending)
 3 steps (2 skipped, 1 pending)
 0m0.025s
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 This time when you ran cucumber there were step definitions that have some code
 to them.  Each one of the steps was set to just return pending.  If a step
@@ -243,12 +225,12 @@ We need to define some code rather than return pending.  In the first step we
 are accepting 2 numbers arg1 and arg2.  For this example we need to make those
 numbers accessible to other tests. Lets make the function look like.
 
-{% highlight ruby %}
+```ruby
 Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
   @a = arg1.to_i
   @b = arg2.to_i
 end
-{% endhighlight %}
+```
 You will probably notice the to_i after the arg1 and arg2.  This just changes
 the value to be an integer.  The @ sign in front of a and b is significant as
 well.  This means those become instance variables and are available across the
@@ -259,7 +241,7 @@ Now when you run cucumber you should get a green line for the first step.  The
 closer the color matches to a cucumber the closer you are to success.  Lets go
 ahead and fix up the other 2 test definitions.
 
-{% highlight ruby %}
+```ruby
 When(/^added together$/) do
   @total=@a+@b
 end
@@ -267,7 +249,7 @@ end
 Then(/^they equal (\d+)$/) do |arg1|
   assert_equal(@total, arg1.to_i)
 end
-{% endhighlight %}
+```
 
 Before you decide to run cucumber again we really need to add a small bit of
 code to the 'env.rb' file.  This file is used to setup the cucumber world or
@@ -275,31 +257,30 @@ global settings that you will use within your tests.  For our tests to have a
 real value the assert statements need to work.  Otherwise you aren't really
 testing anything.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   env.rb
 </header>
 
-<div class="w3-container">
-{% highlight ruby %}
+
+```ruby
 require 'test/unit/assertions'
 
 World(Test::Unit::Assertions)
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Now when you run cucumber you should get all green.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+```
 $ cucumber
 
 Feature: Test 1
@@ -312,18 +293,16 @@ Feature: Test 1
 1 scenario (1 passed)
 3 steps (3 passed)
 0m0.028s
-{% endhighlight %}
-</div>
-</div>
+```
 
 Now remember back a short while ago when we said that if we do not assert
 anything you are not really testing anything.  All Green tests can be a false
 positive, which is something you do not want.  For example in the 'steps.rb'
 file. Put a # sign in front of the assert statement like so.
 
-{% highlight ruby %}
+```ruby
 #assert_equal(@total, arg1.to_i)
-{% endhighlight %}
+```
 
 When you run cucumber this time it is still all green.  You could change those
 numbers in the previous steps to any number you want.  It will always pass.

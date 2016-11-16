@@ -6,7 +6,7 @@
     <meta name="description" content="Cucumber Ruby and Watir implementation.">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -94,161 +94,140 @@
 <p>Cucumber with Ruby I believe is one of the easiest forms of behavior test
 automation.  Getting started we first need a basic directory structure.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">- features
+<div class="highlighter-rouge"><pre class="highlight"><code>- features
   - support
-  - step_definitions</code></pre></figure>
+  - step_definitions
+</code></pre>
+</div>
 
 <p>Once you have created your directory structure you will need to create a
 Gemfile.  If you are unfamiliar with Ruby a Gemfile holds the names and versions
 of packages that can be downloaded to allow your project to work.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      Gemfile
-    </header>
+  Gemfile
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
 
 <span class="n">gem</span> <span class="s1">'cucumber'</span>
 <span class="n">gem</span> <span class="s1">'rspec-expectations'</span>
 <span class="n">gem</span> <span class="s1">'watir-webdriver'</span>
-<span class="n">gem</span> <span class="s1">'selenium-webdriver'</span></code></pre></figure>
-
-    </div>
+<span class="n">gem</span> <span class="s1">'selenium-webdriver'</span>
+</code></pre>
 </div>
 
 <p>To install all the needed packages you can now do the following on the command
 line.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
-<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-grey"&gt;
+  &lt;i class="fa fa-terminal" aria-hidden="true"&gt;&lt;/i&gt; &lt;!--&lt;img alt="tip image" src="/lib/images/cli.png" class="icon"/&gt;--&gt;
 
-      Command Line
-    </header>
+  Command Line
+&lt;/header&gt;
+</code></pre>
+</div>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">gem install bundler
-bundle install</code></pre></figure>
-
-    </div>
+<div class="highlighter-rouge"><pre class="highlight"><code>gem install bundler
+bundle install
+</code></pre>
 </div>
 
 <p>Now we need to setup an environment for cucumber.  To do this you can create a
 ‘env.rb’ file in the support directory.  This file will become more useful for
 different configuration items later on.  For now we just need a small bit of
 code.</p>
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      env.rb
-    </header>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-blue"&gt;
+  &lt;!--&lt;img alt="file icon image" src="/lib/images/file.png" class="icon"/&gt;--&gt; &lt;i class="fa fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;
 
-    <div class="w3-container">
+  env.rb
+&lt;/header&gt;
+</code></pre>
+</div>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="nb">require</span> <span class="s1">'watir-webdriver'</span></code></pre></figure>
-
-    </div>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'watir-webdriver'</span>
+</code></pre>
 </div>
 
 <p>If you have done everything right you should have the basic structure for a
 cucumber test suite.  It should run however you do not have an tests just yet.
 Lets create a new feature file called ‘testCookbook.feature’.</p>
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      testCookbook.feature
-    </header>
-
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
+  testCookbook.feature
+</header>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
 
   <span class="kn">Scenario</span><span class="p">:</span> Test Cookbook Title Description
     <span class="nf">Given</span> I visit Test Cookbook website
-    <span class="nf">Then</span> I see title Test Cookbook</code></pre></figure>
-
-    </div>
+    <span class="nf">Then</span> I see title Test Cookbook
+</code></pre>
 </div>
 
 <p>Now try running your cucumber suite.  To do so run the command below on the
 command line.  When it runs you should see some yellow text showing that you
 need step definitions.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
-<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-grey"&gt;
+  &lt;i class="fa fa-terminal" aria-hidden="true"&gt;&lt;/i&gt; &lt;!--&lt;img alt="tip image" src="/lib/images/cli.png" class="icon"/&gt;--&gt;
 
-      Command Line
-    </header>
+  Command Line
+&lt;/header&gt;
+</code></pre>
+</div>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">bundle <span class="nb">exec </span>cucumber</code></pre></figure>
-
-    </div>
+<div class="highlighter-rouge"><pre class="highlight"><code>bundle exec cucumber
+</code></pre>
 </div>
 
 <p>Building step definitions can be done by copying the template in yellow from the
 command line or building your own regular expression definition to match. For
 this example create a file called steps.rb in the step_definitions directory.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-blue"&gt;
+  &lt;!--&lt;img alt="file icon image" src="/lib/images/file.png" class="icon"/&gt;--&gt; &lt;i class="fa fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;
 
-      steps.rb
-    </header>
+  steps.rb
+&lt;/header&gt;
+</code></pre>
+</div>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">)</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">)</span> <span class="k">do</span>
   <span class="vi">@browser</span><span class="p">.</span><span class="nf">goto</span> <span class="s1">'http://www.testcookbook.com'</span>
 <span class="k">end</span>
 
 <span class="no">Then</span><span class="p">(</span><span class="sr">/^I see title Test Cookbook$/</span><span class="p">)</span> <span class="k">do</span>
   <span class="n">expect</span><span class="p">(</span><span class="vi">@browser</span><span class="p">.</span><span class="nf">title</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="s2">"Test Cookbook"</span><span class="p">)</span>
-<span class="k">end</span></code></pre></figure>
-
-    </div>
+<span class="k">end</span>
+</code></pre>
 </div>
 
 <p>Now try running one more time.  This time you should see some errors.  We need
 to build us some small hooks that will take care of setup and teardown of the
 browser.  Lets make a new file in the support directory called ‘hooks.rb’.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-    <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-blue"&gt;
+&lt;!--&lt;img alt="file icon image" src="/lib/images/file.png" class="icon"/&gt;--&gt; &lt;i class="fa fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;
 
-      hooks.rb
-    </header>
+  hooks.rb
+&lt;/header&gt;
+</code></pre>
+</div>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">Before</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Before</span> <span class="k">do</span>
   <span class="vi">@browser</span> <span class="o">=</span> <span class="no">Watir</span><span class="o">::</span><span class="no">Browser</span><span class="p">.</span><span class="nf">new</span>
 <span class="k">end</span>
 
 <span class="no">After</span> <span class="k">do</span>
   <span class="vi">@browser</span><span class="p">.</span><span class="nf">close</span>
-<span class="k">end</span></code></pre></figure>
-
-    </div>
+<span class="k">end</span>
+</code></pre>
 </div>
 
 <p>Last try and this time it should work.  Run your Cucumber suite and you should

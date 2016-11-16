@@ -13,14 +13,14 @@ schema.
 
 
 ## Validate basic JSON syntax
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   test.py
 </header>
 
-<div class="w3-container">
-{% highlight python %}
+
+```python
 import json
 
 def validate_json_syntax(d):
@@ -38,40 +38,40 @@ print validate_json_syntax(data)
 #missing quotes around lastName
 data = '{"firstName": "John", lastName: "Doe"}'
 print validate_json_syntax(data)
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Run the test to see what output looks like.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+
+```
 $ python test.py
 {u'lastName': u'Doe', u'firstName': u'John'}
 DEBUG: JSON data contains an error
 False
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Once we have loaded the JSON and we know that it is syntactically correct. We
 can now start testing the JSON schema. Lets load up that test.py again and add
 JSON schema.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   test.py
 </header>
 
-<div class="w3-container">
-{% highlight python %}
+
+```python
 import json
 from jsonschema import validate
 
@@ -95,9 +95,9 @@ schema = {
 #output will be None
 print(validate(jsd, schema))
 
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 
 This just happens to be a happy path example for a JSON schema validation.  But
@@ -116,14 +116,14 @@ schema = {
 
 You should have some output that looks like.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+
+```
 $ python test.py
 jsonschema.exceptions.ValidationError: u'Doe' is not of type 'number'
 
@@ -132,6 +132,6 @@ Failed validating 'type' in schema['properties']['lastName']:
 
 On instance['lastName']:
     u'Doe'
-{% endhighlight %}
-</div>
-</div>
+```
+
+

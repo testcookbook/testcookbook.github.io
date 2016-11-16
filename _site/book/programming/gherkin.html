@@ -6,7 +6,7 @@
     <meta name="description" content="What is Gherkin?">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -97,13 +97,15 @@ describe how somethings behaves without actually implementing that functionality
 <p>The format for a Gherkin file is done by defining a Feature, then a Scenario.
 For Example.</p>
 
-<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Describe what this feature is about.
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Describe what this feature is about.
 
   <span class="kn">Scenario</span><span class="p">:</span> Describe what the scenario will be about.
     <span class="nf">Given</span> I do something
     <span class="nf">And</span> do something else
     <span class="nf">When</span> this happens
-    <span class="nf">Then</span> I get to do something new</code></pre></figure>
+    <span class="nf">Then</span> I get to do something new
+</code></pre>
+</div>
 
 <p>Why would you ever want to write the Gherkin?  In a buisness format the Gherkin
 file can be used in a variety of ways.  One of those ways is to have a common

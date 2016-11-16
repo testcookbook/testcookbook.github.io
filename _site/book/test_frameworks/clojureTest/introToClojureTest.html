@@ -6,7 +6,7 @@
     <meta name="description" content="Introduction to Clojure Test">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -93,19 +93,15 @@
 
 <p><strong>Create a new App</strong></p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>lein new funapp</code></pre></figure>
-
-</div>
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>lein new funapp
+</code></pre>
 </div>
 
 <p>Leiningen will create a basic starting project for you that will look like the
@@ -131,17 +127,13 @@ structure below.</p>
 <p>Leiningen is package manage tool that will allow us a clean run and test
 interface. If you change into the funapp directory you can run “lein test”.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
-
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
@@ -154,37 +146,39 @@ expected: (= 0 1)
 
 Ran 1 tests containing 1 assertions.
 1 failures, 0 errors.
-Tests failed.</code></pre></figure>
-
-</div>
+Tests failed.
+</code></pre>
 </div>
 
 <p>Notice that when you run the project you start immediately with a failed test.
 The tests is in the core_test.clj file and simply stating that it is expecting
 0 to be equal to 1.  Lets fix this test.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   test/funapp/core_test.clj
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
   </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">clojure.test</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]</span><span class="w">
             </span><span class="p">[</span><span class="n">funapp.core</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]))</span><span class="w">
 
 </span><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">a-test</span><span class="w">
   </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"FIXME, I fail."</span><span class="w">
-    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span></code></pre></figure>
-
-</div>
+    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
+</span></code></pre>
 </div>
 
 <p>Check out the last line of the test.</p>
+
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  test/funapp/core_test.clj
+</header>
 
 <div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
 </span></code></pre>
@@ -194,30 +188,33 @@ The tests is in the core_test.clj file and simply stating that it is expecting
 argument resolves to true or false.  If it is false it will result in a failing
 test.  Let’s change that last line to look like.</p>
 
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  test/funapp/core_test.clj
+</header>
+
 <div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
 </span></code></pre>
 </div>
 
 <p>This time when you run your tests you should see an output like.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
 Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.</code></pre></figure>
-
-</div>
+0 failures, 0 errors.
+</code></pre>
 </div>
 
 <h2 id="test-a-function">Test a function</h2>
@@ -229,26 +226,29 @@ add up all the numbers in a list.  We will start with a list of (1 2 3).</p>
 <p>As with any TDD process lets write a basic failing test and add it to
 “core_test.clj”.</p>
 
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  test/funapp/core_test.clj
+</header>
+
 <div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">addList-test</span><span class="w">
   </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"Function should add up all numbers in the list"</span><span class="w">
     </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="p">(</span><span class="nf">addList</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])))))</span><span class="w">
 </span></code></pre>
 </div>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
-Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
+Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)
+</code></pre>
 </div>
 
 <p>Failing is good.  This particular failure is telling us that the function</p>
@@ -256,29 +256,31 @@ Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol:
 <p>Remember back from the tree diagram there is a src folder and underneath it is
 “funapp/core.clj”.  Lets open that file up.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   funapp/core.clj
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-clojure" data-lang="clojure"><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core</span><span class="p">)</span><span class="w">
+<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core</span><span class="p">)</span><span class="w">
 
 </span><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">foo</span><span class="w">
   </span><span class="s">"I don't do a whole lot."</span><span class="w">
   </span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w">
-  </span><span class="p">(</span><span class="nb">println</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"Hello, World!"</span><span class="p">))</span></code></pre></figure>
-
-</div>
+  </span><span class="p">(</span><span class="nb">println</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="s">"Hello, World!"</span><span class="p">))</span><span class="w">
+</span></code></pre>
 </div>
 
 <p>Within that file add a new function called addList that will sum up all the
 numbers in the list.</p>
 
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<i class="fa fa-file-code-o" aria-hidden="true"></i>
+
+  funapp/core.clj
+</header>
 <div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="k">defn</span><span class="w"> </span><span class="n">addList</span><span class="w">
   </span><span class="s">"This will add all the numbers in a list"</span><span class="w">
   </span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="w">
@@ -288,24 +290,20 @@ numbers in the list.</p>
 
 <p>Try running your tests now.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ lein test
+<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
 Ran 2 tests containing 2 assertions.
-0 failures, 0 errors.</code></pre></figure>
-
-</div>
+0 failures, 0 errors.
+</code></pre>
 </div>
 
         </div>

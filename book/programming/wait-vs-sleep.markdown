@@ -18,11 +18,11 @@ The sleep statement has been around for quite a long time in the world of
 software development.  As a tester sometimes it seems like the easiest way to
 delay whatever is going on so that the rest of your test may pass.  
 
-{% highlight javascript %}
+```javascript
 $('#someElement').click();
 browser.sleep(3000);
 $('#someOtherElement').click();
-{% endhighlight %}
+```
 
 You might have something that looks similar to the code above.  You try to click
 on an element, sleep for 3 seconds and then try to click on another element. The
@@ -40,11 +40,11 @@ element was present.  In most automation frameworks there exists some form of
 a waitForPresence.  If there isn't one they are generally not to complicated to
 make your own.  
 
-{% highlight javascript %}
+```javascript
 $('#someElement').click();
 $('#someOtherElement').waitForPresence();
 $('#someOtherElement').click();
-{% endhighlight %}
+```
 
 In this example instead of sleeping for 3 seconds, we wait for the element to
 be present.  This can be really cool.  For example a pro for this type of delay

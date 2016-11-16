@@ -21,9 +21,9 @@ can potentially help resolve finding some direction.
 Now to start off we really need to build the most basic JSON schema that we can
 come up with.
 
-{% highlight json %}
+```json
 { }
-{% endhighlight %}
+```
 
 It sure doesn't look like much does it.  In reality it isn't much.  It is just
 an empty object in JSON format.  JSON schema itself is a JSON document.  Lets
@@ -31,17 +31,17 @@ try to make that schema a little more useful.  Lets say we need to get a JSON
 response from the Telephone company, that contains a first name, last name, and
 a telephone number. An example response is.
 
-{% highlight json %}
+```json
 {
   "firstName": "John",
   "lastName": "Doe",
   "phoneNumber": "(555)-888-5555"
 }
-{% endhighlight %}
+```
 
 Our schema for this would look like.
 
-{% highlight json %}
+```json
 {
   "title": "Telephone company response",
   "type": "object",
@@ -57,7 +57,7 @@ Our schema for this would look like.
     }
   }
 }
-{% endhighlight %}
+```
 
 Awesome now we could validate our response from the Telephone company and test
 that it is what it should be.  One thing to know about JSON schema is you can
@@ -69,7 +69,7 @@ then it would have failed saying something like output was not a string.
 Lets assume though that we have to have all 3 of those fields.  To do that we
 can add one simple statement to the JSON schema.  Required.
 
-{% highlight json %}
+```json
 {
   "title": "Telephone company response",
   "type": "object",
@@ -86,7 +86,7 @@ can add one simple statement to the JSON schema.  Required.
   },
   "required": ["firstName", "lastName", "phoneNumber"]
 }
-{% endhighlight %}
+```
 
 Now if the Telephone company sends a response without firstName, lastName, or
 phoneNumber the schema will be invalid.

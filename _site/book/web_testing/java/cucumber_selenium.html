@@ -6,7 +6,7 @@
     <meta name="description" content="Running Cucumber with Java JVM and Selenium Web Driver.">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -96,7 +96,7 @@
 <p>Initialize a pom.xml file either using the generate function or on your own.
 Then add the dependencies below.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;dependencies&gt;</span>
   <span class="nt">&lt;dependency&gt;</span>
     <span class="nt">&lt;groupId&gt;</span>info.cukes<span class="nt">&lt;/groupId&gt;</span>
     <span class="nt">&lt;artifactId&gt;</span>cucumber-junit<span class="nt">&lt;/artifactId&gt;</span>
@@ -120,15 +120,19 @@ Then add the dependencies below.</p>
     <span class="nt">&lt;artifactId&gt;</span>selenium-java<span class="nt">&lt;/artifactId&gt;</span>
     <span class="nt">&lt;version&gt;</span>2.53.1<span class="nt">&lt;/version&gt;</span>
   <span class="nt">&lt;/dependency&gt;</span>
-<span class="nt">&lt;/dependencies&gt;</span></code></pre></figure>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre>
+</div>
 
 <h2 id="files-structure">Files Structure</h2>
 <hr />
 <p>Once you have created a pom.xml file the next important step is the Structure
 of the files. You will need 2 main folders to start out.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">src/test/java/com/program/test/step_definitions
-src/test/resources/features</code></pre></figure>
+<div class="highlighter-rouge"><pre class="highlight"><code>src/test/java/com/program/test/step_definitions
+src/test/resources/features
+</code></pre>
+</div>
 
 <p>Notice on the step definitions folder.  It says “/com/program/test/”.  This can
 and probably should be changed to your actual program structure.  If just using
@@ -138,23 +142,18 @@ as standalone tests then it should be fine.</p>
 <hr />
 <p>In the “resources/features” directory you will add your feature files in Gherkin
 format.  In the case of this exercise we can use.</p>
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      testCookbook.feature
-    </header>
-
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
+  testCookbook.feature
+</header>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
 
   <span class="kn">Scenario</span><span class="p">:</span> Test Cookbook Title Description
     <span class="nf">Given</span> I visit Test Cookbook website
-    <span class="nf">Then</span> I see title Test Cookbook</code></pre></figure>
-
-    </div>
+    <span class="nf">Then</span> I see title Test Cookbook
+</code></pre>
 </div>
 
 <p>For more information about Gherkin you can refer back to the Gherkin chapter.</p>
@@ -175,17 +174,15 @@ format.  In the case of this exercise we can use.</p>
 <p>Simple enough right?  Well lets start with step 1 and create the runner. For my
 example I create a file called RunCukesTest.java within the step_definitions
 directory.</p>
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      RunCukesTest.java
-    </header>
+  RunCukesTest.java
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">cucumber.api.junit.Cucumber</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">cucumber.api.CucumberOptions</span><span class="o">;</span>
@@ -199,9 +196,8 @@ directory.</p>
   <span class="n">tags</span> <span class="o">=</span> <span class="o">{}</span>
 <span class="o">)</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RunCukesTest</span> <span class="o">{}</span></code></pre></figure>
-
-  </div>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RunCukesTest</span> <span class="o">{}</span>
+</code></pre>
 </div>
 
 <h3 id="hooks">Hooks</h3>
@@ -209,17 +205,16 @@ directory.</p>
 <p>After creating the runner, we need to build some hooks.  These hooks will help
 us along they way for setup and tear down for out tests. Lets create a file
 called Hooks.java</p>
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      RunCukesTest.java
-    </header>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-blue"&gt;
+  &lt;!--&lt;img alt="file icon image" src="/lib/images/file.png" class="icon"/&gt;--&gt; &lt;i class="fa fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;
 
-    <div class="w3-container">
+  RunCukesTest.java
+&lt;/header&gt;
+</code></pre>
+</div>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">java.net.MalformedURLException</span><span class="o">;</span>
 
@@ -261,9 +256,8 @@ called Hooks.java</p>
     <span class="n">driver</span><span class="o">.</span><span class="na">quit</span><span class="o">();</span>
   <span class="o">}</span>
 
-<span class="o">}</span></code></pre></figure>
-
-</div>
+<span class="o">}</span>
+</code></pre>
 </div>
 
 <h3 id="step-definitions">Step Definitions</h3>
@@ -271,17 +265,15 @@ called Hooks.java</p>
 <p>Last but certainly not the least we need a step definition called
 TestCookbookPage.java</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
-<i class="fa fa-file-code-o" aria-hidden="true"></i>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;header class="cm1 w3-blue"&gt;
+  &lt;!--&lt;img alt="file icon image" src="/lib/images/file.png" class="icon"/&gt;--&gt; &lt;i class="fa fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;
 
-      TestCookbookPage.java
-    </header>
+  TestCookbookPage.java
+&lt;/header&gt;
+</code></pre>
+</div>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">step_definitions</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertTrue</span><span class="o">;</span>
 
@@ -310,9 +302,8 @@ TestCookbookPage.java</p>
       <span class="n">assertTrue</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"Test Cookbook"</span><span class="o">));</span>
     <span class="o">}</span>
 
-<span class="o">}</span></code></pre></figure>
-
-  </div>
+<span class="o">}</span>
+</code></pre>
 </div>
 
 <h2 id="working-example">Working Example</h2>

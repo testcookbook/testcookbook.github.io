@@ -35,17 +35,15 @@ The second important step in validating your JSON file is to compare it with a
 JSON schema validation.  To do this we will start by importing a gem called
 json-schema.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
-<div class="w3-container">
-{% highlight shell %}
+
+```
 $ gem install json-schema
-{% endhighlight %}
-</div>
-</div>
+```
 
 After the gem is installed you can start crafting your Ruby code.
 
@@ -72,7 +70,6 @@ The validate function will either return true or the error message.  You could
 also have it just return true or false.  It really depends on what kind of
 information you would like to deal with.
 
-
 You could also whip up a little RSpec magic to test your JSON as well.
 
 ```ruby
@@ -97,5 +94,4 @@ RSpec.describe "Is JSON Valid" do
     expect(validate(JSON.parse(schema), JSON.parse(file))).to be_truthy
   end
 end
-
 ```

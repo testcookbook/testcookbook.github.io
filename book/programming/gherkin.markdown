@@ -12,7 +12,7 @@ describe how somethings behaves without actually implementing that functionality
 The format for a Gherkin file is done by defining a Feature, then a Scenario.
 For Example.
 
-{% highlight Gherkin %}
+```gherkin
 Feature: Describe what this feature is about.
 
   Scenario: Describe what the scenario will be about.
@@ -20,7 +20,7 @@ Feature: Describe what this feature is about.
     And do something else
     When this happens
     Then I get to do something new
-{% endhighlight %}
+```
 
 Why would you ever want to write the Gherkin?  In a buisness format the Gherkin
 file can be used in a variety of ways.  One of those ways is to have a common

@@ -6,7 +6,7 @@
     <meta name="description" content="Create a Maven project?">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -100,23 +100,19 @@ JDK from Oracle, and Maven.  You can download Maven and get more documentation
 about it from <a href="https://maven.apache.org/">https://maven.apache.org/</a>.  Once they
 are installed you also need to make sure that your PATH is updated appropriately.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/jdk/bin:/path/to/maven/bin
-<span class="gp">$ </span>mvn archetype:generate
-    -DgroupId<span class="o">=</span>project
-    -DartifactId<span class="o">=</span>project
-    -DarchetypeArtifactId<span class="o">=</span>maven-archetype-quickstart</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ export PATH=$PATH:/path/to/jdk/bin:/path/to/maven/bin
+$ mvn archetype:generate
+    -DgroupId=project
+    -DartifactId=project
+    -DarchetypeArtifactId=maven-archetype-quickstart
+</code></pre>
 </div>
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
@@ -131,17 +127,14 @@ On a small note you may see documentation that says to use
 <p>This will create a basic directory structure for your new project and a few
 sample files. There will be a pom.xml, app source and an app test file.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ tree
+<div class="highlighter-rouge"><pre class="highlight"><code>$ tree
 .
 ├── pom.xml
 └── src
@@ -153,9 +146,7 @@ sample files. There will be a pom.xml, app source and an app test file.</p>
         └── java
             └── project
                 └── AppTest.java
-                </code></pre></figure>
-
-</div>
+</code></pre>
 </div>
 
 <p>To run your first tests run ‘mvn test’.</p>

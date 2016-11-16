@@ -6,7 +6,7 @@
     <meta name="description" content="Getting started with the Robot Framework.">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -99,19 +99,15 @@ a keyword driven approach or a more BDD approach using a <a href="/book/programm
 <p>First off we need to setup a little environment stuff.  Hopefully starting out
 you have some basic Python skills.  Lets install Robot Framework.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>pip install robotframework</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pip install robotframework
+</code></pre>
 </div>
 
 <h2 id="your-first-test">Your First Test.</h2>
@@ -119,17 +115,14 @@ you have some basic Python skills.  Lets install Robot Framework.</p>
 Lets assume we want to test adding up a couple of numbers.  For the first test
 we will focus on a keyword driven development.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   keyword.robot
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-robot" data-lang="robot">*** Settings ***
+<pre><code class="language-robot">*** Settings ***
 Documentation     Example Keyword Test
 
 Library    AdderLibrary.py
@@ -137,10 +130,9 @@ Library    AdderLibrary.py
 *** Test Cases ***
 Addition
     Add input    3    5
-    Total    8</code></pre></figure>
+    Total    8
 
-</div>
-</div>
+</code></pre>
 
 <p>You will notices from the keyword.robot file that there are 2 main headings,
 surrounded by three asterisks. The first section covers what the settings needed
@@ -167,17 +159,15 @@ code presented, the large spaced areas are 4 spaces wide.
 <p>Once you have test file to describe what you are doing. Then its time to write
 code to actually test what was described.  Create a file “AdderLibrary.py”.
 You might remember it from the settings of the robot file we created.</p>
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   AdderLibrary.py
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""
     Tests for AdderLibrary
     """</span>
@@ -192,9 +182,9 @@ You might remember it from the settings of the robot file we created.</p>
     <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">expected</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="nb">AssertionError</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">s != </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span></code></pre></figure>
+            <span class="k">raise</span> <span class="nb">AssertionError</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">s != </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span>
 
-</div>
+</code></pre>
 </div>
 
 <p>For this example we will test within just this file to demonstrate how keywords
@@ -213,34 +203,27 @@ value matches that which we added up.  If it is equal we are fine.  However if
 things are not equal then we need to assert an error followed by some message
 that describes what the issue is.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-<figure class="highlight">
-<pre><code class="language-text" data-lang="text">
-$ robot keyword.robot
+<div class="highlighter-rouge"><pre class="highlight"><code>$ robot keyword.robot
 ==============================================================================
 Keyword :: Example Keyword Test                                               
 ==============================================================================
-Addition                                                              | <span style="color:#0A0">PASS</span> |
+Addition                                                              | PASS |
 ------------------------------------------------------------------------------
-Keyword :: Example Keyword Test                                       | <span style="color:#0A0">PASS</span> |
+Keyword :: Example Keyword Test                                       | PASS |
 1 critical test, 1 passed, 0 failed
 1 test total, 1 passed, 0 failed
 ==============================================================================
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-
 </code></pre>
-</figure>
-</div>
 </div>
 
 <h2 id="gherkin">Gherkin</h2>
@@ -249,17 +232,14 @@ Report:  /home/user/robotframework/report.html
 write using a <a href="/book/programming/gherkin.html">Gherkin</a> format?  Well your in
 luck.  Lets create a file called “gherkin.robot”.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   gherkin.robot
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-language" data-lang="language">*** Settings ***
+<div class="highlighter-rouge"><pre class="highlight"><code>*** Settings ***
 Documentation     Example Gherkin Style Test
 
 Library    AdderLibrary.py
@@ -273,9 +253,9 @@ Addition
 two numbers "${a}" and "${b}"
     Add input    ${a}    ${b}
 total of result is "${total}"
-    Total    ${total}</code></pre></figure>
+    Total    ${total}
 
-</div>
+</code></pre>
 </div>
 
 <p>Within this file you will see a new header called Keywords, and the Test Cases
@@ -292,34 +272,27 @@ could change and we might want to reuse that functionality later.</p>
 <p>Once the step definition is described we can then add keyword functions just
 like we did on the keyword.robot file.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-<figure class="highlight">
-<pre><code class="language-text" data-lang="text">
-$ robot gherkin.robot
+<div class="highlighter-rouge"><pre class="highlight"><code>$ robot gherkin.robot
 ==============================================================================
 Gherkin :: Example Gherkin Style Test                                         
 ==============================================================================
-Addition                                                              | <span style="color:#0A0">PASS</span> |
+Addition                                                              | PASS |
 ------------------------------------------------------------------------------
-Gherkin :: Example Gherkin Style Test                                 | <span style="color:#0A0">PASS</span> |
+Gherkin :: Example Gherkin Style Test                                 | PASS |
 1 critical test, 1 passed, 0 failed
 1 test total, 1 passed, 0 failed
 ==============================================================================
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-
 </code></pre>
-</figure>
-</div>
 </div>
 
         </div>

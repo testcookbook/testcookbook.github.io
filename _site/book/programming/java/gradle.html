@@ -6,7 +6,7 @@
     <meta name="description" content="Create a Gradle project">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -108,21 +108,17 @@ JUnit which at this time is '4.12'.  Older versions of JUnit work a little
 different and may not compile as expected for these lessons.
 </div>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/path/to/gradle/bin
-<span class="gp">$ </span>mkdir YourProject
-<span class="gp">$ </span>gradle init --type<span class="o">=</span>java-library</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ export PATH=$PATH:/path/to/gradle/bin
+$ mkdir YourProject
+$ gradle init --type=java-library
+</code></pre>
 </div>
 
 <p>Gradle will now build a basic project structure for Java.  If you look in the
@@ -131,19 +127,15 @@ application source files and tests.</p>
 
 <p>To run the tests</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>gradle <span class="nb">test</span></code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gradle test
+</code></pre>
 </div>
 
         </div>

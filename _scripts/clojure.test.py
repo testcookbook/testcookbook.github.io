@@ -2,8 +2,9 @@ import automation as at
 import jekyll_include as ji
 from jekyll_include import Jekyll
 
-global jekyll
-jekyll = Jekyll("clojure/IntroClojureTest", "clojure")
+global clojure
+clojure = Jekyll("clojure/IntroClojureTest", "clojure")
+bash = Jekyll("clojure/IntroClojureTest", "text")
 
 def title(t):
     print "**************************************"
@@ -15,6 +16,7 @@ def create_project():
     cmds = """
 lein new funapp
 """
+    bash.code("createProject", cmds)
     at.run(cmds)
 
 def cleanup():
@@ -30,11 +32,13 @@ def run_tests():
 cd funapp
 lein test
 """
+    bash.code("runTest", cmds)
     return at.run(cmds)
 
 def fix_first_test():
     s = "    (is (= 1 1))))"
     at.replace_lines("funapp/test/funapp/core_test.clj", 6, 7, s)
+    clojure.code("addListTest", s)
 
 def add_list_test():
     s = """
@@ -43,6 +47,7 @@ def add_list_test():
     (is (= 6 (addList [1 2 3])))))
 """
     at.append("funapp/test/funapp/core_test.clj", s)
+    clojure.code("addListTest", s)
 
 def add_list_src():
     s = """
@@ -52,7 +57,7 @@ def add_list_src():
   (reduce + x))
 """
     at.append("funapp/src/funapp/core.clj", s)
-    jekyll.code("addList", s)
+    clojure.code("addList", s)
     #ji.code("clojure", "addList", s, "clojure")
 
 cleanup()

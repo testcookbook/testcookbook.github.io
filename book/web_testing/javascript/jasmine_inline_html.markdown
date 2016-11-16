@@ -13,7 +13,7 @@ be Jasmine offers a simple way to run some tests within your browser.
 To start off we need to include some external resources.  You can get these
 files from either the NPM registry or you could link to the files on a CDN.
 
-{% highlight HTML %}
+```html
 <html>
 <head>
   //within head tags
@@ -22,12 +22,12 @@ files from either the NPM registry or you could link to the files on a CDN.
   <script src="jasmine-html.min.js"></script>
   <script src="boot.min.js"></script>
 </head>
-{% endhighlight %}
+```
 
 Now that we have all of our dependencies lets create a new function that adds
 2 numbers and see if the output is correct.
 
-{% highlight HTML %}
+```html
   <body>
     <script>
       function adder(x, y) {
@@ -42,6 +42,6 @@ Now that we have all of our dependencies lets create a new function that adds
       });
     </script>
   </body>
-{% endhighlight %}
+```
 
 [http://www.testcookbook.com/book/web_testing/javascript/jasmine_inline_html.html](/book/web_testing/javascript/jasmine_inline_html.html)

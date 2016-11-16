@@ -6,7 +6,7 @@
     <meta name="description" content="Cucumber testing suite using Javascript and Selenium Web Driver">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -92,26 +92,23 @@
           <h1 id="cucumberjs--selenium-web-driver">CucumberJS + Selenium Web Driver</h1>
 
 <h2 id="create-a-cucumberjs-project">Create a CucumberJS project</h2>
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
+
+<header class="cm1 w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
-      Command Line
-    </header>
+  Command Line
+</header>
 
-    <div class="w3-container">
+<div class="highlighter-rouge"><pre class="highlight"><code># install Cucumber and Selenium webdriver
+$ npm install cucumber selenium-webdriver
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c"># install Cucumber and Selenium webdriver</span>
-<span class="gp">$ </span>npm install cucumber selenium-webdriver
+# install browser drivers
+$ npm install chromedriver geckodriver
 
-<span class="c"># install browser drivers</span>
-<span class="gp">$ </span>npm install chromedriver geckodriver
-
-<span class="c"># install an assertion tool</span>
-<span class="gp">$ </span>npm install assert</code></pre></figure>
-
-</div>
+# install an assertion tool
+$ npm install assert
+</code></pre>
 </div>
 
 <p>If you are using a package.json file you will probably want to save all of these
@@ -123,16 +120,16 @@ modules to dev dependencies.  to do that when running npm install add a switch
 <!--<img alt="tip image" src="/lib/images/tip100.png" class="icon"/>-->
 
   Another nice thing to do with a package.json file is to add test script.
+</div>
 
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/cucumber-js"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
+
 <p>With this added to your NPM package file you can run all your cucumber tests by
 typing in “npm test” on the command line.</p>
 
@@ -143,59 +140,54 @@ typing in “npm test” on the command line.</p>
 <p>First off we need to create a place for all of our feature files written in
 Gherkin.  Within this folder you will create files with an extension of feature.
 For example “testFile.feature”.</p>
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
+
+<header class="cm1 w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
-      Command Line
-    </header>
+  Command Line
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir features</code></pre></figure>
-
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir features
+</code></pre>
 </div>
-</div>
+
 <p>After creating the features directory we need a place to store our code that
 runs the features and does the assertions.  We call these step definitions.</p>
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
+
+<header class="cm1 w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
-      Command Line
-    </header>
+  Command Line
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">cd </span>features
-mkdir step_definitions</code></pre></figure>
-
+<div class="highlighter-rouge"><pre class="highlight"><code>cd features
+mkdir step_definitions
+</code></pre>
 </div>
-</div>
+
 <p>Last but not least we need to create a support directory that handles
 initializing the World object for Cucumber and other enhancements for Cucumber.</p>
-<div class="w3-card">
-    <header class="w3-container w3-grey">
-      <i class="fa fa-terminal" aria-hidden="true"></i>
+
+<header class="cm1 w3-grey">
+  <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
-      Command Line
-    </header>
+  Command Line
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash">mkdir support</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir support
+</code></pre>
 </div>
 
 <p>Once done you should have a folder stucture like this.</p>
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">- features
+<div class="highlighter-rouge"><pre class="highlight"><code>- features
   - step_definitions
-  - support</code></pre></figure>
+  - support
+</code></pre>
+</div>
 
 <hr />
 
@@ -204,17 +196,14 @@ initializing the World object for Cucumber and other enhancements for Cucumber.<
 <p>Within the support directory create a file named “world.js”.  In this file we
 can require some libraries, select browser to test with and set some timeouts.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      world.js
-    </header>
+  world.js
+</header>
 
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">seleniumWebdriver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selenium-webdriver'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">seleniumWebdriver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selenium-webdriver'</span><span class="p">);</span>
 
 <span class="kd">function</span> <span class="nx">CustomWorld</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">seleniumWebdriver</span><span class="p">.</span><span class="nx">Builder</span><span class="p">()</span>
@@ -227,9 +216,8 @@ can require some libraries, select browser to test with and set some timeouts.</
 
   <span class="c1">// sets a default timeout to 30 seconds.  Time is in ms.</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">setDefaultTimeout</span><span class="p">(</span><span class="mi">30</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
-<span class="p">};</span></code></pre></figure>
-
-</div>
+<span class="p">};</span>
+</code></pre>
 </div>
 
 <hr />
@@ -239,23 +227,18 @@ can require some libraries, select browser to test with and set some timeouts.</
 <p>Create a feature file like “test_cookbook.feature”.  Within the file describe
 the behavior that you would like.</p>
 
-<div class="w3-card">
-    <header class="w3-container w3-blue">
-      <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
+<header class="cm1 w3-blue">
+  <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
-      testCookbook.feature
-    </header>
-
-    <div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-gherkin" data-lang="gherkin"><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
+  testCookbook.feature
+</header>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test Cookbook Home Page
 
   <span class="kn">Scenario</span><span class="p">:</span> Test Cookbook Title Description
     <span class="nf">Given</span> I visit Test Cookbook website
-    <span class="nf">Then</span> I see title Test Cookbook</code></pre></figure>
-
-    </div>
+    <span class="nf">Then</span> I see title Test Cookbook
+</code></pre>
 </div>
 
 <hr />
@@ -267,28 +250,34 @@ definitions.</p>
 
 <p>Within the file we first need to setup a javascript module.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
 
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <p>When you run the tests Cucumber will be looking for regular expression  matching
 functions to execute. In the feature file the first step we have is a Given
 statement.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
   <span class="p">});</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <p>Now that we have an expression to run, we also need to give it some direction.
 Lets have it take us to “www.testcookbook.com”.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com'</span><span class="p">);</span>
   <span class="p">});</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <p>If you were to run the tests at this point you should see a browser pop up and
 goto “www.testcookbook.com”.</p>
@@ -300,15 +289,14 @@ goto “www.testcookbook.com”.</p>
 At this point you may still see a browser on the screen.  While starting out its
 not a big deal to close the window by hand.  However we can add a hooks.js file
 within the step_definitions folder to handle that for us.
+</div>
 
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">After</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">quit</span><span class="p">();</span>
   <span class="p">});</span>
-<span class="p">};</span></code></pre></figure>
-
-
+<span class="p">};</span>
+</code></pre>
 </div>
 
 <p>We now have some code in place to take us to a website.  But thats not really
@@ -317,7 +305,7 @@ step that says the title of the page should be “Test Cookbook”.  To accompli
 this we need to get the text for the title and assert whether or not it equals
 the desired outcome.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com'</span><span class="p">);</span>
   <span class="p">});</span>
@@ -328,7 +316,9 @@ the desired outcome.</p>
       <span class="k">return</span> <span class="nx">title</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">});</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <p>Now give it a run.</p>
 
@@ -338,7 +328,7 @@ in order to assert or expect specific values.  Luckily this is an easy fix.
 Provided that you installed the assert package at the beginning all we need to
 do is require assert.</p>
 
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -351,7 +341,9 @@ do is require assert.</p>
       <span class="k">return</span> <span class="nx">title</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">});</span>
-<span class="p">};</span></code></pre></figure>
+<span class="p">};</span>
+</code></pre>
+</div>
 
 <p>If you run npm test this time you should be able to get some passing tests.</p>
 

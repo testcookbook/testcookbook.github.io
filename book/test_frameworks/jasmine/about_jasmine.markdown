@@ -15,13 +15,13 @@ test applications and services.
 ---
 Jasmine uses a describe and it format to define the tests.
 
-{% highlight javascript %}
+```javascript
 describe("What are the tests about", function() {
   it("tells us what the spec and expectation is", function() {
     expect("some function or value").toBe(true);
   });
 });
-{% endhighlight %}
+```
 
 ## Expectations
 ---
@@ -33,7 +33,7 @@ A matcher is a function that returns a boolean for different types of
 comparison. For example.  toBeTruthy() would validate if the expectation is
 true or toBeFalsy() would validate if the expectation is false.
 
-{% highlight javascript %}
+```javascript
 //Pass
 expect(true).toBe(true);
 expect(true).toBeTruthy();
@@ -41,7 +41,7 @@ expect(true).toBeTruthy();
 //Fail
 expect(false).toBe(true);
 expect(false).toBeTruthy();
-{% endhighlight %}
+```
 
 ## Implementation
 ---
@@ -58,46 +58,46 @@ There are a couple of ways you can do that.  The first is from the spec or "it"
 level.  All you need to do is add a "x" in front of "it".  When you run your
 suite all the tests that do not have a "x" will run.
 
-{% highlight javascript %}
+```javascript
 describe("What are the tests about", function() {
   xit("tells us what the spec and expectation is", function() {
     expect("some function or value").toBe(true);
   });
 });
-{% endhighlight %}
+```
 
 Another option would be to pend the entire suite.  This way none of the specs
 within the suite would run but any other suite within your project will.  To
 do this put a "x" before "describe".
 
-{% highlight javascript %}
+```javascript
 xdescribe("What are the tests about", function() {
   it("tells us what the spec and expectation is", function() {
     expect("some function or value").toBe(true);
   });
 });
-{% endhighlight %}
+```
 
 ## Run specific test or suite.
 ---
 To run a specific test you can put a "f" in front of "it".  When you run Jasmine
 it will run only that test.
 
-{% highlight javascript %}
+```javascript
 describe("What are the tests about", function() {
   fit("tells us what the spec and expectation is", function() {
     expect("some function or value").toBe(true);
   });
 });
-{% endhighlight %}
+```
 
 The same is true for a suite.  To run just the suite put a "f" in front of
 describe.
 
-{% highlight javascript %}
+```javascript
 fdescribe("What are the tests about", function() {
   it("tells us what the spec and expectation is", function() {
     expect("some function or value").toBe(true);
   });
 });
-{% endhighlight %}
+```

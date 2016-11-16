@@ -12,14 +12,14 @@ PHPUnit is a unit testing framework in a XUnit architecture.
 The first thing you will need is PHPUnit installed locally.  I recommend using
 composer.  This will allow you to download other dependencies if needed.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   composer.json
 </header>
 
-<div class="w3-container">
-{% highlight json %}
+
+```json
 {
   "name": "testcookbook/phpunit",
   "authors": [
@@ -34,38 +34,38 @@ composer.  This will allow you to download other dependencies if needed.
   "require": {
   }
 }
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 To install you can run.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 $ composer install
 $ # or
 $ php composer.phar install
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 After installing your dependencies you can begin to write some tests.  Lets
 start by writing some unit tests for a class that adds 2 numbers called Adder.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   adder_tests.php
 </header>
 
-<div class="w3-container">
-{% highlight php %}
+
+```php
 <?php
 use PHPUnit\Framework\TestCase;
 
@@ -83,20 +83,20 @@ class AdderTest extends TestCase
   }
 }
 ?>
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 Now lets create a basic class to make the test pass.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   adder.php
 </header>
 
-<div class="w3-container">
-{% highlight php %}
+
+```php
 <?php
 class Adder
 {
@@ -116,21 +116,19 @@ class Adder
 
 }
 ?>
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 To run your tests.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight shell %}
+
+```
 $ vendor/bin/phpunit adder_tests.php
-{% endhighlight %}
-</div>
-</div>
+```

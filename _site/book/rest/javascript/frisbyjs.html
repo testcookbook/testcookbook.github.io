@@ -6,7 +6,7 @@
     <meta name="description" content="Testing REST services with Frisby.js">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
-    <link rel="stylesheet" href="/lib/highlight.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -108,20 +108,16 @@ above.  Chances are you already have some sort of package json that you could
 install packages too.  If so you can skip the init part and start installing
 required packages.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm install --save-dev frisby jasmine-node
-$ mkdir specs</code></pre></figure>
-
-</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev frisby jasmine-node
+$ mkdir specs
+</code></pre>
 </div>
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
@@ -138,17 +134,14 @@ $ mkdir specs</code></pre></figure>
 <p>Since we installed jasmine-node using the –save-dev flag we should update the
 test task on the package json.  This will allow for a clean way to run the tests.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   steps.py
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -162,30 +155,26 @@ test task on the package json.  This will allow for a clean way to run the tests
     </span><span class="nt">"frisby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.5"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"jasmine-node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.14.5"</span><span class="w">
   </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span></code></pre></figure>
-
-</div>
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 </div>
 
 <p>You can now run your specs using npm test.</p>
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
-<div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm test
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
 &gt; test@1.0.0 test /home/ben/exp/test
 &gt; jasmine-node specs
 
 Finished in 0.001 seconds
-0 tests, 0 assertions, 0 failures, 0 skipped</code></pre></figure>
-
-</div>
+0 tests, 0 assertions, 0 failures, 0 skipped
+</code></pre>
 </div>
 
 <p>Once you have a basic running test suite its time to write our first spec.</p>
@@ -199,36 +188,31 @@ Finished in 0.001 seconds
 
 <h2 id="your-first-spec">Your first spec</h2>
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   <!--<img alt="file icon image" src="/lib/images/file.png" class="icon"/>-->
 <i class="fa fa-file-code-o" aria-hidden="true"></i>
 
   first_spec.js
 </header>
 
-<div class="w3-container">
-
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">frisby</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'frisby'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">frisby</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'frisby'</span><span class="p">);</span>
 <span class="nx">frisby</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'Get Brightbit Twitter feed'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">expectStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="p">.</span><span class="nx">toss</span><span class="p">();</span></code></pre></figure>
-
-</div>
+<span class="p">.</span><span class="nx">toss</span><span class="p">();</span>
+</code></pre>
 </div>
 
 <p>Now try running your tests with “npm test”</p>
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   <i class="fa fa-terminal" aria-hidden="true"></i>
 <!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
 
   Command Line
 </header>
-<div class="w3-container">
 
-<figure class="highlight"><pre><code class="language-text" data-lang="text">$ npm test
+<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
 
 &gt; test@1.0.0 test /home/ben/exp/test
 &gt; jasmine-node specs
@@ -236,9 +220,8 @@ Finished in 0.001 seconds
 .
 
 Finished in 0.452 seconds
-1 test, 1 assertion, 0 failures, 0 skipped</code></pre></figure>
-
-</div>
+1 test, 1 assertion, 0 failures, 0 skipped
+</code></pre>
 </div>
 
         </div>

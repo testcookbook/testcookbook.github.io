@@ -22,19 +22,19 @@ above.  Chances are you already have some sort of package json that you could
 install packages too.  If so you can skip the init part and start installing
 required packages.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
-<div class="w3-container">
-{% highlight text %}
+
+```
 $ npm install --save-dev frisby jasmine-node
 $ mkdir specs
-{% endhighlight %}
-</div>
-</div>
+```
+
+
 
 <div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
 {% include tipIcon.html%}
@@ -48,14 +48,12 @@ $ mkdir specs
 Since we installed jasmine-node using the --save-dev flag we should update the
 test task on the package json.  This will allow for a clean way to run the tests.
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   steps.py
 </header>
 
-<div class="w3-container">
-{% highlight json %}
+```json
 {
   "name": "test",
   "version": "1.0.0",
@@ -71,28 +69,23 @@ test task on the package json.  This will allow for a clean way to run the tests
     "jasmine-node": "^1.14.5"
   }
 }
-{% endhighlight %}
-</div>
-</div>
+```
 
 You can now run your specs using npm test.
 
-<div class="w3-card">
-<header class="w3-container w3-grey">
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
-<div class="w3-container">
-{% highlight text %}
+
+```
 $ npm test
 > test@1.0.0 test /home/ben/exp/test
 > jasmine-node specs
 
 Finished in 0.001 seconds
 0 tests, 0 assertions, 0 failures, 0 skipped
-{% endhighlight %}
-</div>
-</div>
+```
 
 Once you have a basic running test suite its time to write our first spec.  
 
@@ -103,31 +96,27 @@ Once you have a basic running test suite its time to write our first spec.
 
 ## Your first spec
 
-<div class="w3-card">
-<header class="w3-container w3-blue">
+<header class="cm1 w3-blue">
   {% include fileIcon.html%}
   first_spec.js
 </header>
 
-<div class="w3-container">
-{% highlight javascript %}
+```javascript
 var frisby = require('frisby');
 frisby.create('Get Brightbit Twitter feed')
   .get('http://www.testcookbook.com/lib/REST/test.json')
   .expectStatus(200)
 .toss();
-{% endhighlight %}
-</div>
-</div>
+```
 
 Now try running your tests with "npm test"
-<div class="w3-card">
-<header class="w3-container w3-grey">
+
+<header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
-<div class="w3-container">
-{% highlight text %}
+
+```
 $ npm test
 
 > test@1.0.0 test /home/ben/exp/test
@@ -137,6 +126,4 @@ $ npm test
 
 Finished in 0.452 seconds
 1 test, 1 assertion, 0 failures, 0 skipped
-{% endhighlight %}
-</div>
-</div>
+```
