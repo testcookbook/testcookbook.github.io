@@ -3,7 +3,7 @@ layout: default
 title:  "About Cucumber"
 description: "Getting started with cucumber testing."
 ---
-# Cucumber
+## Cucumber
 
 Cucumber is a behavior driven development test framework.  This framework was
 designed to allow for living documentation, business readability, and allow
