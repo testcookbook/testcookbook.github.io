@@ -3,8 +3,8 @@ import jekyll_include as ji
 from jekyll_include import Jekyll
 
 global clojure
-clojure = Jekyll("clojure/IntroClojureTest", "clojure")
-bash = Jekyll("clojure/IntroClojureTest", "text")
+clojure = Jekyll("clojure/introClojureTest", "clojure")
+bash = Jekyll("clojure/introClojureTest", "text")
 
 def title(t):
     print "**************************************"

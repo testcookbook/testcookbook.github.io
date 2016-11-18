@@ -28,7 +28,10 @@ github_username: testcookbook
 markdown: kramdown
 highlight: rouge
 
+timezone: America/Chicago
+
 exclude: ["_scripts", "Gemfile", "Gemfile.lock"]
 
 gems:
-  - jekyll-sitemap
+  #- jekyll-sitemap
+  #- jekyll-last-modified-at

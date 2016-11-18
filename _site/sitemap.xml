@@ -1,105 +1,365 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</loc>
-<lastmod>2016-11-08T05:22:12-06:00</lastmod>
-</url>
-<url>
-<loc>http://www.testcookbook.com/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</loc>
-<lastmod>2016-09-29T06:22:12-05:00</lastmod>
-</url>
-<url>
-<loc>http://www.testcookbook.com/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</loc>
-<lastmod>2016-09-29T06:22:12-05:00</lastmod>
-</url>
-<url>
-<loc>http://www.testcookbook.com/about/</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/cucumber/about_cucumber.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/galenframework/about_galen_framework.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/gauge/about_gauge.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/jasmine/about_jasmine.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/junit/about_junit.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/lettuce/about_lettuce.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/phpunit/about_phpunit.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/robotframework/about_robot_framework.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/rspec/about_rspec.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/web_testing/ruby/cucumber-ruby-watir-selenium.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/web_testing/java/cucumber_selenium.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/web_testing/javascript/cucumberjs-selenium.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/rest/javascript/frisbyjs.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/programming/gherkin.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/glossary/glossary.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/programming/java/gradle.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/test_frameworks/clojureTest/introToClojureTest.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/web_testing/javascript/jasmine_inline_html.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/rest/json_schema.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/programming/java/maven.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/news.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/programming/javascript/npm_project.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/rest/postman/postman.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/table_of_contents.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/rest/python/validate_json_python.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/rest/ruby/validate_json_ruby.html</loc>
-</url>
-<url>
-<loc>http://www.testcookbook.com/book/programming/wait-vs-sleep.html</loc>
-</url>
+  
+  <url>
+    <loc>http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</loc>
+    
+    <lastmod>2016-11-08T05:22:12-06:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.testcookbook.com/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</loc>
+    
+    <lastmod>2016-09-29T06:22:12-05:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.testcookbook.com/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</loc>
+    
+    <lastmod>2016-09-29T06:22:12-05:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/about/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/cucumber/about_cucumber.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/galenframework/about_galen_framework.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/gauge/about_gauge.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/jasmine/about_jasmine.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/junit/about_junit.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/lettuce/about_lettuce.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/phpunit/about_phpunit.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/robotframework/about_robot_framework.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/rspec/about_rspec.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/web_testing/ruby/cucumber-ruby-watir-selenium.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/web_testing/java/cucumber_selenium.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/web_testing/javascript/cucumberjs-selenium.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/rest/javascript/frisbyjs.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/gherkin.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/glossary/glossary.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/java/gradle.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/basics/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/php/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/clojure/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/ruby/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/java/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/python/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/javascript/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/test_frameworks/clojureTest/introToClojureTest.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/web_testing/javascript/jasmine_inline_html.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/rest/json_schema.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/java/maven.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/news.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/javascript/npm_project.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/rest/postman/postman.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/table_of_contents.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/rest/python/validate_json_python.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/rest/ruby/validate_json_ruby.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/wait-vs-sleep.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
 </urlset>

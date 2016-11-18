@@ -1,18 +1,4 @@
-def include(project, diagram, text):
-    fn = "../" + project + "/" + diagram + ".markdown"
-    f = open(fn , 'w+')
-    f.write(txt)
-    f.close()
-
-def code(project, diagram, text, language):
-    fn = "../_includes/" + project + "/" + diagram + ".markdown"
-    f = open(fn , 'w+')
-    #s = "{% highlight" + language "%}"
-    #e = "{% endhighlight %}"
-    s = "```"+language
-    e = "```"
-    f.write(s + text + e)
-    f.close()
+import os
 
 class Jekyll:
     def __init__(self, project, language):
@@ -20,7 +6,7 @@ class Jekyll:
         self.language = language
 
     def code(self, diagram, text):
-        fn = "../_includes/" + self.project + "/" + diagram + ".markdown"
+        fn = os.getcwd() + "/../_includes/" + self.project + "/" + diagram + ".markdown"
         f = open(fn , 'w+')
         #s = "{% highlight" + language "%}"
         #e = "{% endhighlight %}"
