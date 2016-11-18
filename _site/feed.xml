@@ -4,10 +4,10 @@
     <title>Test Cookbook</title>
     <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
 </description>
-    <link>https://testcookbook.github.io/</link>
-    <atom:link href="https://testcookbook.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Nov 2016 09:27:36 -0600</pubDate>
-    <lastBuildDate>Fri, 18 Nov 2016 09:27:36 -0600</lastBuildDate>
+    <link>http://www.testcookbook.com/</link>
+    <atom:link href="http://www.testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 18 Nov 2016 09:48:04 -0600</pubDate>
+    <lastBuildDate>Fri, 18 Nov 2016 09:48:04 -0600</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -24,8 +24,8 @@
 building some simple tests. &lt;a href=&quot;/book/rest/postman/postman.html&quot;&gt;Intro to Postman&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 08 Nov 2016 05:22:12 -0600</pubDate>
-        <link>https://testcookbook.github.io/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</link>
-        <guid isPermaLink="true">https://testcookbook.github.io/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</guid>
+        <link>http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</link>
+        <guid isPermaLink="true">http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</guid>
         
         
         <category>javascript</category>
@@ -49,8 +49,8 @@ experience off right with TDD as you learn the language.
 &lt;a href=&quot;/book/test_frameworks/clojureTest/introToClojureTest.html&quot;&gt;Introduction to Clojure.Test&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Sep 2016 06:22:12 -0500</pubDate>
-        <link>https://testcookbook.github.io/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</link>
-        <guid isPermaLink="true">https://testcookbook.github.io/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</guid>
+        <link>http://www.testcookbook.com/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</link>
+        <guid isPermaLink="true">http://www.testcookbook.com/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</guid>
         
         
         <category>clojure</category>
@@ -67,8 +67,8 @@ experience off right with TDD as you learn the language.
 cookbook &lt;a href=&quot;/book/rest/javascript/frisbyjs.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 </description>
         <pubDate>Thu, 29 Sep 2016 06:22:12 -0500</pubDate>
-        <link>https://testcookbook.github.io/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</link>
-        <guid isPermaLink="true">https://testcookbook.github.io/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</guid>
+        <link>http://www.testcookbook.com/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</link>
+        <guid isPermaLink="true">http://www.testcookbook.com/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</guid>
         
         
         <category>javascript</category>
