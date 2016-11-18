@@ -6,9 +6,37 @@
 </description>
     <link>https://testcookbook.github.io/</link>
     <atom:link href="https://testcookbook.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Nov 2016 15:24:46 -0600</pubDate>
-    <lastBuildDate>Thu, 17 Nov 2016 15:24:46 -0600</lastBuildDate>
+    <pubDate>Fri, 18 Nov 2016 09:27:36 -0600</pubDate>
+    <lastBuildDate>Fri, 18 Nov 2016 09:27:36 -0600</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Adding more content while you vote.</title>
+        <description>&lt;h1 id=&quot;adding-more-content-while-you-vote&quot;&gt;Adding more content while you vote.&lt;/h1&gt;
+
+&lt;p&gt;Happy Taco Tuesday and Voting day for 2016.&lt;/p&gt;
+
+&lt;p&gt;Todays adds included some updates to starting a Java project using either
+&lt;a href=&quot;/book/programming/java/maven.html&quot;&gt;Maven&lt;/a&gt; or
+&lt;a href=&quot;/book/programming/java/gradle.html&quot;&gt;Gradle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We also added an introduction to Postman and doing a very simple REST query and
+building some simple tests. &lt;a href=&quot;/book/rest/postman/postman.html&quot;&gt;Intro to Postman&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Nov 2016 05:22:12 -0600</pubDate>
+        <link>https://testcookbook.github.io/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</link>
+        <guid isPermaLink="true">https://testcookbook.github.io/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</guid>
+        
+        
+        <category>javascript</category>
+        
+        <category>Postman</category>
+        
+        <category>Gradle</category>
+        
+        <category>Maven</category>
+        
+      </item>
     
       <item>
         <title>Clojure.Test</title>
