@@ -1,4 +1,5 @@
 import subprocess
+import json
 
 def remove_lines(fn, s, e):
     string = ""
@@ -25,6 +26,12 @@ def append(fn, txt):
     f.write(txt)
     f.close()
 
+def write_json(fn, d):
+    f = open(fn, 'w+')
+    txt = json.dumps(d, sort_keys=True, indent=4, separators=(',', ': '))
+    f.write(txt)
+    f.close()
+
 def run(cmds):
     p = subprocess.Popen(cmds, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in p.stdout.readlines():
@@ -32,3 +39,12 @@ def run(cmds):
     retval = p.wait()
     #return value 0 if successful 1 if fail exit status
     return retval
+
+def getJson(fn):
+    s = open(fn, 'r').read()
+    return json.loads(s)
+
+def title(t):
+    print "**************************************"
+    print t
+    print "**************************************"
