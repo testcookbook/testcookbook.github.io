@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  "CucmberJS Introduction"
+title:  "CucumberJS Introduction"
 description: "Getting started using CucumberJS for testing."
 ---
 # CucumberJS Introduction
