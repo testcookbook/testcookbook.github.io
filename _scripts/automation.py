@@ -26,6 +26,11 @@ def append(fn, txt):
     f.write(txt)
     f.close()
 
+def write(fn, txt):
+    f = open(fn, 'w+')
+    f.write(txt)
+    f.close()
+
 def write_json(fn, d):
     f = open(fn, 'w+')
     txt = json.dumps(d, sort_keys=True, indent=4, separators=(',', ': '))
