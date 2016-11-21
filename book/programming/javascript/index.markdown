@@ -14,6 +14,9 @@ description: "Testing recipes using Javascript"
 [Jasmine inline with HTML](/book/web_testing/javascript/jasmine_inline_html.html)
 : Running Jasmine in a web browser.
 
+[CucumberJS Introduction](/book/programming/javascript/cucumberjs_intro.html)
+: Introduction to testing with CucumberJS.
+
 [CucumberJS with Selenium Webdriver](/book/web_testing/javascript/cucumberjs-selenium.html)
 : Testing a website using CucumberJS and Selenium Webdriver
 

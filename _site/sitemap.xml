@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.testcookbook.com/cucumber/cucumber-js/cucumberjs/javascript/2016/11/21/Introduction-To-CucumberJS.html</loc>
+    
+    <lastmod>2016-11-21T15:00:00-06:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</loc>
     
     <lastmod>2016-11-08T05:22:12-06:00</lastmod>
@@ -140,6 +149,15 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/web_testing/javascript/cucumberjs-selenium.html</loc>
+    <lastmod>2016-11-18T09:25:16-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/javascript/cucumberjs_intro.html</loc>
     <lastmod>2016-11-18T09:25:16-06:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>

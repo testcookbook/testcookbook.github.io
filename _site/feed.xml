@@ -6,9 +6,30 @@
 </description>
     <link>http://www.testcookbook.com/</link>
     <atom:link href="http://www.testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 18 Nov 2016 14:48:03 -0600</pubDate>
-    <lastBuildDate>Fri, 18 Nov 2016 14:48:03 -0600</lastBuildDate>
+    <pubDate>Mon, 21 Nov 2016 16:08:37 -0600</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2016 16:08:37 -0600</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>CucumberJS Introduction</title>
+        <description>&lt;h1 id=&quot;cucumberjs-introduction-recipe&quot;&gt;CucumberJS Introduction Recipe&lt;/h1&gt;
+
+&lt;p&gt;New quick recipe for cucumber js.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 21 Nov 2016 15:00:00 -0600</pubDate>
+        <link>http://www.testcookbook.com/cucumber/cucumber-js/cucumberjs/javascript/2016/11/21/Introduction-To-CucumberJS.html</link>
+        <guid isPermaLink="true">http://www.testcookbook.com/cucumber/cucumber-js/cucumberjs/javascript/2016/11/21/Introduction-To-CucumberJS.html</guid>
+        
+        
+        <category>cucumber</category>
+        
+        <category>cucumber-js</category>
+        
+        <category>cucumberjs</category>
+        
+        <category>javascript</category>
+        
+      </item>
     
       <item>
         <title>Adding more content while you vote.</title>

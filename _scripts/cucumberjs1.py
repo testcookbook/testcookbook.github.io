@@ -2,8 +2,9 @@ import automation as at
 import jekyll_include as ji
 from jekyll_include import Jekyll
 
-python = Jekyll("python/introPythonTest", "python")
-bash = Jekyll("python/introPythonTest", "text")
+feature = Jekyll("javascript/introCucumberJS", "gherkin")
+javascript = Jekyll("javascript/introCucumberJS", "javascript")
+bash = Jekyll("javascript/introCucumberJS", "text")
 
 def create_project():
     at.title("Create Project")
@@ -58,6 +59,7 @@ Feature: First Test
         Then the total should be 7
 """
     at.write('firstTest/features/first_feature.feature', txt)
+    feature.code("first_feature", txt)
 
 def first_steps():
     txt = """
@@ -79,6 +81,7 @@ module.exports = function () {
 }
 """
     at.write('firstTest/features/step_definitions/first_steps.js', txt)
+    javascript.code("first_steps", txt)
 
 
 cleanup()

@@ -6,17 +6,36 @@ date:   2016-11-08 08:52:00 -0500
 ---
 # Create a NodeJS project
 
+**Ingredients**
+
+* NodeJS
+
+**Bake Time**
+
+* 1 - 2 min
+
+**Instructions**
+
 Basic steps to creating a NodeJS package.json file.  
 
+## Quick Initialize project
 
 <header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
 
+```
+$ npm init -f
+```
+
+## Prompted Initialization of Project
+<header class="cm1 w3-grey">
+  {% include cliIcon.html%}
+  Command Line
+</header>
 
 ```
-$ mkdir test
 $ npm init
 name: (test)
 version: (1.0.0)
@@ -44,5 +63,3 @@ About to write to /home/user/test/package.json:
 
 Is this ok? (yes)
 ```
-
-
