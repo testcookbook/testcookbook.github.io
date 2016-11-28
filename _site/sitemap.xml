@@ -4,7 +4,7 @@
   <url>
     <loc>http://www.testcookbook.com/bash/shpec/testing/2016/11/28/Introduction-To-SHPEC.html</loc>
     
-    <lastmod>2016-11-28T04:00:00-06:00</lastmod>
+    <lastmod>2016-11-28T09:00:00-06:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -211,52 +211,7 @@
   
 
   <url>
-    <loc>http://www.testcookbook.com/book/basics/</loc>
-    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/bash/</loc>
-    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/clojure/</loc>
-    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/java/</loc>
-    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/javascript/</loc>
-    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/php/</loc>
+    <loc>http://www.testcookbook.com/book/programming/ruby/</loc>
     <lastmod>2016-11-18T11:28:03-06:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
@@ -274,7 +229,16 @@
   
 
   <url>
-    <loc>http://www.testcookbook.com/book/programming/ruby/</loc>
+    <loc>http://www.testcookbook.com/book/programming/php/</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/javascript/</loc>
     <lastmod>2016-11-18T11:28:03-06:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
@@ -292,7 +256,43 @@
   
 
   <url>
+    <loc>http://www.testcookbook.com/book/programming/java/</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/clojure/</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
     <loc>http://www.testcookbook.com/</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/basics/</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/bash/</loc>
     <lastmod>2016-11-18T11:28:03-06:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
@@ -365,6 +365,15 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/postman/postman.html</loc>
+    <lastmod>2016-11-18T11:28:03-06:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/bash/shpecTestingWithCurl.html</loc>
     <lastmod>2016-11-18T11:28:03-06:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>

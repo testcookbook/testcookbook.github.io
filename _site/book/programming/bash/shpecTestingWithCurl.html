@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SHPEC and Curl to test endpoints</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-language" content="en-us">
+    <meta name="description" content="SHPEC and Curl to test endpoints">
+    <link rel="stylesheet" href="/lib/w3.css" />
+    <link rel="stylesheet" href="/lib/style.css" />
+    <link rel="stylesheet" href="/lib/zenburn.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85156207-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Book",
+  "url": "http://www.testcookbook.com",
+  "name": "Test Cookbook",
+  "author": "Ben Harrington",
+  "bookFormat": {
+  	"@type": "BookFormatType",
+  	"name": "Test Cookbook",
+    "url": "http://www.testcookbook.com"
+  }
+}
+</script>
+
+  </head>
+
+  <body>
+    <div class="w3-container w3-blue">
+      <div class="titleHeader">
+        <span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-book" aria-hidden="true"></i>
+        </span>
+        <!--<span class="w3-opennav w3-hide-large w3-hide-medium" onclick="w3_open()">&#9776;</span>-->
+        <a class="w3-btn w3-blue" href="/">
+          <i class="fa fa-book w3-hide-small" aria-hidden="true"></i>
+          Test Cookbook</a>
+      </div>
+    </div>
+    <div class="w3-row">
+      <div class="w3-col m4 l3 w3-green">
+        <nav class="w3-sidebar w3-collapse" id="mySidenav">
+          <a href="#" onclick="w3_close()" class="w3-btn w3-closenav w3-hide-large w3-hide-medium">Close &times;</a>
+          <a href="/news.html">News</a>
+<a href="/index.html">Introduction</a>
+<a href="/book/programming/bash">Bash</a>
+<a href="/book/programming/clojure">Clojure</a>
+<a href="/book/programming/java">Java</a>
+<a href="/book/programming/javascript">Javascript</a>
+<a href="/book/programming/php">PHP</a>
+<a href="/book/programming/python">Python</a>
+<a href="/book/programming/ruby">Ruby</a>
+<a href="/book/glossary/glossary.html">Glossary</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeGwJ-QoKN_QLvGL5VEWP2YJdnRSTuGV3J3JovR42mdEYAndw/viewform">Feedback</a>
+
+        </nav>
+      </div>
+      <div class="w3-col m8 l9">
+        <div class="w3-container">
+          <h1 id="shpec-and-curl-to-test-endpoints">SHPEC and Curl to test endpoints</h1>
+
+<p>SHPEC makes it easy to wrap some Bash commands with some assertions.  Curl is a
+data transfer tool that supports a wide variety of protocols.  To test endpoints
+you will be transferring data from a HTTP or HTTPS resource.</p>
+
+<p><strong>Ingredients</strong></p>
+
+<ul>
+  <li>Bash</li>
+  <li>Curl</li>
+  <li>Date</li>
+</ul>
+
+<p><strong>Special Ingredients</strong></p>
+
+<p>If you are running a Mac you will need to install coreutils to get the same
+GNU standard options for date.  Recommended Way is to install using homebrew.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install coreutils
+</code></pre>
+</div>
+
+<p><strong>Bake Time</strong></p>
+
+<p>15 min.</p>
+
+<p><strong>Instructions</strong></p>
+
+<p>Start by creating a project structure.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>mkdir shpec
+mkdir -p shpec/matchers
+</code></pre>
+</div>
+
+<p>Within the matchers directory create a file called <em>curl_matchers.sh</em>.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>status_200() {
+  assert present "$1" "HTTP/1.1 200 OK"
+}
+
+content_type() {
+  assert present "$1" "Content-Type: $2;"
+}
+</code></pre>
+</div>
+
+<p>Notice that there are 2 matcher functions one for Status code and one for
+Content-Type.</p>
+
+<p>The function <em>status_200()</em> takes in 1 argument $1 which will be the data returned
+back from Curl.</p>
+
+<p>The function <em>content_type()</em> will take 2 arguments $1 and $2.  $1 is the data
+that comes from Curl and $2 is the Content-Type that we are looking for.</p>
+
+<p>Once you have your matchers create a new file called <em>first_curl_shpec.sh</em> and
+put in the following code.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>describe "SHPEC Curl Endpoint Test"
+  start="$(date +%s%3N)"
+  output="$(curl -s -i 'http://www.testcookbook.com/lib/REST/test.json')"
+  end="$(date +%s%3N)"
+  runtime=$((end-start))
+
+  it "has runtime less than 1 second"
+    assert lt $runtime "1000"
+  end
+
+  it "returns a 200 status code"
+    assert status_200 "$output"
+  end
+
+  it "returns an application/json contentType"
+    assert content_type "$output" "application/json"
+  end
+end
+</code></pre>
+</div>
+
+<p>You will notice that immediately after the describe block there is a start,
+output, end and runtime. The start and end variables get the time before and
+after the Curl command.  This will allow us to calculate the milliseconds that
+it took to run that specific command.  The difference of these 2 values will be
+stored in runtime.</p>
+
+<p>The other major variable that we are using is output.  This is where we are
+storing the data returned from Curl.</p>
+
+<p>Curl it self has a couple arguments that will help in producing the data we need
+to create some useful tests.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>curl -s -i some-url
+</code></pre>
+</div>
+
+<p>The <em>-s</em> is used to suppress the progress bar from coming back in our data.  The
+ <em>-i</em> adds header information to the return value.  This is where we can see
+things like Content-Type, Cookies, etc.</p>
+
+<p>This will produce a result like the following and returns it within the output
+variable.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ curl -s -i 'http://www.testcookbook.com/lib/REST/test.json'
+HTTP/1.1 200 OK
+Server: GitHub.com
+Date: Mon, 28 Nov 2016 15:40:54 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 25
+Last-Modified: Mon, 28 Nov 2016 11:28:51 GMT
+Access-Control-Allow-Origin: *
+Expires: Mon, 28 Nov 2016 15:50:54 GMT
+Cache-Control: max-age=600
+Accept-Ranges: bytes
+X-GitHub-Request-Id: 2FDE25D5:59A4:126984DF:583C5006
+
+{
+  "name": "John Doe"
+}
+</code></pre>
+</div>
+
+<p>Once we have our data we can run asserts on the matchers that we created.</p>
+
+        </div>
+      </div>
+    </div>
+    <script>
+function w3_open() {
+  document.getElementById("mySidenav").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidenav").style.display = "none";
+}
+function myAccFunc(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-green", "");
+    }
+}
+    </script>
+  </body>
+</html>
