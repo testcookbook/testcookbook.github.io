@@ -6,9 +6,29 @@
 </description>
     <link>http://www.testcookbook.com/</link>
     <atom:link href="http://www.testcookbook.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 28 Nov 2016 05:07:19 -0600</pubDate>
-    <lastBuildDate>Mon, 28 Nov 2016 05:07:19 -0600</lastBuildDate>
+    <pubDate>Mon, 28 Nov 2016 05:28:00 -0600</pubDate>
+    <lastBuildDate>Mon, 28 Nov 2016 05:28:00 -0600</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Introduction to testing Bash with SHPEC</title>
+        <description>&lt;h1 id=&quot;introduction-testing-bash-with-shpec&quot;&gt;Introduction testing Bash with SHPEC&lt;/h1&gt;
+
+&lt;p&gt;Get started with testing Bash using SHPEC.  It is a simple framework similar to
+RSpec or Jasmine.  &lt;a href=&quot;/book/programming/bash/introToShpec.html&quot;&gt;SHPEC Testing&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 28 Nov 2016 04:00:00 -0600</pubDate>
+        <link>http://www.testcookbook.com/bash/shpec/testing/2016/11/28/Introduction-To-SHPEC.html</link>
+        <guid isPermaLink="true">http://www.testcookbook.com/bash/shpec/testing/2016/11/28/Introduction-To-SHPEC.html</guid>
+        
+        
+        <category>bash</category>
+        
+        <category>shpec</category>
+        
+        <category>testing</category>
+        
+      </item>
     
       <item>
         <title>CucumberJS Introduction</title>
