@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test Cookbook - News</title>
+    <title>Introduction to Bash testing with SHPEC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-language" content="en-us">
-    <meta name="description" content="Test Cookbook News">
+    <meta name="description" content="Introduction to Bash testing with SHPEC">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/zenburn.css" />
@@ -69,33 +69,69 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h1 class="w3-container">News</h1>
+          <h1 id="introduction-to-shpec">Introduction to SHPEC</h1>
 
-<ul class="post-list">
-  
-    <li>
-      <span class="post-meta">Nov 21, 2016</span> &gt;
-      <a class="post-link" href="/cucumber/cucumber-js/cucumberjs/javascript/2016/11/21/Introduction-To-CucumberJS.html">CucumberJS Introduction</a>
-    </li>
-  
-    <li>
-      <span class="post-meta">Nov 8, 2016</span> &gt;
-      <a class="post-link" href="/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html">Adding more content while you vote.</a>
-    </li>
-  
-    <li>
-      <span class="post-meta">Sep 29, 2016</span> &gt;
-      <a class="post-link" href="/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html">Clojure.Test</a>
-    </li>
-  
-    <li>
-      <span class="post-meta">Sep 29, 2016</span> &gt;
-      <a class="post-link" href="/javascript/frisbyjs/2016/09/29/Adding-Frisby.html">Adding FrisbyJS Docs</a>
-    </li>
-  
+<p>SHPEC brings a simple yet powerful ability to testing bash scripts, or even
+testing other systems using a set of bash commands.  Getting started you will
+need a few ingredients.</p>
+
+<p><strong>Ingredients</strong></p>
+
+<ul>
+  <li>Bash - If using Linux or Mac this is easy.  On Windows if you have Git bash that will work too.</li>
+  <li>SHPEC - Install from <a href="https://github.com/rylnd/shpec">https://github.com/rylnd/shpec</a></li>
 </ul>
 
-<p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p><strong>Bake Time</strong></p>
+
+<ul>
+  <li>5 min</li>
+</ul>
+
+<p><strong>Instructions</strong></p>
+
+<p>Start off by creating a directory to build tests in.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>mkdir shpec
+</code></pre>
+</div>
+
+<p>Create a file called “first_test_shpec.sh” and fill it with the code below.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>describe "test"
+  it "works"
+    assert equal "test" "test"
+   end
+end
+</code></pre>
+</div>
+
+<p>Lastly run the tests.</p>
+
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>shpec
+</code></pre>
+</div>
+
+<p>Now that you have a simple set of tests experiment using some of the other
+matchers available.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Binary Matchers
+equal         # equality
+unequal       # inequality
+gt            # algebraic '&gt;'
+lt            # algebraic '&lt;'
+match         # regex match
+no_match      # lack of regex match
+
+Unary Matchers
+present       # string presence
+blank         # string absence
+file_present  # file presence
+file_absent   # file absence
+symlink       # tests a symlink's target
+test          # evaluates a test string
+</code></pre>
+</div>
 
         </div>
       </div>
