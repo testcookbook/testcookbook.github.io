@@ -17,6 +17,9 @@ description: "Testing recipes using Javascript"
 [CucumberJS Introduction](/book/programming/javascript/cucumberjs_intro.html)
 : Introduction to testing with CucumberJS.
 
+[CucumberJS and Chai assertions](/book/programming/javascript/cucumberjs_chai_three_ways.html)
+: CucumberJS with Chai assertions Three ways.  Assert, Expect and Should.  
+
 [CucumberJS with Selenium Webdriver](/book/web_testing/javascript/cucumberjs-selenium.html)
 : Testing a website using CucumberJS and Selenium Webdriver
 
