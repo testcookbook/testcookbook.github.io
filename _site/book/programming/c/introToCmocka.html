@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Introduction to testing Bash with SHPEC</title>
+    <title>C Unit Testing with cmocka</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-language" content="en-us">
-    <meta name="description" content="A simple way to get started testing Bash using SHPEC">
+    <meta name="description" content="C Unit Testing with cmocka">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/zenburn.css" />
@@ -70,15 +70,49 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h2 id="introduction-testing-bash-with-shpec">Introduction testing Bash with SHPEC</h2>
+          <h1 id="c-unit-testing-with-cmocka">C Unit Testing with cmocka</h1>
 
-<p>Get started with testing Bash using SHPEC.  It is a simple framework similar to
-RSpec or Jasmine.  <a href="/book/programming/bash/introToShpec.html">SHPEC Testing</a></p>
+<p><strong>Ingredients</strong>
+* C compiler
+* <a href="https://cmocka.org/">cmocka</a></p>
 
-<h2 id="shpec-testing-with-curl-to-test-endpoints">SHPEC testing with Curl to test endpoints</h2>
+<p><strong>Bake Time</strong>
+* 10 min</p>
 
-<p>Using Curl and SHPEC together to make assertions on what an endpoint should
-return. <a href="/book/programming/bash/shpecTestingWithCurl.html">SHPEC and Curl</a></p>
+<p><strong>Instructions</strong></p>
+
+<p>Create a new file called “test.c”.  This will be a simple src file to create a
+basic test.</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdarg.h&gt;
+#include &lt;stddef.h&gt;
+#include &lt;setjmp.h&gt;
+#include &lt;cmocka.h&gt;
+</span>
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">failing_test</span><span class="p">()</span> <span class="p">{</span>
+	<span class="n">assert_false</span><span class="p">(</span><span class="mi">1</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+	<span class="k">const</span> <span class="k">struct</span> <span class="n">CMUnitTest</span> <span class="n">tests</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+		<span class="n">cmocka_unit_test</span><span class="p">(</span><span class="n">failing_test</span><span class="p">),</span>
+	<span class="p">};</span>
+	<span class="k">return</span> <span class="n">cmocka_run_group_tests</span><span class="p">(</span><span class="n">tests</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Build your tests</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gcc -o tests test.c -l cmocka -L /usr/local/lib
+</code></pre>
+</div>
+
+<p>Run your tests</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ./tests
+</code></pre>
+</div>
 
         </div>
       </div>
