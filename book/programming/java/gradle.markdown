@@ -14,27 +14,16 @@ gradle from [https://gradle.org/](https://gradle.org/).  You will also need
 Java on your system too.  You can get the jdk from Oracle.  Once you have
 installed Java and downloaded Gradle you can update your paths and init a project.
 
-<div class="w3-panel w3-pale-yellow w3-bottombar w3-topbar w3-border-green">
-{% include tipIcon.html%}
-If you chose Maven open up the 'pom.xml' and change to the latest version of
-JUnit which at this time is '4.12'.  Older versions of JUnit work a little
-different and may not compile as expected for these lessons.
-</div>
-
-
 <header class="cm1 w3-grey">
   {% include cliIcon.html%}
   Command Line
 </header>
-
 
 ```
 $ export PATH=$PATH:/path/to/gradle/bin
 $ mkdir YourProject
 $ gradle init --type=java-library
 ```
-
-
 
 Gradle will now build a basic project structure for Java.  If you look in the
 directory you will have a src directory.  This is where you can put your
