@@ -19,6 +19,8 @@ cd restapi
 gradle init --type=java-library
 ```
 
+![gradle init](/lib/images/java/gradleInit.gif)
+
 Then update your build.gradle file.
 
 ```groovy
