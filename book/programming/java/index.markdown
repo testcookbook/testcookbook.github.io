@@ -16,3 +16,6 @@ description: "Testing recipes using Java"
 
 [Java JVM Cucumber with Selenium Web Driver](/book/web_testing/java/cucumber_selenium.html)
 : Test website with Cucumber JVM using Selenium web driver.
+
+[REST api with Spark Java](/book/programming/java/sparkjava.html)
+: Create simple REST api for mocking data using Spark Java.

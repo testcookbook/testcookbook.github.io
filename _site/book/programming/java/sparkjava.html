@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gradle</title>
+    <title>Simple RestApi using Spark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-language" content="en-us">
-    <meta name="description" content="Create a Gradle project">
+    <meta name="description" content="Create a simple REST api for mocking data using Spark">
     <link rel="stylesheet" href="/lib/w3.css" />
     <link rel="stylesheet" href="/lib/style.css" />
     <link rel="stylesheet" href="/lib/zenburn.css" />
@@ -70,43 +70,49 @@
       </div>
       <div class="w3-col m8 l9">
         <div class="w3-container">
-          <h1 id="create-a-gradle-jvm-project">Create a Gradle JVM Project</h1>
+          <h1 id="create-a-simple-rest-api-using-spark">Create a simple REST api using Spark</h1>
 
-<p>Gradle is a build tool that allows package dependency resolutions as well as
-tasks to complete and test your application.</p>
+<p>Depending on the test environments you have sometimes you may want to build your
+own REST api that can mock data for your test scenarios.</p>
 
-<p>When getting started it is recommended that you download the latest version of
-gradle from <a href="https://gradle.org/">https://gradle.org/</a>.  You will also need
-Java on your system too.  You can get the jdk from Oracle.  Once you have
-installed Java and downloaded Gradle you can update your paths and init a project.</p>
+<h2 id="getting-started">Getting started</h2>
 
-<header class="cm1 w3-grey">
-  <i class="fa fa-terminal" aria-hidden="true"></i>
-<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+<p>Create a new project directory and add Spark dependencies.</p>
 
-  Command Line
-</header>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ export PATH=$PATH:/path/to/gradle/bin
-$ mkdir YourProject
-$ gradle init --type=java-library
+<div class="language-text highlighter-rouge"><pre class="highlight"><code>mkdir restapi
+cd restapi
+gradle init --type=java-library
 </code></pre>
 </div>
 
-<p>Gradle will now build a basic project structure for Java.  If you look in the
-directory you will have a src directory.  This is where you can put your
-application source files and tests.</p>
+<p>Then update your build.gradle file.</p>
 
-<p>To run the tests</p>
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'java'</span>
+<span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'application'</span>
+<span class="n">mainClassName</span> <span class="o">=</span> <span class="s2">"RestApi"</span>
 
-<header class="cm1 w3-grey">
-  <i class="fa fa-terminal" aria-hidden="true"></i>
-<!--<img alt="tip image" src="/lib/images/cli.png" class="icon"/>-->
+<span class="n">repositories</span> <span class="o">{</span>
+    <span class="n">jcenter</span><span class="o">()</span>
+<span class="o">}</span>
 
-  Command Line
-</header>
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s1">'com.sparkjava:spark-core:2.5.4'</span>
+    <span class="n">testCompile</span> <span class="s1">'junit:junit:4.12'</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gradle test
+<p>Create a new file called RestApi.java and place it under the
+“restapi/src/main/java” directory.</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">spark</span><span class="o">.</span><span class="na">Spark</span><span class="o">.*;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RestApi</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">get</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">"Root Route"</span><span class="o">);</span>
+        <span class="n">get</span><span class="o">(</span><span class="s">"/hello"</span><span class="o">,</span> <span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">"Hello World"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 
