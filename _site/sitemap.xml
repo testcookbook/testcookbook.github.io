@@ -2,6 +2,15 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.testcookbook.com/go/testing/2017/03/15/Simple-test-using-Go.html</loc>
+    
+    <lastmod>2017-03-15T16:00:00+01:00</lastmod>
+    
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://www.testcookbook.com/bash/shpec/testing/2016/11/28/Introduction-To-SHPEC.html</loc>
     
     <lastmod>2016-11-28T15:00:00+00:00</lastmod>
