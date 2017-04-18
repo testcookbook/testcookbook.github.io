@@ -4,7 +4,7 @@
   <url>
     <loc>http://www.testcookbook.com/go/testing/2017/03/15/Simple-test-using-Go.html</loc>
     
-    <lastmod>2017-03-15T16:00:00+01:00</lastmod>
+    <lastmod>2017-03-15T10:00:00-05:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -13,7 +13,7 @@
   <url>
     <loc>http://www.testcookbook.com/bash/shpec/testing/2016/11/28/Introduction-To-SHPEC.html</loc>
     
-    <lastmod>2016-11-28T15:00:00+00:00</lastmod>
+    <lastmod>2016-11-28T09:00:00-06:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -22,7 +22,7 @@
   <url>
     <loc>http://www.testcookbook.com/cucumber/cucumber-js/cucumberjs/javascript/2016/11/21/Introduction-To-CucumberJS.html</loc>
     
-    <lastmod>2016-11-21T21:00:00+00:00</lastmod>
+    <lastmod>2016-11-21T15:00:00-06:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -31,7 +31,7 @@
   <url>
     <loc>http://www.testcookbook.com/javascript/postman/gradle/maven/2016/11/08/Adding-more-content-while-you-vote.html</loc>
     
-    <lastmod>2016-11-08T11:22:12+00:00</lastmod>
+    <lastmod>2016-11-08T05:22:12-06:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -40,7 +40,7 @@
   <url>
     <loc>http://www.testcookbook.com/clojure/clojure.test/2016/09/29/Introduction-To-Clojure-Test.html</loc>
     
-    <lastmod>2016-09-29T12:22:12+01:00</lastmod>
+    <lastmod>2016-09-29T06:22:12-05:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -49,7 +49,7 @@
   <url>
     <loc>http://www.testcookbook.com/javascript/frisbyjs/2016/09/29/Adding-Frisby.html</loc>
     
-    <lastmod>2016-09-29T12:22:12+01:00</lastmod>
+    <lastmod>2016-09-29T06:22:12-05:00</lastmod>
     
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -59,7 +59,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/about/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -68,7 +68,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/cucumber/about_cucumber.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -77,7 +77,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/galenframework/about_galen_framework.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -86,7 +86,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/gauge/about_gauge.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -95,7 +95,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/jasmine/about_jasmine.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -104,7 +104,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/junit/about_junit.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -113,7 +113,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/lettuce/about_lettuce.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -122,7 +122,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/phpunit/about_phpunit.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -131,7 +131,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/robotframework/about_robot_framework.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -140,7 +140,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/rspec/about_rspec.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -149,7 +149,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/web_testing/ruby/cucumber-ruby-watir-selenium.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -158,7 +158,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/web_testing/java/cucumber_selenium.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -167,7 +167,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/web_testing/javascript/cucumberjs-selenium.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -176,7 +176,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/javascript/cucumberjs_chai_three_ways.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -185,7 +185,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/javascript/cucumberjs_intro.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -194,7 +194,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/javascript/frisbyjs.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -203,7 +203,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/gherkin.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -212,7 +212,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/glossary/glossary.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -221,106 +221,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/java/gradle.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/python/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/php/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/ruby/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/basics/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/javascript/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/bash/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/c/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/clojure/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
-    <changefreq>Monthly</changefreq>
-    <priority>.8</priority>
-  </url>
-
-  
-
-  <url>
-    <loc>http://www.testcookbook.com/book/programming/go/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -329,7 +230,115 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/java/</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/php/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/python/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/ruby/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/go/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/clojure/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/c/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/bash/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/javascript/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/basics/</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
+    <changefreq>Monthly</changefreq>
+    <priority>.8</priority>
+  </url>
+
+  
+
+  <url>
+    <loc>http://www.testcookbook.com/book/programming/bash/introToBats.html</loc>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -338,7 +347,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/test_frameworks/clojureTest/introToClojureTest.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -347,7 +356,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/c/introToCmocka.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -356,7 +365,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/bash/introToShpec.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -365,7 +374,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/web_testing/javascript/jasmine_inline_html.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -374,7 +383,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/json_schema.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -383,7 +392,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/java/maven.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -392,7 +401,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/news.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -401,7 +410,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/javascript/npm_project.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -410,7 +419,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/postman/postman.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -419,7 +428,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/bash/shpecTestingWithCurl.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -428,7 +437,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/java/sparkjava.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -437,7 +446,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/table_of_contents.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -446,7 +455,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/go/testingWithGo.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -455,7 +464,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/python/validate_json_python.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -464,7 +473,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/rest/ruby/validate_json_ruby.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
@@ -473,7 +482,7 @@
 
   <url>
     <loc>http://www.testcookbook.com/book/programming/wait-vs-sleep.html</loc>
-    <lastmod>2016-11-17T21:20:45+00:00</lastmod>
+    <lastmod>2017-03-23T12:04:35-05:00</lastmod>
     <changefreq>Monthly</changefreq>
     <priority>.8</priority>
   </url>
