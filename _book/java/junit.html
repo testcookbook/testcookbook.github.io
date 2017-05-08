@@ -1,0 +1,766 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>JUnit · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="junit/cucumber-and-selenium.html" />
+    
+    
+    <link rel="prev" href="intro-to-maven.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">Preface</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Common Automation Concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../common-automation-concepts/gherkin.html">
+            
+                <a href="../common-automation-concepts/gherkin.html">
+            
+                    
+                    Gherkin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../common-automation-concepts/assumption-styles.html">
+            
+                <a href="../common-automation-concepts/assumption-styles.html">
+            
+                    
+                    Assumption Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Bash</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../Bash.html">
+            
+                <a href="../Bash.html">
+            
+                    
+                    Bash
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../shpec-testing.html">
+            
+                <a href="../shpec-testing.html">
+            
+                    
+                    SHPEC Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../shpec-and-curl.html">
+            
+                <a href="../shpec-and-curl.html">
+            
+                    
+                    SHPEC and Curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">C</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../c/unit-test-with-cmocka.html">
+            
+                <a href="../c/unit-test-with-cmocka.html">
+            
+                    
+                    Unit Test with CMOCKA
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Clojure</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../clojure/unit-test-with-clojure.html">
+            
+                <a href="../clojure/unit-test-with-clojure.html">
+            
+                    
+                    Unit Test with Clojure
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Go</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../go/test-with-go.html">
+            
+                <a href="../go/test-with-go.html">
+            
+                    
+                    Test with Go
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Java</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="intro-to-gradle.html">
+            
+                <a href="intro-to-gradle.html">
+            
+                    
+                    Intro to Gradle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="intro-to-maven.html">
+            
+                <a href="intro-to-maven.html">
+            
+                    
+                    Intro to Maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.3" data-path="junit.html">
+            
+                <a href="junit.html">
+            
+                    
+                    JUnit
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="junit/cucumber-and-selenium.html">
+            
+                <a href="junit/cucumber-and-selenium.html">
+            
+                    
+                    Cucumber & Selenium
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Javascript</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../javascript/first-nodejs-project.html">
+            
+                <a href="../javascript/first-nodejs-project.html">
+            
+                    
+                    First NodeJS Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../javascript/jasmine.html">
+            
+                <a href="../javascript/jasmine.html">
+            
+                    
+                    Jasmine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.2.1" data-path="../javascript/jasmine/jasmine-within-a-browser.html">
+            
+                <a href="../javascript/jasmine/jasmine-within-a-browser.html">
+            
+                    
+                    Jasmine within a Browser
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="../javascript/cucumber-js.html">
+            
+                <a href="../javascript/cucumber-js.html">
+            
+                    
+                    Cucumber JS
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.3.1" data-path="../javascript/cucumber-js/cucumber-+-chai.html">
+            
+                <a href="../javascript/cucumber-js/cucumber-+-chai.html">
+            
+                    
+                    Cucumber + Chai
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3.2" data-path="../javascript/cucumber-js/cucumberjs-+-selenium.html">
+            
+                <a href="../javascript/cucumber-js/cucumberjs-+-selenium.html">
+            
+                    
+                    CucumberJS + Selenium
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="../javascript/frisbyjs.html">
+            
+                <a href="../javascript/frisbyjs.html">
+            
+                    
+                    FrisbyJS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="../javascript/galen-framework.html">
+            
+                <a href="../javascript/galen-framework.html">
+            
+                    
+                    Galen Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PHP</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../php/phpunit.html">
+            
+                <a href="../php/phpunit.html">
+            
+                    
+                    PHPUnit
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1.1" data-path="../php/phpunit/phpunit-+-selenium.html">
+            
+                <a href="../php/phpunit/phpunit-+-selenium.html">
+            
+                    
+                    PHPUnit + Selenium
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Python</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../python/lettuce.html">
+            
+                <a href="../python/lettuce.html">
+            
+                    
+                    Lettuce
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.1" data-path="../python/lettuce/lettuce-+-selenium.html">
+            
+                <a href="../python/lettuce/lettuce-+-selenium.html">
+            
+                    
+                    Lettuce + Selenium
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="../python/robot-framework.html">
+            
+                <a href="../python/robot-framework.html">
+            
+                    
+                    Robot Framework
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="../python/json-schema-validation.html">
+            
+                <a href="../python/json-schema-validation.html">
+            
+                    
+                    JSON Schema Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Ruby</li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../ruby/rspec.html">
+            
+                <a href="../ruby/rspec.html">
+            
+                    
+                    RSpec Unit Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="11.2" data-path="../ruby/cucumber-+-ruby.html">
+            
+                <a href="../ruby/cucumber-+-ruby.html">
+            
+                    
+                    Cucumber + Ruby
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >JUnit</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="junit">JUnit </h1>
+<p>JUnit is a Java framework for writing repeatable tests. Primarily these would be unit tests, however you can bend it to your particular needs.</p>
+<h2 id="getting-started">Getting Started </h2>
+<p>When working with most Java projects you generally want to use a build tool. For JUnit tests there are a couple of build tools that you are most likely to see and use. For this exercise feel free to try out either Maven or Gradle. If this is your first Java project check out the section on initializing<a href="http://www.testcookbook.com/book/programming/java/maven.html" target="_blank">Maven</a>or<a href="http://www.testcookbook.com/book/programming/java/gradle.html" target="_blank">Gradle</a>.</p>
+<p>Once you have created a new Java project, create a new file within the &#x2018;src/main/java/path/to/app&#x2019; directory called &#x2018;AddNumberTest.java&#x2019;.</p>
+<p>src/main/java/path/to/app/AddNumberTest.java</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.assertEquals;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddNumberTest</span> </span>{
+  <span class="hljs-meta">@Test</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addsNumbersExpression</span><span class="hljs-params">()</span> </span>{
+    assertEquals(<span class="hljs-number">2</span>+<span class="hljs-number">3</span>, <span class="hljs-number">5</span>);
+  }
+
+}
+</code></pre>
+<p>You should now be ready to run your tests.</p>
+<p>Command Line</p>
+<pre><code># Maven User
+$ mvn test
+
+# Gradle User
+$ gradle test
+</code></pre><p>Now that we have a real basic test lets try a small amount of TDD and build a class that adds up 2 numbers. Making some modifications to the AddNumberTest.java so that it looks like.</p>
+<p>AddNumberTest.java</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.junit.Assert.assertEquals;
+<span class="hljs-keyword">import</span> org.junit.Test;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddNumberTest</span> </span>{
+  <span class="hljs-meta">@Test</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addsNumbersExpression</span><span class="hljs-params">()</span> </span>{
+    AddNumber an = <span class="hljs-keyword">new</span> AddNumber(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);
+    assertEquals(an.total, <span class="hljs-number">5</span>);
+  }
+
+}
+</code></pre>
+<p>If you were to run the tests now you would get an error since AddNumber has not been created. Lets see if we can make this test pass with some code.</p>
+<p>src/main/java/path/to/app/AddNumber.java</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AddNumber</span> </span>{
+
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> num1;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> num2;
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> total;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AddNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n1, <span class="hljs-keyword">int</span> n2)</span> </span>{
+    num1 = n1;
+    num2 = n2;
+    total = n1 + n2;
+  }
+
+}
+</code></pre>
+<p>Now try running the tests. You should get something like.</p>
+<p>Command Line</p>
+<pre><code>-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running AddNumberTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in AddNumberTest
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.637 s
+[INFO] Finished at: 2016-10-07T11:41:55-05:00
+[INFO] Final Memory: 15M/166M
+[INFO] ------------------------------------------------------------------------
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="intro-to-maven.html" class="navigation navigation-prev " aria-label="Previous page: Intro to Maven">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="junit/cucumber-and-selenium.html" class="navigation navigation-next " aria-label="Next page: Cucumber & Selenium">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"JUnit","level":"7.3","depth":1,"next":{"title":"Cucumber & Selenium","level":"7.4","depth":1,"path":"java/junit/cucumber-and-selenium.md","ref":"java/junit/cucumber-and-selenium.md","articles":[]},"previous":{"title":"Intro to Maven","level":"7.2","depth":1,"path":"java/intro-to-maven.md","ref":"java/intro-to-maven.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"java/junit.md","mtime":"2017-05-08T13:20:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T13:26:52.228Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
