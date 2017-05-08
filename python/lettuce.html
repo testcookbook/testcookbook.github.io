@@ -111,7 +111,20 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../common-automation-concepts/gherkin.html">
+        <li class="chapter " data-level="2.1" data-path="../common-automation-concepts/assumption-styles.html">
+            
+                <a href="../common-automation-concepts/assumption-styles.html">
+            
+                    
+                    Assumption Styles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../common-automation-concepts/gherkin.html">
             
                 <a href="../common-automation-concepts/gherkin.html">
             
@@ -124,12 +137,12 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="../common-automation-concepts/assumption-styles.html">
+        <li class="chapter " data-level="2.3" data-path="../common-automation-concepts/json-schema.html">
             
-                <a href="../common-automation-concepts/assumption-styles.html">
+                <a href="../common-automation-concepts/json-schema.html">
             
                     
-                    Assumption Styles
+                    JSON-Schema
             
                 </a>
             
@@ -425,6 +438,19 @@
             
         </li>
     
+        <li class="chapter " data-level="8.6" data-path="../javascript/json-schema/tiny-validator.html">
+            
+                <a href="../javascript/json-schema/tiny-validator.html">
+            
+                    
+                    Tiny Validator v4
+            
+                </a>
+            
+
+            
+        </li>
+    
 
     
         
@@ -620,7 +646,7 @@
 <pre><code>$ mkdir lettuce
 $ cd lettuce
 $ mkdir features
-</code></pre><p>Lets create a feature file using Gherkin within the features folder.</p>
+</code></pre><p>Lets create a feature file using <a href="../common-automation-concepts/gherkin.html">Gherkin</a> within the features folder.</p>
 <p><strong><em>test1.feature</em></strong></p>
 <pre><code class="lang-gherkin"><span class="hljs-keyword">Feature</span>: Test 1
 
@@ -690,7 +716,7 @@ $ mkdir features
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lettuce","level":"10.1","depth":1,"next":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]},"previous":{"title":"PHPUnit + Selenium","level":"9.1.1","depth":2,"path":"php/phpunit/phpunit-+-selenium.md","ref":"php/phpunit/phpunit-+-selenium.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics","livereload"],"pluginsConfig":{"livereload":{},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sitemap":{"hostname":"https://www.testcookbook.com"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce.md","mtime":"2017-05-08T14:31:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T14:49:05.297Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lettuce","level":"10.1","depth":1,"next":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]},"previous":{"title":"PHPUnit + Selenium","level":"9.1.1","depth":2,"path":"php/phpunit/phpunit-+-selenium.md","ref":"php/phpunit/phpunit-+-selenium.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics"],"pluginsConfig":{"sitemap":{"hostname":"https://www.testcookbook.com"},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce.md","mtime":"2017-05-08T16:25:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T16:33:47.262Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -698,10 +724,6 @@ $ mkdir features
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
