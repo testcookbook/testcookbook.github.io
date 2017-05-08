@@ -6,6 +6,7 @@
   "dependencies": {
     "gitbook": "^3.2.2",
     "gitbook-cli": "^2.3.0",
+    "gitbook-plugin-analytics": "^0.2.1",
     "gitbook-plugin-sitemap": "^1.2.0"
   },
   "devDependencies": {},
