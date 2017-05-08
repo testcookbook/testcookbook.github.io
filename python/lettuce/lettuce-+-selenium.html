@@ -633,8 +633,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p><a href="https://github.com/testcookbook/python-lettuce-selenium" target="_blank">Lettuce Selenium Example</a></p>
-<script src="../../_gitbook_plugin_analytics.js"></script>
+                                <h1 id="lettuce-and-selenium">Lettuce and Selenium</h1>
+<p><a href="https://github.com/testcookbook/python-lettuce-selenium" target="_blank">Lettuce Selenium Example</a></p>
+<blockquote>
+<p>Python 2.7</p>
+</blockquote>
+<p>Now that you have a basic startup of Lettuce, you can add some things so that you can use
+selenium to test your websites and applications. First a little bit of setup will be needed.</p>
+<h3 id="install-packages">Install packages</h3>
+<p><strong><em>requirements.txt</em></strong></p>
+<pre><code>lettuce
+selenium
+python-Levenshtein
+</code></pre><p><strong><em>Terminal</em></strong></p>
+<pre><code>pip install -r requirements.txt
+</code></pre><p>There is one more important thing that we will need, geckodriver.  Geckodriver is used
+by Selenium to talk with Firefox.  You can download the appropriate one for your machine
+here <a href="https://github.com/mozilla/geckodriver/releases" target="_blank">https://github.com/mozilla/geckodriver/releases</a>.
+Once it is downloaded make sure to unpackage it place the file in your PATH. If it is not
+in the PATH you will get an error.</p>
+<h3 id="the-feature">The Feature</h3>
+<p>For this experiment we will do a simple test going to google.com and making sure there is Google in the title.</p>
+<pre><code class="lang-gherkin"><span class="hljs-keyword">Feature</span>: Google Home Page
+  <span class="hljs-keyword">Scenario</span>: Google Title Description
+    <span class="hljs-keyword">Given</span> I visit Google
+    <span class="hljs-keyword">Then</span> I see title Google
+</code></pre>
+<h3 id="the-steps">The Steps</h3>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> lettuce <span class="hljs-keyword">import</span> *
+<span class="hljs-keyword">from</span> selenium <span class="hljs-keyword">import</span> webdriver
+
+
+<span class="hljs-meta">@before.each_scenario</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setup_some_scenario</span><span class="hljs-params">(scenario)</span>:</span>
+    world.driver = webdriver.Firefox()
+
+<span class="hljs-meta">@after.each_scenario</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">setup_some_scenario</span><span class="hljs-params">(scenario)</span>:</span>
+    world.driver.close()
+
+<span class="hljs-meta">@step(u&apos;Given I visit Google&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">given_i_visit_google</span><span class="hljs-params">(step)</span>:</span>
+    world.driver.get(<span class="hljs-string">&quot;http://www.google.com&quot;</span>)
+
+<span class="hljs-meta">@step(u&apos;Then I see title Google&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">then_i_see_title_google</span><span class="hljs-params">(step)</span>:</span>
+    <span class="hljs-keyword">assert</span> <span class="hljs-string">&quot;Google&quot;</span> <span class="hljs-keyword">in</span> world.driver.title
+</code></pre>
+<h3 id="run">Run</h3>
+<pre><code>lettuce
+
+Feature: Google Home Page            # features/Google.feature:1
+
+  Scenario: Google Title Description # features/Google.feature:3
+    Given I visit Google             # features/steps.py:14
+    Then I see title Google          # features/steps.py:18
+
+1 feature (1 passed)
+1 scenario (1 passed)
+2 steps (2 passed)
+</code></pre><script src="../../_gitbook_plugin_analytics.js"></script>
                                 
                                 </section>
                             
@@ -677,7 +735,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"next":{"title":"Robot Framework","level":"10.2","depth":1,"path":"python/robot-framework.md","ref":"python/robot-framework.md","articles":[]},"previous":{"title":"Lettuce","level":"10.1","depth":1,"path":"python/lettuce.md","ref":"python/lettuce.md","articles":[{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics"],"pluginsConfig":{"sitemap":{"hostname":"https://www.testcookbook.com"},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce/lettuce-+-selenium.md","mtime":"2017-05-08T15:15:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T16:33:47.262Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"next":{"title":"Robot Framework","level":"10.2","depth":1,"path":"python/robot-framework.md","ref":"python/robot-framework.md","articles":[]},"previous":{"title":"Lettuce","level":"10.1","depth":1,"path":"python/lettuce.md","ref":"python/lettuce.md","articles":[{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics"],"pluginsConfig":{"sitemap":{"hostname":"https://www.testcookbook.com"},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce/lettuce-+-selenium.md","mtime":"2017-05-08T19:20:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T19:42:20.869Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

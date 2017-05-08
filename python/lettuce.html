@@ -642,6 +642,14 @@
 <p>You might have to install python-Levenshtein depending on your Python install.</p>
 </blockquote>
 <pre><code>$ pip install python-Levenshtein
+</code></pre><blockquote>
+<p>You can always uses a requirements.txt file for package install.  This will make things cleaner and easier later on.</p>
+</blockquote>
+<p><strong><em>requirements.txt</em></strong></p>
+<pre><code>lettuce
+python-Levenshtein
+</code></pre><p><strong><em>Terminal</em></strong></p>
+<pre><code>pip install -r requirements.txt
 </code></pre><p>Now lets create some basic folder structure.</p>
 <pre><code>$ mkdir lettuce
 $ cd lettuce
@@ -716,7 +724,7 @@ $ mkdir features
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Lettuce","level":"10.1","depth":1,"next":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]},"previous":{"title":"PHPUnit + Selenium","level":"9.1.1","depth":2,"path":"php/phpunit/phpunit-+-selenium.md","ref":"php/phpunit/phpunit-+-selenium.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics"],"pluginsConfig":{"sitemap":{"hostname":"https://www.testcookbook.com"},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce.md","mtime":"2017-05-08T16:25:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T16:33:47.262Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Lettuce","level":"10.1","depth":1,"next":{"title":"Lettuce + Selenium","level":"10.1.1","depth":2,"path":"python/lettuce/lettuce-+-selenium.md","ref":"python/lettuce/lettuce-+-selenium.md","articles":[]},"previous":{"title":"PHPUnit + Selenium","level":"9.1.1","depth":2,"path":"php/phpunit/phpunit-+-selenium.md","ref":"php/phpunit/phpunit-+-selenium.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["sitemap","analytics"],"pluginsConfig":{"sitemap":{"hostname":"https://www.testcookbook.com"},"analytics":{"context":[{"token":"UA-85156207-1","base":["www.testcookbook.com","testcookbook.com"]}]},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"python/lettuce.md","mtime":"2017-05-08T19:03:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-08T19:42:20.869Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
