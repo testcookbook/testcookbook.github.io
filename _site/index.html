@@ -12,6 +12,7 @@
     <!-- Milligram CSS minified -->
     <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 
+    <link rel="stylesheet" href="/css/style.css">
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -35,12 +36,18 @@
                 y.className = "column column-100";
             }
         }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
     </script>
 </head>
-<body>
+<body onload="menu()">
 <div class="container">
     <div class="row">
-        <div class="column column-90">
+        <div class="column column-80">
             <h1><a href="/">Test Cookbook</a></h1>
         </div>
         <div class="column">
@@ -249,7 +256,34 @@
 
         </div>
         <div id="content" class="column column-100">
-            <p>Thank you for taking the time and interest in the Test Cookbook. This book is a work in progress describing how to use many different tools, and testing utilities. One day we should have quite the portfolio of testing recipes for your enjoyment and learning.</p>
+            <p>Thank you for taking the time and interest in the Test Cookbook. This book is a work in progress
+describing how to use many different tools, and testing utilities. One day we should have quite
+the portfolio of testing recipes for your enjoyment and learning.</p>
+
+<h2 id="contribute">Contribute</h2>
+
+<p>Are you a tester or developer who likes to help train others and share your wealth of knowledge?
+TestCookbook is an opensource book on Github. Come on over and add a pull request or open an issue 
+describing what you would like. <a href="https://github.com/testcookbook/testcookbook.github.io">https://github.com/testcookbook/testcookbook.github.io</a></p>
+
+<h2 id="what-is-a-test-cookbook">What is a Test Cookbook</h2>
+
+<p>Test Cookbook is designed to be an opensource book that can allow other testers, developers or 
+noobies to get started in the world of testing.</p>
+
+<h2 id="what-is-not-test-cookbook">What is not Test Cookbook</h2>
+
+<ul>
+  <li>Not a company: Open Source</li>
+  <li>Not a Product: Yes we have things missing and you are free to add them.</li>
+  <li>There is no budget, or investors.</li>
+  <li>There is no marketing.  Only word of mouth.</li>
+</ul>
+
+<h2 id="spread-the-word">Spread the Word.</h2>
+
+<p>Do you like what you see or find in the Test Cookbook?  Awesome please tell others. Share your
+experience on your favorite social media sites.</p>
 
         </div>
     </div>
