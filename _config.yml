@@ -14,6 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Test Cookbook
+modified: 2017-12-31T18:00:00-06:00
 email: ben@harringtonweb.com
 description: > # this means to ignore newlines until "baseurl:"
   Test Cookbook. Resources to help you get started testing quicker.
@@ -28,6 +29,7 @@ theme: minima
 gems:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-last-modified-at
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
