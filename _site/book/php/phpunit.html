@@ -1,0 +1,368 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="php-unit">PHP Unit</h1>
+
+<p>PHPUnit is a unit testing framework in a XUnit architecture.</p>
+
+<h2 id="getting-started">Getting Started.</h2>
+
+<p>The first thing you will need is PHPUnit installed locally.  I recommend using
+composer.  This will allow you to download other dependencies if needed.</p>
+
+<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testcookbook/phpunit"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nt">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.5"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
+<p>To install you can run.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ composer install
+$ # or
+$ php composer.phar install
+</code></pre>
+</div>
+
+<p>After installing your dependencies you can begin to write some tests.  Lets start by writing some unit tests for a class that adds 2 numbers called Adder.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">require</span><span class="p">(</span><span class="s1">'adder.php'</span><span class="p">);</span>
+
+<span class="k">class</span> <span class="nc">AdderTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">numberCanBeAdded</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="nv">$adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="nv">$total</span> <span class="o">=</span> <span class="nv">$adder</span><span class="o">-&gt;</span><span class="na">getTotal</span><span class="p">();</span>
+
+    <span class="c1">// Assert
+</span>    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="nv">$total</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+</div>
+
+<p>Now lets create a basic class to make the test pass.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">class</span> <span class="nc">Adder</span>
+<span class="p">{</span>
+  <span class="k">private</span> <span class="nv">$a</span><span class="p">;</span>
+  <span class="k">private</span> <span class="nv">$b</span><span class="p">;</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$b</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">=</span> <span class="nv">$a</span><span class="p">;</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span> <span class="o">=</span> <span class="nv">$b</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">getTotal</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">a</span> <span class="o">+</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">b</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+</div>
+
+<p>To run your tests.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ vendor/bin/phpunit adder_tests.php
+</code></pre>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

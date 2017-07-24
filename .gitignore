@@ -1,6 +1,6 @@
 vendor
-_site
 .bundle/
 .idea/
 .sass-cache
 *.swp
+.DS_STORE

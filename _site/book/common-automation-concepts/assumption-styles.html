@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="assumption-styles">Assumption Styles</h1>
+
+<p>Automation testing is really all about defining what your application is supposed to do and making sure it continues to do so.  In almost every programming framework you generally get one of three different assumption styles.  Assert, Expect, Should.</p>
+
+<p>Note: Some frameworks will let you use any combination of these.</p>
+
+<p>In the end, the three of these styles do the same thing they assume that some element or value will have a quantified relationship with an answer that you require.  The reason there are a few ways to describe is about readability and preference.</p>
+
+<p>Let’s take a look at some pseudo code for each.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>let someValue = true
+
+expect(someValue).toBeTrue()
+
+assert(someValue).isTrue()
+
+someValue.should.beTrue()
+</code></pre>
+</div>
+
+<p>Notice that in each case we have a variable “someValue”, and in each case, we want to determine whether it is true.  Each assumption style reads just like a sentence.  Expect “someValue” to be true.  Assert “someValue” is true.  “someValue” should be true.</p>
+
+<h3 id="behind-the-scenes">Behind the scenes.</h3>
+
+<p>The more important part to note about each of these styles is really what is happening during the testing.  Each one of these styles is required to accept some value and make sure that it is correct.  When an error happens we want to create a failure in the test build.  In most cases, this will generate an exit code of the test suite greater than 0.</p>
+
+<h3 id="build-your-own-expect-or-assertion">Build your own expect or assertion.</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class expect
+    
+    var expectedValue
+
+    expect(val)
+        expectedValue = val
+    end
+    
+    toBeTrue()
+        if expectedValue == true
+            return true
+        else
+            throw error("expected #{expectedValue} to have been true")
+        end
+    end
+end
+</code></pre>
+</div>
+
+<p>This is a quick a dirty basic implementation of an expect statement.  Assert works the same way you can replace the text for expect with assert.</p>
+
+<h3 id="building-your-own-should">Building your own should.</h3>
+
+<p>Should is generally a little different that expect and assert.  It is usually added as a child or prototype to another object or class.  For example lets say you have a Boolean.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>class should
+    beTrue()
+        if expectedValue == true
+            return true
+        else
+            throw error("expected #{expectedValue} to have been true")    
+        end
+    end
+end
+
+Boolean.prototype.should = should
+
+Boolean test = true
+
+test.should.beTrue();
+</code></pre>
+</div>
+
+<p>There are some potential cons to using should.  As you notice you are adding foreign code to your specific object. Depending on how much you really want to use this format keep in mind it won’t be quite as pure as the expect and assert styles.</p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

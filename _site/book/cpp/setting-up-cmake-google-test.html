@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="setting-up-cmake-for-google-test">Setting up CMake for Google Test</h1>
+
+<p>If you are new to C++ or CMake this can be somewhat of a daunting task on your own.  However if done correctly
+it can save you quite a bit of heart ache in the end.</p>
+
+<p>As with many libraries you may need to use for your project you need a way to import the libraries resources
+and link them correctly.  In this approach I don’t want to maintain the Google Test libraries, I just want
+to download them and use them when I need them.  You might want to also take note that Google Mock is now
+mixed in with Google Test.  So you will be getting both tools on this build.</p>
+
+<p>When we finish we will end up with a structure that looks something like the tree below.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tree
+.
+├── CMakeLists.txt
+├── CMakeLists.txt.in
+├── library.cpp
+├── library.h
+└── <span class="nb">test</span>
+    ├── CMakeLists.txt
+    ├── example.cpp
+    ├── main.cpp
+    └── simple.cpp
+</code></pre>
+</div>
+
+<p>To start out lets create a new project folder.  You can name it something like TestExample.  Within it create
+a file “CMakeLists.txt.in”.  This file contains a basic config that we can use to download the latest source 
+code for Google Tests and put it in the right location.</p>
+
+<p><strong>CMakeLists.txt.in</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>cmake_minimum_required(VERSION 2.8.2)
+
+project(googletest-download NONE)
+
+include(ExternalProject)
+ExternalProject_Add(googletest
+  GIT_REPOSITORY    https://github.com/google/googletest.git
+  GIT_TAG           master
+  SOURCE_DIR        "${CMAKE_BINARY_DIR}/googletest-src"
+  BINARY_DIR        "${CMAKE_BINARY_DIR}/googletest-build"
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND     ""
+  INSTALL_COMMAND   ""
+  TEST_COMMAND      ""
+)
+</code></pre>
+</div>
+
+<p>Once we have that file we can move on to the CMakeLists.txt in the root directory of our TestExample project.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+project(TestExample)
+
+set(CMAKE_CXX_STANDARD 11)
+
+
+# Download and unpack googletest at configure time
+configure_file(CMakeLists.txt.in
+        googletest-download/CMakeLists.txt)
+execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+execute_process(COMMAND ${CMAKE_COMMAND} --build .
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download )
+
+# Prevent GoogleTest from overriding our compiler/linker options
+# when building with Visual Studio
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
+# Add googletest directly to our build. This adds
+# the following targets: gtest, gtest_main, gmock
+# and gmock_main
+add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
+        ${CMAKE_BINARY_DIR}/googletest-build)
+
+# The gtest/gmock targets carry header search path
+# dependencies automatically when using CMake 2.8.11 or
+# later. Otherwise we have to add them here ourselves.
+if (CMAKE_VERSION VERSION_LESS 2.8.11)
+    include_directories("${gtest_SOURCE_DIR}/include"
+            "${gmock_SOURCE_DIR}/include")
+endif()
+
+# Now simply link your own targets against gtest, gmock,
+# etc. as appropriate
+
+
+enable_testing()
+add_subdirectory(test)
+
+set(SOURCE_FILES library.cpp library.h)
+add_library(TestExample ${SOURCE_FILES})
+
+</code></pre>
+</div>
+
+<p>Now that we have the CMake config files done in the root directory we need to create a new directory
+to house all of our tests.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir test
+</code></pre>
+</div>
+
+<p>Within that directory create another file called CMakeLists.txt and fill in the following.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>include_directories("${PROJECT_SOURCE_DIR}")
+
+# First Simple Google Test
+add_executable(simple simple.cpp)
+target_link_libraries(simple gtest gmock_main)
+add_test(NAME simple_test COMMAND simple)
+</code></pre>
+</div>
+
+<p>Last but not least you can now create a new file in the test directory called “simple.cpp” and write
+your first test. See writing a <a href="/book/cpp/unit-test-with-google-test.html">unit test with Google Test</a></p>
+
+<p>Want to see it all together to play with check out this example on <a href="https://github.com/testcookbook/google-test">Github</a>.</p>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

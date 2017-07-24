@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="bash">Bash</h1>
+
+<p>Bash or Bourne-again shell is a POSIX compliant shell commonly used on Unix and Linux environments.  Bash can also be installed with Git or Cygwin, etc on Windows.</p>
+
+<p>Scripting in Bash can be a powerful tool in your arsenal for testing.  You can use it to run a certain set of commands to deploy some code, or create an environment.  You can also use it as a testing framework and assert the validity of things running.</p>
+
+<h3 id="basics">Basics</h3>
+
+<h4 id="echo">ECHO</h4>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"Hello World"</span>
+</code></pre>
+</div>
+
+<p>The “echo” statement allows you to write text to the screen.</p>
+
+<hr />
+
+<h4 id="if">IF</h4>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nb">true</span> <span class="o">]</span>; <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"True"</span>
+<span class="k">fi</span>
+</code></pre>
+</div>
+
+<p>If statements allow you to have some checks and balances in you code to do different things.  HINT: if you are having issues with the if statement make sure you have the spaces before and after the [] brackets</p>
+
+<hr />
+
+<h4 id="functions">FUNCTIONS</h4>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">test</span><span class="o">()</span>
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="s2">"TESTING"</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>This is a simple function.  You can use it within your script and it will write “TESTING” to the screen.</p>
+
+<hr />
+
+<h3 id="putting-them-together">Putting Them Together</h3>
+
+<p>Lets put these basic steps for Bash together and make an assert_equal function.  Normally an assert function will take 2 arguments and return true if they are equal and false if they are not. Lets start with a basic declaration of the assert function and some code of how we are going to use it.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<span class="o">{</span>
+
+<span class="o">}</span>
+
+assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
+</code></pre>
+</div>
+
+<p>Now that we have a basic framework you can see that we are sending 2 strings of text to the assert_equal function.  In verifying that we have the proper amount of arguments lets use an if to verify that we have both strings.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$2</span> <span class="o">]</span>; <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"Missing Arguments: assert_equal arg1 arg2"</span>
+        <span class="k">return </span>99
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
+</code></pre>
+</div>
+
+<p>There are some new techniques here.  Starting with the if statement.  There is a -z $2 within the brackets.  $2 is how you reference argument 2 from the function call.  When we actually return a proper true false we will use $1 and $2.  The -z is very different from what you would see in other languages.  The -z tells us that the length of the string is zero.  If there is no argument 1 or argument 2 listed after the assert_equal then it will be true and run the code within the if.</p>
+
+<p>The other item that is not like the others is the return statement.  The return statement allow us to send an exit code that can mean specific things to a user.  Normally when an application works like it is suppose to you would return a 0.  However in this case, missing an argument is an error and we want to know that our test is failing due to our scripting as soon as possible.  If there are no arguments here we return back a 99.  You can really put almost any number from 0 to 255.  Anything over 0 however signals the OS that something failed.</p>
+
+<p>We are off to a good start to an assert_equal function.  Now we need to deliver a true or false back.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$2</span> <span class="o">]</span>; <span class="k">then
+        </span><span class="nb">echo</span> <span class="s2">"Missing Arguments: assert_equal arg1 arg2"</span>
+        <span class="k">return </span>99
+    <span class="k">fi</span>
+    <span class="o">[</span> <span class="nv">$1</span> <span class="o">==</span> <span class="nv">$2</span> <span class="o">]</span>
+<span class="o">}</span>
+
+assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
+</code></pre>
+</div>
+
+<p>Lastly we fish with the last line of the function returning a conditional that will return either true or false.</p>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

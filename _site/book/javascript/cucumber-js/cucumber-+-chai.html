@@ -1,0 +1,355 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="cucumberjs-and-chai-assertions-three-ways">CucumberJS and Chai Assertions Three Ways</h1>
+
+<p><strong>Ingredients</strong></p>
+
+<ul>
+  <li>NodeJS</li>
+  <li>Cucumber</li>
+  <li>Chai</li>
+</ul>
+
+<p><strong>Bake Time</strong></p>
+
+<ul>
+  <li>10 - 15 min</li>
+</ul>
+
+<p><strong>Instructions</strong></p>
+
+<p>In a console window initialize a simple npm project.</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir -p firstTest
+<span class="nb">cd </span>firstTest
+mkdir features
+mkdir -p features/step_definitions
+mkdir -p features/support
+npm init -f
+</code></pre>
+</div>
+
+<p>Install cucumber and assert packages and save to package file</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>firstTest
+npm install cucumber chai --save-dev
+ls
+</code></pre>
+</div>
+
+<p>Create your first feature file.</p>
+
+<pre><code class="language-Gherkin">Feature: First Test
+    Scenario: Adding Numbers
+        Given numbers 2 and 5
+        When they are added together
+        Then the total should be 7
+</code></pre>
+
+<p>Build your first step definitions.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">chai</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chai'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">assert</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">should</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">should</span><span class="p">();</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">t</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^numbers </span><span class="se">(\d</span><span class="sr">+</span><span class="se">)</span><span class="sr"> and </span><span class="se">(\d</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">a</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">arg1</span><span class="p">);</span>
+        <span class="nx">b</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">arg2</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">When</span><span class="p">(</span><span class="sr">/^they are added together$/</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">t</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
+    <span class="p">});</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="sr">/^the total should be </span><span class="se">(\d</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">t</span><span class="p">).</span><span class="nx">to</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+        <span class="nx">t</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

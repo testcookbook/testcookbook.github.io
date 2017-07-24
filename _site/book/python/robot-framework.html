@@ -1,0 +1,414 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+
+    <!-- Milligram CSS minified -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="robot-framework">Robot Framework</h1>
+
+<p>Robot Framework is a Test driven development framework.  You can utilize it by a keyword driven approach or a more BDD approach using a Gherkin style test.</p>
+
+<h2 id="getting-started">Getting started.</h2>
+
+<p>First off we need to setup a little environment stuff.  Hopefully starting out you have some basic Python skills.  Lets install Robot Framework.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ pip install robotframework
+</code></pre>
+</div>
+
+<h2 id="your-first-test">Your First Test.</h2>
+<p>Once it is installed we can now start examining how we can create some tests. Lets assume we want to test adding up a couple of numbers.  For the first test we will focus on a keyword driven development.</p>
+
+<p><strong><em>keyword.robot</em></strong></p>
+<pre><code class="language-robot">*** Settings ***
+Documentation     Example Keyword Test
+
+Library    AdderLibrary.py
+
+*** Test Cases ***
+Addition
+    Add input    3    5
+    Total    8
+</code></pre>
+
+<p>You will notices from the keyword.robot file that there are 2 main headings, surrounded by three asterisks. The first section covers what the settings needed are and the other is a section for test cases.</p>
+
+<p>Within the Settings we want to document what the tests are about, and we also need to include a library. This library will be a Python script that will run to automate the specific tests.</p>
+
+<p>The last section is the Test Cases.  Here you can have a descriptive test case. In this case it says Addition.  Followed by 2 keyword lines. Add input and Total.</p>
+
+<blockquote>
+  <p>if you are rather new to Python keep in mind that spacing is very important. It is also important in the robot files as well.  While you are looking at the code presented, the large spaced areas are 4 spaces wide.</p>
+</blockquote>
+
+<h2 id="define-your-tests">Define your tests.</h2>
+
+<p>Once you have test file to describe what you are doing. Then its time to write code to actually test what was described.  Create a file “AdderLibrary.py”. You might remember it from the settings of the robot file we created.</p>
+
+<p><strong><em>AdderLibrary.py</em></strong></p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="s">"""
+    Tests for AdderLibrary
+    """</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="o">=</span><span class="mi">0</span>
+
+    <span class="k">def</span> <span class="nf">add_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">total</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">expected</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">expected</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">AssertionError</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">s != </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span>
+</code></pre>
+</div>
+
+<p>For this example we will test within just this file to demonstrate how keywords work.  Normally the actual functionality would be in its own class file.</p>
+
+<p>Take a look at the add_input definition.  When you used the keyword “Add input” in the robot file it will be translated to “add_test”.  The first word will be capitalized and the underscore will become a space.  After add_test we
+also have 3 arguments. Self, a and b which will be the numbers that we want to add.</p>
+
+<p>Finally take a look at the total function.  This does 2 distinct things.  First it adds up the 2 numbers and returns the value to “self._result”. Secondly we have an if block. This does a simple comparison to validate if the expected value matches that which we added up.  If it is equal we are fine.  However if things are not equal then we need to assert an error followed by some message that describes what the issue is.</p>
+
+<p><strong><em>Terminal</em></strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ robot keyword.robot
+==============================================================================
+Keyword :: Example Keyword Test                                               
+==============================================================================
+Addition                                                              | PASS |
+------------------------------------------------------------------------------
+Keyword :: Example Keyword Test                                       | PASS |
+1 critical test, 1 passed, 0 failed
+1 test total, 1 passed, 0 failed
+==============================================================================
+Output:  /home/user/robotframework/output.xml
+Log:     /home/user/robotframework/log.html
+Report:  /home/user/robotframework/report.html
+</code></pre>
+</div>
+
+<h2 id="gherkin">Gherkin</h2>
+
+<p>You have completed your first test using keywords.  But what if we wanted to write using a style similar to a Gherkin format?  Well your in luck.  Lets create a file called “gherkin.robot”.</p>
+
+<p><strong><em>gherkin.robot</em></strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>*** Settings ***
+Documentation     Example Gherkin Style Test
+
+Library    AdderLibrary.py
+
+*** Test Cases ***
+Addition
+    Given two numbers "3" and "5"
+    Then total of result is "8"
+
+*** Keywords ***
+two numbers "${a}" and "${b}"
+    Add input    ${a}    ${b}
+total of result is "${total}"
+    Total    ${total}
+</code></pre>
+</div>
+
+<p>Within this file you will see a new header called Keywords, and the Test Cases will look like Given, When and Then.  The new section Keywords is a little different than you might expect from something like Cucumber.  With Robot Framework your step definition translation is happening within the test file not the step definition.</p>
+
+<p>Take note from the Given we want to get 2 different numbers and add them.  On the parts that we want to get numbers from we have this “${a}” and “${b}”.  The dollar sign and the brackets tells the framework that these particular arguments could change and we might want to reuse that functionality later.</p>
+
+<p>Once the step definition is described we can then add keyword functions just like we did on the keyword.robot file.</p>
+
+<p><strong><em>Terminal</em></strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ robot gherkin.robot
+==============================================================================
+Gherkin :: Example Gherkin Style Test                                         
+==============================================================================
+Addition                                                              | PASS |
+------------------------------------------------------------------------------
+Gherkin :: Example Gherkin Style Test                                 | PASS |
+1 critical test, 1 passed, 0 failed
+1 test total, 1 passed, 0 failed
+==============================================================================
+Output:  /home/user/robotframework/output.xml
+Log:     /home/user/robotframework/log.html
+Report:  /home/user/robotframework/report.html
+</code></pre>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
