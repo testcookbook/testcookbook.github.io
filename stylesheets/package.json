@@ -1,0 +1,16 @@
+{
+  "name": "stylesheets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "minify": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "cat *.css | ./node_modules/.bin/minify --css > ../css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
