@@ -1,0 +1,456 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Test Cookbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#9b4dca" />
+    <link rel="manifest" href="/manifest.json">
+    <!-- Google Fonts -->
+    <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">-->
+
+    <!-- CSS Reset -->
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">-->
+
+    <!-- Milligram CSS minified -->
+    <!--<link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">-->
+
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google Analytics -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-85156207-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script>
+        function menutoggle() {
+            var x = document.getElementById("sidemenu");
+            var y = document.getElementById("content");
+            if (x.style.display === 'none') {
+                x.style.display = 'block';
+                y.className = "column column-75";
+            } else {
+                x.style.display = 'none';
+                y.className = "column column-100";
+            }
+        }
+
+        function menu() {
+            if (window.innerWidth >= 1024) {
+                menutoggle();
+            }
+        }
+    </script>
+</head>
+<body onload="menu()">
+<div class="container">
+    <div class="row">
+        <div class="column column-80">
+            <h1><a href="/">Test Cookbook</a></h1>
+        </div>
+        <div class="column">
+            <button onclick="menutoggle()">Menu</button>
+        </div>
+    </div>
+</div>
+
+<hr/>
+<div class="container">
+    <div class="row">
+        <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <ol>
+    <li class="header">Preface</li>
+    <ul>
+        <li class="chapter active" data-level="1.1" data-path="./">
+            <a href="/">Introduction</a>
+        </li>
+    </ul>
+    <li class="header">Common Automation Concepts</li>
+    <ul>
+        <li>
+            <a href="/book/common-automation-concepts/assumption-styles.html">
+                Assumption Styles
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/gherkin.html">
+                Gherkin
+            </a>
+        </li>
+        <li>
+            <a href="/book/common-automation-concepts/json-schema.html">
+                JSON-Schema
+            </a>
+        </li>
+
+    </ul>
+    <li>Bash</li>
+    <ul>
+        <li>
+            <a href="/book/bash/Bash.html">
+                Bash
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-testing.html">
+                SHPEC Testing
+            </a>
+        </li>
+        <li>
+            <a href="/book/bash/shpec-and-curl.html">
+                SHPEC and Curl
+            </a>
+        </li>
+    </ul>
+
+
+    <li>C</li>
+    <ul>
+        <li>
+            <a href="/book/c/unit-test-with-cmocka.html">
+                Unit Test with CMOCKA
+            </a>
+        </li>
+    </ul>
+
+    <li>C++</li>
+    <ul>
+        <li>
+            <a href="/book/cpp/setting-up-cmake-google-test.html">
+                Setting up CMake for Google Test
+            </a>
+        </li>
+        <li>
+            <a href="/book/cpp/unit-test-with-google-test.html">
+                Unit Test with Google Test
+            </a>
+        </li>
+    </ul>
+
+    <li>Clojure</li>
+    <ul>
+        <li>
+            <a href="/book/clojure/unit-test-with-clojure.html">
+                Unit Test with Clojure
+            </a>
+        </li>
+    </ul>
+
+    <li>Go</li>
+    <ul>
+        <li>
+            <a href="/book/go/test-with-go.html">
+                Test with Go
+            </a>
+        </li>
+    </ul>
+
+    <li>Groovy</li>
+    <ul>
+        <li>
+            <a href="/book/groovy/jenkins/intro-testing-job-dsl.html">
+                Testing Jenkins Job-Dsl 
+            </a>
+        </li>
+    </ul>
+
+    <li>Java</li>
+    <ul>
+        <li>
+            <a href="/book/java/intro-to-gradle.html">
+                Intro to Gradle
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/intro-to-maven.html">
+                Intro to Maven
+            </a>
+        </li>
+        <li>
+            <a href="/book/java/junit.html">JUnit</a>
+        </li>
+        <li>
+            <a href="/book/java/junit/cucumber-and-selenium.html">Cucumber & Selenium</a>
+        </li>
+    </ul>
+    <li>Javascript</li>
+    <ul>
+        <li>
+            <a href="/book/javascript/first-nodejs-project.html">First NodeJS Project</a>
+        </li>
+        <li>
+            <a href="/book/javascript/jasmine.html">Jasmine</a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/jasmine/jasmine-within-a-browser.html">
+                        Jasmine within a Browser
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/cucumber-js.html">
+                Cucumber JS
+            </a>
+            <ul>
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumber-+-chai.html">
+                        Cucumber + Chai
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/book/javascript/cucumber-js/cucumberjs-+-selenium.html">
+                        CucumberJS + Selenium
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/book/javascript/frisbyjs.html">
+                FrisbyJS
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/galen-framework.html">
+                Galen Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/javascript/json-schema/tiny-validator.html">
+                Tiny Validator v4
+            </a>
+        </li>
+
+    </ul>
+    <li>PHP</li>
+    <ul>
+        <li>
+            <a href="/book/php/phpunit.html">
+                PHPUnit
+            </a>
+        </li>
+        <li>
+            <a href="/book/php/phpunit/phpunit-+-selenium.html">
+                PHPUnit + Selenium
+            </a>
+        </li>
+
+    </ul>
+
+
+    <li>Python</li>
+    <ul>
+        <li>
+            <a href="/book/python/lettuce.html">
+                Lettuce
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/lettuce/lettuce-+-selenium.html">
+                Lettuce + Selenium
+            </a>
+        </li>
+        </li>
+        <li>
+            <a href="/book/python/robot-framework.html">
+                Robot Framework
+            </a>
+        </li>
+        <li>
+            <a href="/book/python/json-schema-validation.html">
+                JSON Schema Validation
+            </a>
+        </li>
+    </ul>
+
+    <li>Ruby</li>
+    <ul>
+        <li>
+            <a href="/book/ruby/rspec.html">RSpec Unit Tests</a>
+        </li>
+        <li>
+            <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+        </li>
+    </ul>
+    <li>Rust</li>
+    <ul>
+        <li>
+            <a href="/book/rust/unit-test-rust.html">Rust Unit Tests</a>
+        </li>
+    </ul>
+</ol>
+
+        </div>
+        <div id="content" class="column column-100">
+            <h1 id="testing-jenkins-job-dsl-scripts">Testing Jenkins Job-Dsl scripts</h1>
+
+<p>Setting up Jenkins can feel like a daunting task if you are not into it an using it every day.  What is even more annoying at times is when either failure happens or you need to upgrade some plugin or the version of Jenkins itself.</p>
+
+<p>For those that like to code or script things, we can take some of the tediousness out of the whole process and allow you to get upfront messages describing the issue rather than waiting on Jenkins to fail.  You don’t wanna be that guy that caused the builds to fail, do you?</p>
+
+<p>So what does a Jenkins job look like as code?  Using the Job-Dsl plugin they look like the following.</p>
+
+<p><em>Sample Jenkins Job</em></p>
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">freeStyleJob</span><span class="o">(</span><span class="s1">'Sample Job'</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">steps</span> <span class="o">{</span>
+        <span class="n">shell</span><span class="o">(</span><span class="s1">'ls'</span><span class="o">)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>This particular script really doesn’t do a whole lot.  It creates a job called Sample Job on Jenkins and runs a bash command to list the files out on the workspace.  For our initial testing, this will work just fine.</p>
+
+<p>If you would like to follow along with a working demo feel free to clone this repo. https://github.com/testcookbook/jenkins_harness</p>
+
+<h2 id="organizing-the-jenkins-harness">Organizing the Jenkins harness</h2>
+
+<p>Now that you know what a simple job looks like we need to organize our dependencies.  Things like what version of Jenkins we want to use, and what plugins we need.  These are handled through the dependencies section of the build.gradle file.</p>
+
+<p>The first set of dependencies we need are the ones to compile the groovy scripts so that we can run tests against them.  In some demos, you may find they do not include ivy like we did below.  If you decide to use groovy grape for your scripts you will need to include it.  Make sure that your version number for the job-dsl-core matches what you want to use on your Jenkins build.</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.5.9"</span>
+    <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>After these, we need to add the Spock framework for testing and Jenkins test harness.  Pay close attention to the versioning of the ones labeled jenkins-war.  That version will be the version of Jenkins that you are using.</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.59"</span>
+    <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
+
+    <span class="n">testCompile</span> <span class="s2">"org.spockframework:spock-core:1.1-groovy-2.4"</span>
+    <span class="c1">// Jenkins Test Harness</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-test-harness:2.26"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2:war-for-test@jar"</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>Lastly, add your plugins. One of the mandatory plugins for this will be the job-dsl plugin.  Again make sure that the versions of these plugins match what you are expecting to run.</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.5.9"</span>
+    <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
+
+    <span class="n">testCompile</span> <span class="s2">"org.spockframework:spock-core:1.1-groovy-2.4"</span>
+    <span class="c1">// Jenkins Test Harness</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-test-harness:2.26"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2:war-for-test@jar"</span>
+
+    <span class="c1">// Job DSL plugin including dependencies</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl:1.59"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl:1.59@jar"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:structs:1.6@jar"</span>
+
+    <span class="c1">// Jenkins plugins to install</span>
+    <span class="n">testPlugins</span> <span class="s2">"org.jenkins-ci.plugins:ghprb:1.31.4"</span>
+    <span class="n">testPlugins</span> <span class="s2">"com.coravy.hudson.plugins.github:github:1.19.0"</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>You may notice now that there are some versions of things that you have to write multiple times.  More than likely you may want to change or upgrade versioning on all of these.  An easier way to manage this is to create a variable that will store those common values.  Notice the ext closure with 2 variables jobDslVersion and jenkinsVersion.</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">ext</span> <span class="o">{</span>
+    <span class="n">jobDslVersion</span> <span class="o">=</span> <span class="s1">'1.59'</span>
+    <span class="n">jenkinsVersion</span> <span class="o">=</span> <span class="s1">'2.46.2'</span>
+<span class="o">}</span>
+
+<span class="n">dependencies</span> <span class="o">{</span>
+    <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:${jobDslVersion}"</span>
+    <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
+
+    <span class="n">testCompile</span> <span class="s2">"org.spockframework:spock-core:1.1-groovy-2.4"</span>
+
+    <span class="c1">// Jenkins Test Harness</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-test-harness:2.26"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:${jenkinsVersion}"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:${jenkinsVersion}:war-for-test@jar"</span>
+
+    <span class="c1">// Job DSL plugin including dependencies</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl:${jobDslVersion}"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl:${jobDslVersion}@jar"</span>
+    <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.plugins:structs:1.6@jar"</span>
+
+    <span class="c1">// Jenkins plugins to install</span>
+    <span class="n">testPlugins</span> <span class="s2">"org.jenkins-ci.plugins:ghprb:1.31.4"</span>
+    <span class="n">testPlugins</span> <span class="s2">"com.coravy.hudson.plugins.github:github:1.19.0"</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<h2 id="testing">Testing</h2>
+
+<p>Once you have your predefined Jenkins harness setup with all the appropriate plugins, it is time for your first test.  This test will be run on all of the groovy files within the jobs directory.  What we want to do is load each script and look to see if any exceptions are thrown.  If there are exceptions then that will mean either we have an error in syntax, a missing method, and sometimes it could mean a wrong version of the plugin being used.</p>
+
+<p>To get started we will create a new file called JobScriptsSpec.groovy in the src/test/groovy/ directory.</p>
+
+<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javaposse.jobdsl.dsl.DslScriptLoader</span>
+<span class="kn">import</span> <span class="nn">javaposse.jobdsl.plugin.JenkinsJobManagement</span>
+<span class="kn">import</span> <span class="nn">org.junit.ClassRule</span>
+<span class="kn">import</span> <span class="nn">org.jvnet.hudson.test.JenkinsRule</span>
+<span class="kn">import</span> <span class="nn">spock.lang.Shared</span>
+<span class="kn">import</span> <span class="nn">spock.lang.Specification</span>
+<span class="kn">import</span> <span class="nn">spock.lang.Unroll</span>
+
+<span class="kd">class</span> <span class="nc">JobScriptsSpec</span> <span class="kd">extends</span> <span class="n">Specification</span> <span class="o">{</span>
+    <span class="nd">@Shared</span>
+    <span class="nd">@ClassRule</span>
+    <span class="n">JenkinsRule</span> <span class="n">jenkinsRule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JenkinsRule</span><span class="o">()</span>
+
+    <span class="nd">@Unroll</span>
+    <span class="kt">def</span> <span class="s1">'test script #file.name'</span><span class="o">(</span><span class="n">File</span> <span class="n">file</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nl">given:</span>
+        <span class="kt">def</span> <span class="n">jobManagement</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JenkinsJobManagement</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">,</span> <span class="o">[:],</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s1">'.'</span><span class="o">))</span>
+
+        <span class="nl">when:</span>
+        <span class="k">new</span> <span class="nf">DslScriptLoader</span><span class="o">(</span><span class="n">jobManagement</span><span class="o">).</span><span class="na">runScript</span><span class="o">(</span><span class="n">file</span><span class="o">.</span><span class="na">text</span><span class="o">)</span>
+
+        <span class="nl">then:</span>
+        <span class="n">noExceptionThrown</span><span class="o">()</span>
+
+        <span class="nl">where:</span>
+        <span class="n">file</span> <span class="o">&lt;&lt;</span> <span class="n">jobFiles</span>
+    <span class="o">}</span>
+
+    <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">File</span><span class="o">&gt;</span> <span class="n">getJobFiles</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">File</span><span class="o">&gt;</span> <span class="n">files</span> <span class="o">=</span> <span class="o">[]</span>
+        <span class="k">new</span> <span class="nf">File</span><span class="o">(</span><span class="s1">'jobs'</span><span class="o">).</span><span class="na">eachFileRecurse</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">it</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">endsWith</span><span class="o">(</span><span class="s1">'.groovy'</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">files</span> <span class="o">&lt;&lt;</span> <span class="n">it</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">files</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>From glancing at this code there are 2 main parts.  The test defined after the @Unroll, and the list function called getJobFiles. If you are unfamiliar with groovy the @Unroll allows us to iterate over a subset of data.  In the case of our tests that will be the files found with the getter getJobFiles. This test will load each script one by one, load it into the Jenkins harness, run the script with the DslScriptLoader and test if an exception is thrown.</p>
+
+<p>If you are using the sample repo you may notice that Gradle wrapper is included.  To run the tests.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Linux / Mac
+./gradlew test
+
+# Windows
+gradlew.bat test
+</code></pre>
+</div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
