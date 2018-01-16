@@ -14,7 +14,7 @@ layout: default
 
 **Instructions**
 
-Create a new file called “test.c”. This will be a simple src file to create a basic test.
+Create a new file called *test.c*. This will be a simple src file to create a basic test.
 
 ```c
 #include <stdarg.h>
@@ -37,14 +37,26 @@ int main(void) {
 Build your tests
 
 ```
-$ gcc -o tests test.c -l cmocka -L /usr/local/lib
+$ gcc -o test test.c -l cmocka -L /usr/local/lib
 ```
 
 Run your tests
 
 ```
-$ ./tests
+$ ./test
 ```
 
+**Using a Makefile**
+```
+buildTests : createBuildDir
+	gcc -o build/test test.c -l cmocka -L /usr/local/lib
 
+createBuildDir :
+	mkdir -p build
 
+test :
+	./build/test
+
+clean :
+	rm -Rf build
+```
