@@ -1,7 +1,10 @@
 ---
 layout: default
 ---
-# Cucumber
+# Ruby + Cucumber
+[![Build Status](https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master)](https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master)
+
+All the source for this lesson is on [Github](https://github.com/testcookbook/ruby-cucumber).
 
 Cucumber is a behavior driven development test framework.  This framework was designed to allow for living documentation, business readability, and allow the team a focus on what the customer wants.
 
@@ -57,6 +60,7 @@ Now lets create some directories and try out some Cucumber.  You will also need 
 $ mkdir cucumber
 $ cd cucumber
 $ gem install cucumber
+$ gem install rspec-expectations
 $ cucumber --init
 ```
 
@@ -67,12 +71,13 @@ Windows is similar but you need to make sure that your slashes face the right di
 C:\Users\homedir> mkdir cucumber
 C:\Users\homedir\cucumber> cd cucumber
 C:\Users\homedir\cucumber> gem install cucumber
+C:\Users\homedir\cucumber> gem install rspec-expectations
 C:\Users\homedir\cucumber> cucumber --init
 ```
 
 Now create a new file within the features directory called 'test1.feature'
 
-***test1.feature***
+***features/test1.feature***
 
 ```gherkin
 Feature: Test 1
@@ -102,33 +107,34 @@ Feature: Test 1
 
 You can implement step definitions for undefined steps with these snippets:
 
-Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
+Given("There are numbers {int} and {int}") do |int, int2|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^added together$/) do
+When("added together") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^they equal (\d+)$/) do |arg1|
+Then("they equal {int}") do |int|
   pending # Write code here that turns the phrase above into concrete actions
 end
 ```
 
 More than likely when you ran cucumber it printed the text above and much of it should be yellow.  Some terminals may not support ascii color so it might be all the same color.  The yellow text signifies steps within the defined feature that are not yet implemented yet.  When using cucumber in Ruby we can actually copy the suggested code and put them into a 'steps.rb' file.
 
-***steps.rb***
+***features/step_definitions/steps.rb***
 ```ruby
-Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("There are numbers {int} and {int}") do |int, int2|
+  @a = int
+  @b = int2
 end
 
-When(/^added together$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+When("added together") do
+  @total = @a + @b
 end
 
-Then(/^they equal (\d+)$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("they equal {int}") do |int|
+    expect(@total).to eq(int)
 end
 ```
 
@@ -160,9 +166,9 @@ This time when you ran cucumber there were step definitions that have some code 
 We need to define some code rather than return pending.  In the first step we are accepting 2 numbers arg1 and arg2.  For this example we need to make those numbers accessible to other tests. Lets make the function look like.
 
 ```ruby
-Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
-  @a = arg1.to_i
-  @b = arg2.to_i
+Given("There are numbers {int} and {int}") do |int, int2|
+  @a = int
+  @b = int2
 end
 ```
 You will probably notice the to_i after the arg1 and arg2.  This just changes the value to be an integer.  The @ sign in front of a and b is significant as well.  This means those become instance variables and are available across the class.  If they were without the @ sign we would not be able to access them in the other steps.  
@@ -170,22 +176,21 @@ You will probably notice the to_i after the arg1 and arg2.  This just changes th
 Now when you run cucumber you should get a green line for the first step.  The closer the color matches to a cucumber the closer you are to success.  Lets go ahead and fix up the other 2 test definitions.
 
 ```ruby
-When(/^added together$/) do
-  @total=@a+@b
+When("added together") do
+  @total = @a + @b
 end
 
-Then(/^they equal (\d+)$/) do |arg1|
-  assert_equal(@total, arg1.to_i)
+Then("they equal {int}") do |int|
+    expect(@total).to eq(int)
 end
 ```
 
 Before you decide to run cucumber again we really need to add a small bit of code to the 'env.rb' file.  This file is used to setup the cucumber world or global settings that you will use within your tests.  For our tests to have a real value the assert statements need to work.  Otherwise you aren't really testing anything.
 
-***env.rb***
+***features/support/env.rb***
 ```ruby
-require 'test/unit/assertions'
-
-World(Test::Unit::Assertions)
+  #With the use of rspec-expectations and latest cucumber no world variables are needed here
+  for this example.
 ```
 
 Now when you run cucumber you should get all green.
@@ -211,7 +216,7 @@ Feature: Test 1
 Now remember back a short while ago when we said that if we do not assert anything you are not really testing anything.  All Green tests can be a false positive, which is something you do not want.  For example in the 'steps.rb' file. Put a # sign in front of the assert statement like so.
 
 ```ruby
-#assert_equal(@total, arg1.to_i)
+#expect(@total).to eq(int)
 ```
 
 When you run cucumber this time it is still all green.  You could change those numbers in the previous steps to any number you want.  It will always pass. Make sure that when you write your tests they provide value and actually assert for something.

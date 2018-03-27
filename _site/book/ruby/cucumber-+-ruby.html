@@ -77,6 +77,11 @@
             </a>
         </li>
         <li>
+            <a href="/book/common-automation-concepts/dry.html">
+                DRY
+            </a>
+        </li>
+        <li>
             <a href="/book/common-automation-concepts/gherkin.html">
                 Gherkin
             </a>
@@ -275,6 +280,9 @@
         </li>
         <li>
             <a href="/book/ruby/cucumber-+-ruby.html">Cucumber + Ruby</a>
+            <ul>
+                <li><a href="/book/ruby/cucumber-data-tables.html">Cucumber Data Tables</a></li>
+            </ul>
         </li>
     </ul>
     <li>Rust</li>
@@ -287,7 +295,10 @@
 
         </div>
         <div id="content" class="column column-100">
-            <h1 id="cucumber">Cucumber</h1>
+            <h1 id="ruby--cucumber">Ruby + Cucumber</h1>
+<p><a href="https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master"><img src="https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master" alt="Build Status" /></a></p>
+
+<p>All the source for this lesson is on <a href="https://github.com/testcookbook/ruby-cucumber">Github</a>.</p>
 
 <p>Cucumber is a behavior driven development test framework.  This framework was designed to allow for living documentation, business readability, and allow the team a focus on what the customer wants.</p>
 
@@ -341,6 +352,7 @@ tests your want to use the DRY method when developing.  DRY means don’t repeat
 <div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir cucumber
 $ cd cucumber
 $ gem install cucumber
+$ gem install rspec-expectations
 $ cucumber --init
 </code></pre>
 </div>
@@ -351,13 +363,14 @@ $ cucumber --init
 <div class="highlighter-rouge"><pre class="highlight"><code>C:\Users\homedir&gt; mkdir cucumber
 C:\Users\homedir\cucumber&gt; cd cucumber
 C:\Users\homedir\cucumber&gt; gem install cucumber
+C:\Users\homedir\cucumber&gt; gem install rspec-expectations
 C:\Users\homedir\cucumber&gt; cucumber --init
 </code></pre>
 </div>
 
 <p>Now create a new file within the features directory called ‘test1.feature’</p>
 
-<p><strong><em>test1.feature</em></strong></p>
+<p><strong><em>features/test1.feature</em></strong></p>
 
 <div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test 1
 
@@ -386,15 +399,15 @@ Feature: Test 1
 
 You can implement step definitions for undefined steps with these snippets:
 
-Given(/^There are numbers (\d+) and (\d+)$/) do |arg1, arg2|
+Given("There are numbers {int} and {int}") do |int, int2|
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-When(/^added together$/) do
+When("added together") do
   pending # Write code here that turns the phrase above into concrete actions
 end
 
-Then(/^they equal (\d+)$/) do |arg1|
+Then("they equal {int}") do |int|
   pending # Write code here that turns the phrase above into concrete actions
 end
 </code></pre>
@@ -402,17 +415,18 @@ end
 
 <p>More than likely when you ran cucumber it printed the text above and much of it should be yellow.  Some terminals may not support ascii color so it might be all the same color.  The yellow text signifies steps within the defined feature that are not yet implemented yet.  When using cucumber in Ruby we can actually copy the suggested code and put them into a ‘steps.rb’ file.</p>
 
-<p><strong><em>steps.rb</em></strong></p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="sr">/^There are numbers (\d+) and (\d+)$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">|</span>
-  <span class="n">pending</span> <span class="c1"># Write code here that turns the phrase above into concrete actions</span>
+<p><strong><em>features/step_definitions/steps.rb</em></strong></p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
+  <span class="vi">@a</span> <span class="o">=</span> <span class="n">int</span>
+  <span class="vi">@b</span> <span class="o">=</span> <span class="n">int2</span>
 <span class="k">end</span>
 
-<span class="no">When</span><span class="p">(</span><span class="sr">/^added together$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="n">pending</span> <span class="c1"># Write code here that turns the phrase above into concrete actions</span>
+<span class="no">When</span><span class="p">(</span><span class="s2">"added together"</span><span class="p">)</span> <span class="k">do</span>
+  <span class="vi">@total</span> <span class="o">=</span> <span class="vi">@a</span> <span class="o">+</span> <span class="vi">@b</span>
 <span class="k">end</span>
 
-<span class="no">Then</span><span class="p">(</span><span class="sr">/^they equal (\d+)$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="o">|</span>
-  <span class="n">pending</span> <span class="c1"># Write code here that turns the phrase above into concrete actions</span>
+<span class="no">Then</span><span class="p">(</span><span class="s2">"they equal {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
+    <span class="n">expect</span><span class="p">(</span><span class="vi">@total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 </div>
@@ -442,9 +456,9 @@ Feature: Test 1
 
 <p>We need to define some code rather than return pending.  In the first step we are accepting 2 numbers arg1 and arg2.  For this example we need to make those numbers accessible to other tests. Lets make the function look like.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="sr">/^There are numbers (\d+) and (\d+)$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="o">|</span>
-  <span class="vi">@a</span> <span class="o">=</span> <span class="n">arg1</span><span class="p">.</span><span class="nf">to_i</span>
-  <span class="vi">@b</span> <span class="o">=</span> <span class="n">arg2</span><span class="p">.</span><span class="nf">to_i</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
+  <span class="vi">@a</span> <span class="o">=</span> <span class="n">int</span>
+  <span class="vi">@b</span> <span class="o">=</span> <span class="n">int2</span>
 <span class="k">end</span>
 </code></pre>
 </div>
@@ -452,22 +466,21 @@ Feature: Test 1
 
 <p>Now when you run cucumber you should get a green line for the first step.  The closer the color matches to a cucumber the closer you are to success.  Lets go ahead and fix up the other 2 test definitions.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">When</span><span class="p">(</span><span class="sr">/^added together$/</span><span class="p">)</span> <span class="k">do</span>
-  <span class="vi">@total</span><span class="o">=</span><span class="vi">@a</span><span class="o">+</span><span class="vi">@b</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">When</span><span class="p">(</span><span class="s2">"added together"</span><span class="p">)</span> <span class="k">do</span>
+  <span class="vi">@total</span> <span class="o">=</span> <span class="vi">@a</span> <span class="o">+</span> <span class="vi">@b</span>
 <span class="k">end</span>
 
-<span class="no">Then</span><span class="p">(</span><span class="sr">/^they equal (\d+)$/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">arg1</span><span class="o">|</span>
-  <span class="n">assert_equal</span><span class="p">(</span><span class="vi">@total</span><span class="p">,</span> <span class="n">arg1</span><span class="p">.</span><span class="nf">to_i</span><span class="p">)</span>
+<span class="no">Then</span><span class="p">(</span><span class="s2">"they equal {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
+    <span class="n">expect</span><span class="p">(</span><span class="vi">@total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
 </code></pre>
 </div>
 
 <p>Before you decide to run cucumber again we really need to add a small bit of code to the ‘env.rb’ file.  This file is used to setup the cucumber world or global settings that you will use within your tests.  For our tests to have a real value the assert statements need to work.  Otherwise you aren’t really testing anything.</p>
 
-<p><strong><em>env.rb</em></strong></p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'test/unit/assertions'</span>
-
-<span class="no">World</span><span class="p">(</span><span class="no">Test</span><span class="o">::</span><span class="no">Unit</span><span class="o">::</span><span class="no">Assertions</span><span class="p">)</span>
+<p><strong><em>features/support/env.rb</em></strong></p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1">#With the use of rspec-expectations and latest cucumber no world variables are needed here</span>
+  <span class="k">for</span> <span class="n">this</span> <span class="n">example</span><span class="o">.</span>
 </code></pre>
 </div>
 
@@ -492,7 +505,7 @@ Feature: Test 1
 
 <p>Now remember back a short while ago when we said that if we do not assert anything you are not really testing anything.  All Green tests can be a false positive, which is something you do not want.  For example in the ‘steps.rb’ file. Put a # sign in front of the assert statement like so.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#assert_equal(@total, arg1.to_i)</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#expect(@total).to eq(int)</span>
 </code></pre>
 </div>
 

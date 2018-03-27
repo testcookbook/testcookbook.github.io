@@ -295,159 +295,86 @@
 
         </div>
         <div id="content" class="column column-100">
-            <h1 id="unit-test-with-clojure">Unit Test with Clojure</h1>
+            <h1 id="cucumber-data-tables-using-ruby">Cucumber Data Tables using Ruby</h1>
 
-<p><strong>Create a new App</strong></p>
+<p><a href="https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master"><img src="https://travis-ci.org/testcookbook/ruby-cucumber.svg?branch=master" alt="Build Status" /></a></p>
 
-<p>Command Line</p>
+<p>All the source for this lesson is on <a href="https://github.com/testcookbook/ruby-cucumber">Github</a>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>lein new funapp
+<p>Data tables are text structures built with pipes | and even spaces following right after the step 
+that is written in the feature file.  By default all tables are 2 dimensional arrays.  During this 
+lesson we will look at how to process these arrays in 3 different ways.  Horizontally, vertically 
+and full 2D array.</p>
+
+<h2 id="horizontal-data-table">Horizontal Data Table</h2>
+
+<p><em>features/data-table.feature</em></p>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a horizontal tables
+    <span class="nf">Given</span> a list of numbers horizontally
+        <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span> <span class="nv">3</span> <span class="p">|</span> <span class="nv">5</span> <span class="p">|</span>
+    <span class="n">Then</span> <span class="n">the</span> <span class="n">total</span> <span class="n">for</span> <span class="n">the</span> <span class="n">horizontal</span> <span class="n">list</span> <span class="n">is</span> <span class="n">9</span>
 </code></pre>
 </div>
 
-<p>Leiningen will create a basic starting project for you that will look like the structure below.</p>
+<p><em>features/step_definitions/data_table.rb</em></p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers horizontally"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+    <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
+<span class="k">end</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.
-├── CHANGELOG.md
-├── LICENSE
-├── README.md
-├── doc
-│   └── intro.md
-├── project.clj
-├── resources
-├── src
-│   └── funapp
-│       └── core.clj
-└── test
-    └── funapp
-        └── core_test.clj
+<span class="no">Then</span><span class="p">(</span><span class="s2">"the total for the horizontal list is {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="vi">@list</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">a</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span>
+    <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+<span class="k">end</span>
 </code></pre>
 </div>
 
-<p>Leiningen is package manage tool that will allow us a clean run and test interface. If you change into the funapp directory you can run “lein test”.</p>
-
-<p>Command Line</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
-
-lein test funapp.core-test
-
-lein test :only funapp.core-test/a-test
-
-FAIL in (a-test) (core_test.clj:7)
-FIXME, I fail.
-expected: (= 0 1)
-  actual: (not (= 0 1))
-
-Ran 1 tests containing 1 assertions.
-1 failures, 0 errors.
-Tests failed.
+<h2 id="vertical-data-table">Vertical Data Table</h2>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a vertical table
+    <span class="nf">Given</span> a list of numbers vertically
+        <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span>
+        <span class="p">|</span> <span class="n">2</span> <span class="p">|</span>
+        <span class="p">|</span> <span class="n">4</span> <span class="p">|</span>
+    <span class="nf">Then</span> the total for the vertical list is 7
 </code></pre>
 </div>
 
-<p>Notice that when you run the project you start immediately with a failed test. The tests is in the core_test.clj file and simply stating that it is expecting 0 to be equal to 1. Lets fix this test.</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers vertically"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+    <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
+<span class="k">end</span>
 
-<p><em>test/funapp/core_test.clj</em></p>
-
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
-  </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">clojure.test</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]</span><span class="w">
-            </span><span class="p">[</span><span class="n">funapp.core</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]))</span><span class="w">
-
-</span><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">a-test</span><span class="w">
-  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"FIXME, I fail."</span><span class="w">
-    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>Check out the last line of the test.</p>
-
-<p><em>test/funapp/core_test.clj</em></p>
-
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>Witihin the last line there is a function “is” that asserts whether a its next argument resolves to true or false. If it is false it will result in a failing test. Let’s change that last line to look like.</p>
-
-<p><em>test/funapp/core_test.clj</em></p>
-
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
-
-<p>This time when you run your tests you should see an output like.</p>
-
-<p>Command Line</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
-
-lein test funapp.core-test
-
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
+<span class="no">Then</span><span class="p">(</span><span class="s2">"the total for the vertical list is {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="vi">@list</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">a</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span>
+  <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+<span class="k">end</span>
 </code></pre>
 </div>
 
-<h2 id="test-a-function">Test a function</h2>
-
-<p>Now that you have a basic build that is passing its tests we need to make it a little more useful. Lets say that in this funapp that I a function that will add up all the numbers in a list. We will start with a list of (1 2 3).</p>
-
-<p>As with any TDD process lets write a basic failing test and add it to “core_test.clj”.</p>
-
-<p><em>test/funapp/core_test.clj</em></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>(deftest addList-test
-  (testing "Function should add up all numbers in the list"
-    (is (= 6 (addList [1 2 3])))))
+<h2 id="2-dimensional">2 Dimensional</h2>
+<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a 2D array
+    <span class="nf">Given</span> a list of numbers in 2D array
+        <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span> <span class="nv">3</span> <span class="p">|</span> <span class="nv">5</span> <span class="p">|</span>
+        <span class="p">|</span> <span class="n">2</span> <span class="p">|</span> <span class="n">6</span> <span class="p">|</span> <span class="n">3</span> <span class="p">|</span>
+        <span class="p">|</span> <span class="n">4</span> <span class="p">|</span> <span class="n">2</span> <span class="p">|</span> <span class="n">2</span> <span class="p">|</span>
+    <span class="nf">Then</span> the total for all numbers in 2D array is 28
 </code></pre>
 </div>
 
-<p>Command Line</p>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers in 2D array"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+  <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
+<span class="k">end</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
-Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)
+<span class="no">Then</span><span class="p">(</span><span class="s2">"the total for all numbers in 2D array is {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
+  <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="vi">@list</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">b</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span> <span class="p">}</span>
+  <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
+<span class="k">end</span>
 </code></pre>
 </div>
 
-<p>Failing is good. This particular failure is telling us that the function</p>
-
-<p>Remember back from the tree diagram there is a src folder and underneath it is “funapp/core.clj”. Lets open that file up.</p>
-
-<p><em>funapp/core.clj</em></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>(ns funapp.core)
-
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
-</code></pre>
-</div>
-
-<p>Within that file add a new function called addList that will sum up all the numbers in the list.</p>
-
-<p><em>funapp/core.clj</em></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>(defn addList
-  "This will add all the numbers in a list"
-  [x]
-  (reduce + x))
-</code></pre>
-</div>
-
-<p>Try running your tests now.</p>
-
-<p>Command Line</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
-
-lein test funapp.core-test
-
-Ran 2 tests containing 2 assertions.
-0 failures, 0 errors.
-</code></pre>
-</div>
-
+<p>If you wanted to <a href="/book/common-automation-concepts/dry.html">DRY</a> this code up a little bit.  You could actually use the same Given 
+statement for all of these 3 scenarios.</p>
 
         </div>
     </div>
