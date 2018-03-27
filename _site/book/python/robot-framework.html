@@ -303,9 +303,8 @@
 
 <p>First off we need to setup a little environment stuff.  Hopefully starting out you have some basic Python skills.  Lets install Robot Framework.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ pip install robotframework
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install robotframework
+</code></pre></div></div>
 
 <h2 id="your-first-test">Your First Test.</h2>
 <p>Once it is installed we can now start examining how we can create some tests. Lets assume we want to test adding up a couple of numbers.  For the first test we will focus on a keyword driven development.</p>
@@ -338,7 +337,7 @@ Addition
 
 <p><strong><em>AdderLibrary.py</em></strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AdderLibrary</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="s">"""
     Tests for AdderLibrary
     """</span>
@@ -354,8 +353,7 @@ Addition
         <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">b</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_result</span> <span class="o">!=</span> <span class="nb">int</span><span class="p">(</span><span class="n">expected</span><span class="p">):</span>
             <span class="k">raise</span> <span class="nb">AssertionError</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">s != </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_result</span><span class="p">,</span> <span class="n">expected</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>For this example we will test within just this file to demonstrate how keywords work.  Normally the actual functionality would be in its own class file.</p>
 
@@ -365,7 +363,7 @@ also have 3 arguments. Self, a and b which will be the numbers that we want to a
 <p>Finally take a look at the total function.  This does 2 distinct things.  First it adds up the 2 numbers and returns the value to “self._result”. Secondly we have an if block. This does a simple comparison to validate if the expected value matches that which we added up.  If it is equal we are fine.  However if things are not equal then we need to assert an error followed by some message that describes what the issue is.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ robot keyword.robot
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot keyword.robot
 ==============================================================================
 Keyword :: Example Keyword Test                                               
 ==============================================================================
@@ -378,15 +376,14 @@ Keyword :: Example Keyword Test                                       | PASS |
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="gherkin">Gherkin</h2>
 
 <p>You have completed your first test using keywords.  But what if we wanted to write using a style similar to a Gherkin format?  Well your in luck.  Lets create a file called “gherkin.robot”.</p>
 
 <p><strong><em>gherkin.robot</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>*** Settings ***
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*** Settings ***
 Documentation     Example Gherkin Style Test
 
 Library    AdderLibrary.py
@@ -401,8 +398,7 @@ two numbers "${a}" and "${b}"
     Add input    ${a}    ${b}
 total of result is "${total}"
     Total    ${total}
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Within this file you will see a new header called Keywords, and the Test Cases will look like Given, When and Then.  The new section Keywords is a little different than you might expect from something like Cucumber.  With Robot Framework your step definition translation is happening within the test file not the step definition.</p>
 
@@ -411,7 +407,7 @@ total of result is "${total}"
 <p>Once the step definition is described we can then add keyword functions just like we did on the keyword.robot file.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ robot gherkin.robot
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot gherkin.robot
 ==============================================================================
 Gherkin :: Example Gherkin Style Test                                         
 ==============================================================================
@@ -424,8 +420,7 @@ Gherkin :: Example Gherkin Style Test                                 | PASS |
 Output:  /home/user/robotframework/output.xml
 Log:     /home/user/robotframework/log.html
 Report:  /home/user/robotframework/report.html
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>

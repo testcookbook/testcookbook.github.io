@@ -299,21 +299,19 @@
 
 <p>In a console window initialize a simple npm project.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p firstTest
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p firstTest
 cd firstTest
 mkdir features
 mkdir -p features/step_definitions
 mkdir -p features/support
 npm init -f
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd firstTest
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd firstTest
 npm install cucumber assert --save-dev
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
@@ -328,7 +326,7 @@ npm install cucumber assert --save-dev
 
 <p>Build your first step definitions.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">t</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^numbers </span><span class="se">(\d</span><span class="sr">+</span><span class="se">)</span><span class="sr"> and </span><span class="se">(\d</span><span class="sr">+</span><span class="se">)</span><span class="sr">$/</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">arg1</span><span class="p">,</span> <span class="nx">arg2</span><span class="p">)</span> <span class="p">{</span>
@@ -344,8 +342,7 @@ npm install cucumber assert --save-dev
         <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>

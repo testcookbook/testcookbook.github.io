@@ -3,6 +3,10 @@ layout: default
 ---
 # Setting up CMake for Google Test
 
+[![Build Status](https://travis-ci.org/testcookbook/google-test.svg?branch=master)](https://travis-ci.org/testcookbook/google-test.svg?branch=master)
+
+Follow the code on [Github](https://github.com/testcookbook/google-test) while you read.
+
 If you are new to C++ or CMake this can be somewhat of a daunting task on your own.  However if done correctly
 it can save you quite a bit of heart ache in the end.  
 

@@ -317,30 +317,27 @@
 
 <p>Start off by creating a directory to build tests in.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir shpec
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir shpec
+</code></pre></div></div>
 
 <p>Create a file called “first_test_shpec.sh” and fill it with the code below.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>describe <span class="s2">"test"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>describe <span class="s2">"test"</span>
   it <span class="s2">"works"</span>
     assert equal <span class="s2">"test"</span> <span class="s2">"test"</span>
    end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Lastly run the tests.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>shpec
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shpec
+</code></pre></div></div>
 
 <p>Now that you have a simple set of tests experiment using some of the other matchers available.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>Binary Matchers
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Binary Matchers
 equal         # equality
 unequal       # inequality
 gt            # algebraic '
@@ -359,8 +356,7 @@ file_present  # file presence
 file_absent   # file absence
 symlink       # tests a symlink's target
 test          # evaluates a test string
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
         </div>

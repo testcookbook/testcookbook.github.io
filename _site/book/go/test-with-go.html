@@ -301,7 +301,7 @@
 
 <p>Once you create the file you can create a test like the file below.</p>
 
-<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">stringtest</span><span class="x">
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">stringtest</span><span class="x">
 </span><span class="k">import</span><span class="x"> </span><span class="s">"testing"</span><span class="x">
 
 </span><span class="k">func</span><span class="x"> </span><span class="n">TestValue</span><span class="p">(</span><span class="n">t</span><span class="x"> </span><span class="o">*</span><span class="n">testing</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
@@ -311,8 +311,7 @@
     </span><span class="n">t</span><span class="o">.</span><span class="n">Error</span><span class="p">(</span><span class="s">"Expected Hello but got"</span><span class="p">,</span><span class="x"> </span><span class="n">v</span><span class="p">)</span><span class="x">
   </span><span class="p">}</span><span class="x">
 </span><span class="p">}</span><span class="x">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>What is going on here? To start we tell Go what package we are working with and import the testing package. From there we can create a test function. For this example we are going to test a value for a specific string.</p>
 
@@ -320,9 +319,8 @@
 
 <p>To run your tests.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>go <span class="nb">test</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>go <span class="nb">test</span>
+</code></pre></div></div>
 
 
         </div>

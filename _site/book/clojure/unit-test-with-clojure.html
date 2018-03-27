@@ -301,13 +301,12 @@
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>lein new funapp
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lein new funapp
+</code></pre></div></div>
 
 <p>Leiningen will create a basic starting project for you that will look like the structure below.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 ├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
@@ -321,14 +320,13 @@
 └── test
     └── funapp
         └── core_test.clj
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Leiningen is package manage tool that will allow us a clean run and test interface. If you change into the funapp directory you can run “lein test”.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
@@ -342,51 +340,46 @@ expected: (= 0 1)
 Ran 1 tests containing 1 assertions.
 1 failures, 0 errors.
 Tests failed.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Notice that when you run the project you start immediately with a failed test. The tests is in the core_test.clj file and simply stating that it is expecting 0 to be equal to 1. Lets fix this test.</p>
 
 <p><em>test/funapp/core_test.clj</em></p>
 
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">ns</span><span class="w"> </span><span class="n">funapp.core-test</span><span class="w">
   </span><span class="p">(</span><span class="no">:require</span><span class="w"> </span><span class="p">[</span><span class="n">clojure.test</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]</span><span class="w">
             </span><span class="p">[</span><span class="n">funapp.core</span><span class="w"> </span><span class="no">:refer</span><span class="w"> </span><span class="no">:all</span><span class="p">]))</span><span class="w">
 
 </span><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="n">a-test</span><span class="w">
   </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"FIXME, I fail."</span><span class="w">
     </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>Check out the last line of the test.</p>
 
 <p><em>test/funapp/core_test.clj</em></p>
 
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Witihin the last line there is a function “is” that asserts whether a its next argument resolves to true or false. If it is false it will result in a failing test. Let’s change that last line to look like.</p>
 
 <p><em>test/funapp/core_test.clj</em></p>
 
-<div class="language-clojure highlighter-rouge"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-clojure highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">))))</span><span class="w">
+</span></code></pre></div></div>
 
 <p>This time when you run your tests you should see an output like.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
 Ran 1 tests containing 1 assertions.
 0 failures, 0 errors.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="test-a-function">Test a function</h2>
 
@@ -396,18 +389,16 @@ Ran 1 tests containing 1 assertions.
 
 <p><em>test/funapp/core_test.clj</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>(deftest addList-test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(deftest addList-test
   (testing "Function should add up all numbers in the list"
     (is (= 6 (addList [1 2 3])))))
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Failing is good. This particular failure is telling us that the function</p>
 
@@ -415,38 +406,35 @@ Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol:
 
 <p><em>funapp/core.clj</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>(ns funapp.core)
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(ns funapp.core)
 
 (defn foo
   "I don't do a whole lot."
   [x]
   (println x "Hello, World!"))
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Within that file add a new function called addList that will sum up all the numbers in the list.</p>
 
 <p><em>funapp/core.clj</em></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>(defn addList
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(defn addList
   "This will add all the numbers in a list"
   [x]
   (reduce + x))
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Try running your tests now.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ lein test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
 Ran 2 tests containing 2 assertions.
 0 failures, 0 errors.
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
         </div>

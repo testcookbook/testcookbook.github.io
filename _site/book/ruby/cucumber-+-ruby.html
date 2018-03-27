@@ -322,7 +322,7 @@ same language.</p>
 
 <p>To get started with this example we will use Ruby and layout some basics. A normal directory setup would look something like.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>.
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 ├── features
 │   ├── test1.feature
 │   ├── test2.feature
@@ -332,8 +332,7 @@ same language.</p>
 │       ├── env.rb
 │       └── hooks.rb
 └── Gemfile
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The features directory would contain your feature files.  These feature files will be written in a Gherkin style format.</p>
 
@@ -349,42 +348,39 @@ tests your want to use the DRY method when developing.  DRY means don’t repeat
 <p>Now lets create some directories and try out some Cucumber.  You will also need Ruby for these examples to work.  If you have never installed or used Ruby, check out. <a href="https://www.ruby-lang.org/">https://www.ruby-lang.org/</a></p>
 
 <p><strong><em>Terminal - Mac / Linux</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ mkdir cucumber
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir cucumber
 $ cd cucumber
 $ gem install cucumber
 $ gem install rspec-expectations
 $ cucumber --init
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Windows is similar but you need to make sure that your slashes face the right direction.  The homedir below will be your Windows user name.  You can create the cucumber directory where ever you would like.  You will also need to make sure on windows that ‘cucumber’ and ‘gem’ binaries are in your PATH variable.</p>
 
 <p><strong><em>Terminal - Windows</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>C:\Users\homedir&gt; mkdir cucumber
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\homedir&gt; mkdir cucumber
 C:\Users\homedir\cucumber&gt; cd cucumber
 C:\Users\homedir\cucumber&gt; gem install cucumber
 C:\Users\homedir\cucumber&gt; gem install rspec-expectations
 C:\Users\homedir\cucumber&gt; cucumber --init
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now create a new file within the features directory called ‘test1.feature’</p>
 
 <p><strong><em>features/test1.feature</em></strong></p>
 
-<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test 1
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> Test 1
 
   <span class="kn">Scenario</span><span class="p">:</span> Add 2 Numbers
-    <span class="nf">Given</span> There are numbers 2 and 3
-    <span class="nf">When</span> added together
-    <span class="nf">Then</span> they equal 5
-</code></pre>
-</div>
+    <span class="nf">Given </span>There are numbers 2 and 3
+    <span class="nf">When </span>added together
+    <span class="nf">Then </span>they equal 5
+</code></pre></div></div>
 
 <p>Lets try running cucumber. You should get an output similar to this below.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cucumber
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cucumber
 
 Feature: Test 1
 
@@ -410,13 +406,12 @@ end
 Then("they equal {int}") do |int|
   pending # Write code here that turns the phrase above into concrete actions
 end
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>More than likely when you ran cucumber it printed the text above and much of it should be yellow.  Some terminals may not support ascii color so it might be all the same color.  The yellow text signifies steps within the defined feature that are not yet implemented yet.  When using cucumber in Ruby we can actually copy the suggested code and put them into a ‘steps.rb’ file.</p>
 
 <p><strong><em>features/step_definitions/steps.rb</em></strong></p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
   <span class="vi">@a</span> <span class="o">=</span> <span class="n">int</span>
   <span class="vi">@b</span> <span class="o">=</span> <span class="n">int2</span>
 <span class="k">end</span>
@@ -428,13 +423,12 @@ end
 <span class="no">Then</span><span class="p">(</span><span class="s2">"they equal {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
     <span class="n">expect</span><span class="p">(</span><span class="vi">@total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Try running cucumber again.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cucumber
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cucumber
 
 Feature: Test 1
 
@@ -449,46 +443,42 @@ Feature: Test 1
 1 scenario (1 pending)
 3 steps (2 skipped, 1 pending)
 0m0.025s
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This time when you ran cucumber there were step definitions that have some code to them.  Each one of the steps was set to just return pending.  If a step returns pending it will usually be yellow and all the steps below it are a light blue.  They are blue because they could not be run yet.  The scenario ended after the first pending.</p>
 
 <p>We need to define some code rather than return pending.  In the first step we are accepting 2 numbers arg1 and arg2.  For this example we need to make those numbers accessible to other tests. Lets make the function look like.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"There are numbers {int} and {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="p">,</span> <span class="n">int2</span><span class="o">|</span>
   <span class="vi">@a</span> <span class="o">=</span> <span class="n">int</span>
   <span class="vi">@b</span> <span class="o">=</span> <span class="n">int2</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>You will probably notice the to_i after the arg1 and arg2.  This just changes the value to be an integer.  The @ sign in front of a and b is significant as well.  This means those become instance variables and are available across the class.  If they were without the @ sign we would not be able to access them in the other steps.</p>
 
 <p>Now when you run cucumber you should get a green line for the first step.  The closer the color matches to a cucumber the closer you are to success.  Lets go ahead and fix up the other 2 test definitions.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">When</span><span class="p">(</span><span class="s2">"added together"</span><span class="p">)</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">When</span><span class="p">(</span><span class="s2">"added together"</span><span class="p">)</span> <span class="k">do</span>
   <span class="vi">@total</span> <span class="o">=</span> <span class="vi">@a</span> <span class="o">+</span> <span class="vi">@b</span>
 <span class="k">end</span>
 
 <span class="no">Then</span><span class="p">(</span><span class="s2">"they equal {int}"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">int</span><span class="o">|</span>
     <span class="n">expect</span><span class="p">(</span><span class="vi">@total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Before you decide to run cucumber again we really need to add a small bit of code to the ‘env.rb’ file.  This file is used to setup the cucumber world or global settings that you will use within your tests.  For our tests to have a real value the assert statements need to work.  Otherwise you aren’t really testing anything.</p>
 
 <p><strong><em>features/support/env.rb</em></strong></p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code>  <span class="c1">#With the use of rspec-expectations and latest cucumber no world variables are needed here</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">#With the use of rspec-expectations and latest cucumber no world variables are needed here</span>
   <span class="k">for</span> <span class="n">this</span> <span class="n">example</span><span class="o">.</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now when you run cucumber you should get all green.</p>
 
 <p><strong><em>Terminal</em></strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cucumber
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cucumber
 
 Feature: Test 1
 
@@ -500,14 +490,12 @@ Feature: Test 1
 1 scenario (1 passed)
 3 steps (3 passed)
 0m0.028s
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now remember back a short while ago when we said that if we do not assert anything you are not really testing anything.  All Green tests can be a false positive, which is something you do not want.  For example in the ‘steps.rb’ file. Put a # sign in front of the assert statement like so.</p>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="c1">#expect(@total).to eq(int)</span>
-</code></pre>
-</div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#expect(@total).to eq(int)</span>
+</code></pre></div></div>
 
 <p>When you run cucumber this time it is still all green.  You could change those numbers in the previous steps to any number you want.  It will always pass. Make sure that when you write your tests they provide value and actually assert for something.</p>
 

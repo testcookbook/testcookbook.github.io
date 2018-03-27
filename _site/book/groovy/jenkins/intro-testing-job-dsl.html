@@ -304,13 +304,12 @@
 <p>So what does a Jenkins job look like as code?  Using the Job-Dsl plugin they look like the following.</p>
 
 <p><em>Sample Jenkins Job</em></p>
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">freeStyleJob</span><span class="o">(</span><span class="s1">'Sample Job'</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">freeStyleJob</span><span class="o">(</span><span class="s1">'Sample Job'</span><span class="o">)</span> <span class="o">{</span>
     <span class="n">steps</span> <span class="o">{</span>
         <span class="n">shell</span><span class="o">(</span><span class="s1">'ls'</span><span class="o">)</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This particular script really doesn’t do a whole lot.  It creates a job called Sample Job on Jenkins and runs a bash command to list the files out on the workspace.  For our initial testing, this will work just fine.</p>
 
@@ -322,16 +321,15 @@
 
 <p>The first set of dependencies we need are the ones to compile the groovy scripts so that we can run tests against them.  In some demos, you may find they do not include ivy like we did below.  If you decide to use groovy grape for your scripts you will need to include it.  Make sure that your version number for the job-dsl-core matches what you want to use on your Jenkins build.</p>
 
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.5.9"</span>
     <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After these, we need to add the Spock framework for testing and Jenkins test harness.  Pay close attention to the versioning of the ones labeled jenkins-war.  That version will be the version of Jenkins that you are using.</p>
 
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.59"</span>
     <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
 
@@ -341,12 +339,11 @@
     <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2"</span>
     <span class="n">testCompile</span> <span class="s2">"org.jenkins-ci.main:jenkins-war:2.46.2:war-for-test@jar"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Lastly, add your plugins. One of the mandatory plugins for this will be the job-dsl plugin.  Again make sure that the versions of these plugins match what you are expecting to run.</p>
 
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dependencies</span> <span class="o">{</span>
     <span class="n">compile</span> <span class="s2">"org.jenkins-ci.plugins:job-dsl-core:1.5.9"</span>
     <span class="n">compile</span> <span class="s2">"org.apache.ivy:ivy:2.4.0"</span>
 
@@ -365,12 +362,11 @@
     <span class="n">testPlugins</span> <span class="s2">"org.jenkins-ci.plugins:ghprb:1.31.4"</span>
     <span class="n">testPlugins</span> <span class="s2">"com.coravy.hudson.plugins.github:github:1.19.0"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You may notice now that there are some versions of things that you have to write multiple times.  More than likely you may want to change or upgrade versioning on all of these.  An easier way to manage this is to create a variable that will store those common values.  Notice the ext closure with 2 variables jobDslVersion and jenkinsVersion.</p>
 
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="n">ext</span> <span class="o">{</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ext</span> <span class="o">{</span>
     <span class="n">jobDslVersion</span> <span class="o">=</span> <span class="s1">'1.59'</span>
     <span class="n">jenkinsVersion</span> <span class="o">=</span> <span class="s1">'2.46.2'</span>
 <span class="o">}</span>
@@ -395,8 +391,7 @@
     <span class="n">testPlugins</span> <span class="s2">"org.jenkins-ci.plugins:ghprb:1.31.4"</span>
     <span class="n">testPlugins</span> <span class="s2">"com.coravy.hudson.plugins.github:github:1.19.0"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="testing">Testing</h2>
 
@@ -404,7 +399,7 @@
 
 <p>To get started we will create a new file called JobScriptsSpec.groovy in the src/test/groovy/ directory.</p>
 
-<div class="language-groovy highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javaposse.jobdsl.dsl.DslScriptLoader</span>
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">javaposse.jobdsl.dsl.DslScriptLoader</span>
 <span class="kn">import</span> <span class="nn">javaposse.jobdsl.plugin.JenkinsJobManagement</span>
 <span class="kn">import</span> <span class="nn">org.junit.ClassRule</span>
 <span class="kn">import</span> <span class="nn">org.jvnet.hudson.test.JenkinsRule</span>
@@ -442,20 +437,18 @@
         <span class="n">files</span>
     <span class="o">}</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>From glancing at this code there are 2 main parts.  The test defined after the @Unroll, and the list function called getJobFiles. If you are unfamiliar with groovy the @Unroll allows us to iterate over a subset of data.  In the case of our tests that will be the files found with the getter getJobFiles. This test will load each script one by one, load it into the Jenkins harness, run the script with the DslScriptLoader and test if an exception is thrown.</p>
 
 <p>If you are using the sample repo you may notice that Gradle wrapper is included.  To run the tests.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Linux / Mac
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Linux / Mac
 ./gradlew test
 
 # Windows
 gradlew.bat test
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>

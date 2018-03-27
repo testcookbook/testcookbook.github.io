@@ -307,7 +307,7 @@
 
 <p>src/main/java/path/to/app/AddNumberTest.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumberTest</span> <span class="o">{</span>
@@ -317,27 +317,25 @@
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You should now be ready to run your tests.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Maven User
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Maven User
 $ mvn test
 
 # Gradle User
 $ gradle test
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now that we have a real basic test lets try a small amount of TDD and build a class that adds up 2 numbers. Making some modifications to the AddNumberTest.java so that it looks like.</p>
 
 <p>AddNumberTest.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumberTest</span> <span class="o">{</span>
@@ -348,14 +346,13 @@ $ gradle test
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you were to run the tests now you would get an error since AddNumber has not been created. Lets see if we can make this test pass with some code.</p>
 
 <p>src/main/java/path/to/app/AddNumber.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumber</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumber</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="kt">int</span> <span class="n">num1</span><span class="o">;</span>
   <span class="kd">public</span> <span class="kt">int</span> <span class="n">num2</span><span class="o">;</span>
@@ -368,14 +365,13 @@ $ gradle test
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now try running the tests. You should get something like.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>-------------------------------------------------------
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-------------------------------------------------------
  T E S T S
 -------------------------------------------------------
 Running AddNumberTest
@@ -392,8 +388,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Finished at: 2016-10-07T11:41:55-05:00
 [INFO] Final Memory: 15M/166M
 [INFO] ------------------------------------------------------------------------
-</code></pre>
-</div>
+</code></pre></div></div>
 
 
         </div>

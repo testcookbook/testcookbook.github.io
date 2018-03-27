@@ -303,7 +303,7 @@
 
 <p><strong><em>test.py</em></strong></p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="k">def</span> <span class="nf">validate_json_syntax</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
@@ -320,22 +320,20 @@
 <span class="c">#missing quotes around lastName</span>
 <span class="n">data</span> <span class="o">=</span> <span class="s">'{"firstName": "John", lastName: "Doe"}'</span>
 <span class="k">print</span> <span class="n">validate_json_syntax</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Run the test to see what output looks like.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ python test.py
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
 {u'lastName': u'Doe', u'firstName': u'John'}
 DEBUG: JSON data contains an error
 False
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>Once we have loaded the JSON and we know that it is syntactically correct. We can now start testing the <a href="/common-automation-concepts/json-schema.md">JSON schema</a>. Lets load up that test.py again and add JSON schema.</p>
 
 <p><strong><em>test.py</em></strong></p>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">from</span> <span class="nn">jsonschema</span> <span class="kn">import</span> <span class="n">validate</span>
 
 <span class="k">def</span> <span class="nf">validate_json_syntax</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
@@ -358,24 +356,22 @@ False
 <span class="c">#output will be None</span>
 <span class="k">print</span><span class="p">(</span><span class="n">validate</span><span class="p">(</span><span class="n">jsd</span><span class="p">,</span> <span class="n">schema</span><span class="p">))</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 <p>This just happens to be a happy path example for a JSON schema validation.  But what if for some reason we really wanted the lastName to be a number? Within the schema change type to number.  Then run the program and see what happens.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">schema</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">"type"</span><span class="p">:</span> <span class="s">"object"</span><span class="p">,</span>
     <span class="s">"properties"</span><span class="p">:</span> <span class="p">{</span>
       <span class="s">"firstName"</span><span class="p">:</span> <span class="p">{</span> <span class="s">"type"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">},</span>
       <span class="s">"lastName"</span><span class="p">:</span> <span class="p">{</span> <span class="s">"type"</span><span class="p">:</span> <span class="s">"number"</span><span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You should have some output that looks like.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>$ python test.py
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
 jsonschema.exceptions.ValidationError: u'Doe' is not of type 'number'
 
 Failed validating 'type' in schema['properties']['lastName']:
@@ -383,8 +379,7 @@ Failed validating 'type' in schema['properties']['lastName']:
 
 On instance['lastName']:
     u'Doe'
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>
