@@ -15,6 +15,7 @@
     <!--<link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">-->
 
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/autumn.css">
     <!-- Google Analytics -->
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -295,24 +296,25 @@
 
         </div>
         <div id="content" class="column column-100">
-            <h1 id="junit">JUnit</h1>
+            <h1 id="junit">JUnit 5</h1>
 
 <p>JUnit is a Java framework for writing repeatable tests. Primarily these would be unit tests, however you can bend it to your particular needs.</p>
 
 <h2 id="getting-started">Getting Started</h2>
 
-<p>When working with most Java projects you generally want to use a build tool. For JUnit tests there are a couple of build tools that you are most likely to see and use. For this exercise feel free to try out either Maven or Gradle. If this is your first Java project check out the section on initializing<a href="http://www.testcookbook.com/book/programming/java/maven.html">Maven</a>or<a href="http://www.testcookbook.com/book/programming/java/gradle.html">Gradle</a>.</p>
+<p>When working with most Java projects you generally want to use a build tool. For JUnit tests there are a couple of build tools that you are most likely to see and use. For this exercise feel free to try out either Maven or Gradle. If this is your first Java project check out the section on initializing <a href="https://www.testcookbook.com/book/programming/java/maven.html">Maven</a> or <a href="https://www.testcookbook.com/book/programming/java/gradle.html">Gradle</a>.  You can view a working <a href="https://github.com/testcookbook/junit5/blob/master/pom.xml">pom.xml</a></p>
 
-<p>Once you have created a new Java project, create a new file within the ‘src/main/java/path/to/app’ directory called ‘AddNumberTest.java’.</p>
+<p>Once you have created a new Java project, create a new file within the ‘src/test/java/path/to/app’ directory called ‘Math.java’.</p>
 
-<p>src/main/java/path/to/app/AddNumberTest.java</p>
+<p>src/test/java/path/to/app/Math.java</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumberTest</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathTest</span> <span class="o">{</span>
+  
   <span class="nd">@Test</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addsNumbersExpression</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addingNumbers</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
   <span class="o">}</span>
 
@@ -331,37 +333,32 @@ $ gradle test
 
 </code></pre></div></div>
 
-<p>Now that we have a real basic test lets try a small amount of TDD and build a class that adds up 2 numbers. Making some modifications to the AddNumberTest.java so that it looks like.</p>
+<p>Now that we have a real basic test lets try a small amount of TDD and build a class that adds up 2 numbers. Making some modifications to the MathTest.java so that it looks like.</p>
 
-<p>AddNumberTest.java</p>
+<p>MathTest.java</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">Assert</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">org.junit.Test</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumberTest</span> <span class="o">{</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathTest</span> <span class="o">{</span>
+  
   <span class="nd">@Test</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addsNumbersExpression</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">AddNumber</span> <span class="n">an</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AddNumber</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">);</span>
-    <span class="n">assertEquals</span><span class="o">(</span><span class="n">an</span><span class="o">.</span><span class="na">total</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addingNumbers</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">Math</span> <span class="n">m</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Math</span><span class="o">();</span>
+    <span class="n">assertEquals</span><span class="o">(</span><span class="n">m</span><span class="o">.</span><span class="na">Add</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">),</span> <span class="mi">5</span><span class="o">);</span>
   <span class="o">}</span>
 
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>If you were to run the tests now you would get an error since AddNumber has not been created. Lets see if we can make this test pass with some code.</p>
+<p>If you were to run the tests now you would get an error since Math has not been created. Lets see if we can make this test pass with some code.</p>
 
-<p>src/main/java/path/to/app/AddNumber.java</p>
+<p>src/main/java/path/to/app/Math.java</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AddNumber</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Math</span> <span class="o">{</span>
 
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">num1</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">num2</span><span class="o">;</span>
-  <span class="kd">public</span> <span class="kt">int</span> <span class="n">total</span><span class="o">;</span>
-
-  <span class="kd">public</span> <span class="nf">AddNumber</span><span class="o">(</span><span class="kt">int</span> <span class="n">n1</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n2</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">num1</span> <span class="o">=</span> <span class="n">n1</span><span class="o">;</span>
-    <span class="n">num2</span> <span class="o">=</span> <span class="n">n2</span><span class="o">;</span>
-    <span class="n">total</span> <span class="o">=</span> <span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">Add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
   <span class="o">}</span>
 
 <span class="o">}</span>
@@ -371,24 +368,28 @@ $ gradle test
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-------------------------------------------------------
- T E S T S
--------------------------------------------------------
-Running AddNumberTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec - in AddNumberTest
-
-Results :
-
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
-
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running MathTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in MathTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 2.637 s
-[INFO] Finished at: 2016-10-07T11:41:55-05:00
-[INFO] Final Memory: 15M/166M
+[INFO] Total time: 4.041 s
+[INFO] Finished at: 2018-05-07T15:06:27-05:00
+[INFO] Final Memory: 17M/221M
 [INFO] ------------------------------------------------------------------------
 </code></pre></div></div>
+
+<p><img src="https://travis-ci.org/testcookbook/junit5.svg?branch=master" alt="Travis Build Icon" /></p>
+
+<p>All of the source of this lesson is on <a href="https://github.com/testcookbook/junit5">Github</a>.</p>
 
 
         </div>
