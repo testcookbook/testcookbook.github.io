@@ -23,9 +23,22 @@ npm install cucumber assert --save-dev
 
 Install cucumber and assert packages and save to package file
 
+Updating your package.json file to run the tests. Within the scripts section of the package.json update the object test with the following.
+```
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js"
+  },
+```
+
+Once you have saved the package.json file you will now be able to run your tests using.
+
+```
+npm test
+```
+
 Create your first feature file written in [Gherkin](/book/common-automation-concepts/gherkin.html).
 
-```Gherkin
+```gherkin
 Feature: First Test
     Scenario: Adding Numbers
         Given numbers 2 and 5
@@ -36,20 +49,38 @@ Feature: First Test
 Build your first step definitions.
 
 ```javascript
-var assert = require('assert');
-module.exports = function () {
-    var a, b, t;
-    this.Given(/^numbers (\d+) and (\d+)$/, function (arg1, arg2) {
-        a = Number(arg1);
-        b = Number(arg2);
-    });
+const {Given, Then, When} = require('cucumber');
+const assert = require('assert');
 
-    this.When(/^they are added together$/, function () {
-        t = a + b;
-    });
+let a, b, t;
 
-    this.Then(/^the total should be (\d+)$/, function (arg1) {
-        assert.equal(t, 7);
-    });
-}
+Given('numbers {int} and {int}', function(int, int2) {
+    a = int;
+    b = int2;
+});
+
+When('they are added together', function() {
+    t = a + b;
+});
+
+Then('the total should be {int}', function(int) {
+    assert.equal(t, 7)
+});
 ```
+
+```
+$ npm test
+
+> cucumberjs-sample@1.0.0 test /Users/ben/personal/cucumberjs-sample
+> cucumber-js
+
+...
+
+1 scenario (1 passed)
+3 steps (3 passed)
+0m00.003s
+```
+
+![Travis Build Cucumber-Js-Sample](https://travis-ci.org/testcookbook/cucumber-js-sample.svg?branch=master)
+
+If you would like to view this all together check it out on [Github](https://github.com/testcookbook/cucumber-js-sample).
