@@ -296,107 +296,53 @@
 
         </div>
         <div id="content" class="column column-100">
-            <h1 id="unit-test-in-rust">Unit Test in Rust</h1>
+            <h1 id="junit-5-pom-starter">JUnit 5 POM Starter</h1>
 
-<p>Lets get started very quick an dirty with a new library.</p>
+<p><a href="/book/java/junit.html">JUnit 5 Intro</a></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cargo new example_test
-Created library `example_test` project
-</code></pre>
-</div>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
 
-<p>That should give you a new folder in your current directory with a structure like.</p>
+    <span class="nt">&lt;groupId&gt;</span>com.testcookbook<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>junit5-sample<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>1.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ tree
-.
-├── Cargo.lock
-├── Cargo.toml
-├── src
-│   └── lib.rs
-</code></pre>
-</div>
+    <span class="nt">&lt;properties&gt;</span>
+        <span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+        <span class="nt">&lt;java.version&gt;</span>1.8<span class="nt">&lt;/java.version&gt;</span>
+        <span class="nt">&lt;maven.compiler.source&gt;</span>${java.version}<span class="nt">&lt;/maven.compiler.source&gt;</span>
+		<span class="nt">&lt;maven.compiler.target&gt;</span>${java.version}<span class="nt">&lt;/maven.compiler.target&gt;</span>
+        <span class="nt">&lt;junit.jupiter.version&gt;</span>5.3.0<span class="nt">&lt;/junit.jupiter.version&gt;</span>
+        <span class="nt">&lt;junit.platform.version&gt;</span>1.3.1<span class="nt">&lt;/junit.platform.version&gt;</span>
+    <span class="nt">&lt;/properties&gt;</span>
 
-<p>Now that we have a project let’s start testing.  Take a look at “lib.rs”</p>
+    <span class="nt">&lt;dependencies&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+            <span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId&gt;</span>junit-jupiter-engine<span class="nt">&lt;/artifactId&gt;</span>
+            <span class="nt">&lt;version&gt;</span>${junit.jupiter.version}<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+        <span class="nt">&lt;dependency&gt;</span>
+			<span class="nt">&lt;groupId&gt;</span>org.junit.jupiter<span class="nt">&lt;/groupId&gt;</span>
+			<span class="nt">&lt;artifactId&gt;</span>junit-jupiter-api<span class="nt">&lt;/artifactId&gt;</span>
+			<span class="nt">&lt;version&gt;</span>${junit.jupiter.version}<span class="nt">&lt;/version&gt;</span>
+			<span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+		<span class="nt">&lt;/dependency&gt;</span>
+    <span class="nt">&lt;/dependencies&gt;</span>
 
-<p><strong>lib.rs</strong></p>
-<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">cfg</span><span class="p">(</span><span class="n">test</span><span class="p">)]</span>
-<span class="k">mod</span> <span class="n">tests</span> <span class="p">{</span>
-    <span class="cp">#[test]</span>
-    <span class="k">fn</span> <span class="nf">it_works</span><span class="p">()</span> <span class="p">{</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+    <span class="nt">&lt;build&gt;</span>
+        <span class="nt">&lt;plugins&gt;</span>
+            <span class="nt">&lt;plugin&gt;</span>
+                <span class="nt">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="nt">&lt;/artifactId&gt;</span>
+                <span class="nt">&lt;version&gt;</span>2.22.0<span class="nt">&lt;/version&gt;</span>
+            <span class="nt">&lt;/plugin&gt;</span>
+        <span class="nt">&lt;/plugins&gt;</span>
+    <span class="nt">&lt;/build&gt;</span>
 
-<p>Well what do you know right from the start of creating a new project is a sample test module.
-Though there is now a simple test it really doesn’t do anything useful.  However if you are new
-to Rust and want to see something run go ahead and watch everything pass.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>cargo test
-</code></pre>
-</div>
-
-<h2 id="assertions">Assertions</h2>
-
-<p>As it was just mentioned this test really does nothing useful at all.  All it does is run a 
-test function and never asserts anything.  Let’s change that by demonstrating 3 different 
-assert macros.</p>
-
-<ul>
-  <li>assert! - Asserts based on a boolean.</li>
-  <li>assert_eq! - Asserts based on equality of 2 objects.</li>
-  <li>assert_ne! - Asserts based on no equality of 2 objects.</li>
-</ul>
-
-<p>In the “it_works” functions try out some examples and run them to see how things work.</p>
-
-<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
-<span class="k">fn</span> <span class="nf">it_works</span><span class="p">()</span> <span class="p">{</span>
-    <span class="c">//Passing Assertion</span>
-    <span class="k">assert</span><span class="o">!</span><span class="p">(</span><span class="k">true</span><span class="p">);</span> 
-    <span class="nd">assert_eq!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-    <span class="nd">assert_ne!</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cargo test 
-
-Compiling example_test v0.1.0 (file:///working_dir/example_test)
-      Finished dev [unoptimized + debuginfo] target(s) in 1.29 secs
-       Running target/debug/deps/example_test-938c230a543dbf89
-  
-  running 1 test
-  test tests::it_works ... ok
-  
-  test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured
-  
-     Doc-tests example_test
-  
-  running 0 tests
-  
-  test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
-</code></pre>
-</div>
-
-<h2 id="testing-your-library">Testing your library.</h2>
-
-<p>Now that you know how to do some basic assertions you can now expand the knowledge. Let’s 
-write a test that will add 2 numbers and return a result.</p>
-
-<div class="language-rust highlighter-rouge"><pre class="highlight"><code><span class="k">pub</span> <span class="k">fn</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
-<span class="p">}</span>
-
-<span class="cp">#[cfg(test)]</span>
-<span class="k">mod</span> <span class="n">tests</span> <span class="p">{</span>
-    <span class="k">use</span> <span class="nn">super</span><span class="p">::</span><span class="o">*</span><span class="p">;</span>
-
-    <span class="cp">#[test]</span>
-    <span class="k">fn</span> <span class="nf">add_test</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nd">assert_eq!</span><span class="p">(</span><span class="nf">add</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="mi">4</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="nt">&lt;/project&gt;</span>
 </code></pre>
 </div>
 

@@ -306,14 +306,15 @@
 
 <p>Let’s take a look at some pseudo code for each.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let someValue = true
+<div class="highlighter-rouge"><pre class="highlight"><code>let someValue = true
 
 expect(someValue).toBeTrue()
 
 assert(someValue).isTrue()
 
 someValue.should.beTrue()
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Notice that in each case we have a variable “someValue”, and in each case, we want to determine whether it is true.  Each assumption style reads just like a sentence.  Expect “someValue” to be true.  Assert “someValue” is true.  “someValue” should be true.</p>
 
@@ -323,7 +324,7 @@ someValue.should.beTrue()
 
 <h3 id="build-your-own-expect-or-assertion">Build your own expect or assertion.</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class expect
+<div class="highlighter-rouge"><pre class="highlight"><code>class expect
     
     var expectedValue
 
@@ -339,7 +340,8 @@ someValue.should.beTrue()
         end
     end
 end
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>This is a quick a dirty basic implementation of an expect statement.  Assert works the same way you can replace the text for expect with assert.</p>
 
@@ -347,7 +349,7 @@ end
 
 <p>Should is generally a little different that expect and assert.  It is usually added as a child or prototype to another object or class.  For example lets say you have a Boolean.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class should
+<div class="highlighter-rouge"><pre class="highlight"><code>class should
     beTrue()
         if expectedValue == true
             return true
@@ -362,7 +364,8 @@ Boolean.prototype.should = should
 Boolean test = true
 
 test.should.beTrue();
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>There are some potential cons to using should.  As you notice you are adding foreign code to your specific object. Depending on how much you really want to use this format keep in mind it won’t be quite as pure as the expect and assert styles.</p>
 

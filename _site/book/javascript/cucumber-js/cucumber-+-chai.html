@@ -316,20 +316,22 @@
 
 <p>In a console window initialize a simple npm project.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir <span class="nt">-p</span> firstTest
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir -p firstTest
 <span class="nb">cd </span>firstTest
 mkdir features
-mkdir <span class="nt">-p</span> features/step_definitions
-mkdir <span class="nt">-p</span> features/support
-npm init <span class="nt">-f</span>
-</code></pre></div></div>
+mkdir -p features/step_definitions
+mkdir -p features/support
+npm init -f
+</code></pre>
+</div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>firstTest
-npm install cucumber chai <span class="nt">--save-dev</span>
-<span class="nb">ls</span>
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd </span>firstTest
+npm install cucumber chai --save-dev
+ls
+</code></pre>
+</div>
 
 <p>Create your first feature file.</p>
 
@@ -342,7 +344,7 @@ npm install cucumber chai <span class="nt">--save-dev</span>
 
 <p>Build your first step definitions.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">chai</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chai'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">chai</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'chai'</span><span class="p">);</span>
 <span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">assert</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">should</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">should</span><span class="p">();</span>
@@ -364,7 +366,8 @@ npm install cucumber chai <span class="nt">--save-dev</span>
         <span class="nx">t</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
     <span class="p">});</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
         </div>
     </div>

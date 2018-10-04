@@ -302,20 +302,22 @@
 <p>Install rspec gem using gem command.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install rspec
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install rspec
+</code></pre>
+</div>
 
 <p>If you like to use bundler you can setup a Gemfile to look like.</p>
 
 <p><strong><em>Gemfile</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source "https://rubygems.org"
+<div class="highlighter-rouge"><pre class="highlight"><code>source "https://rubygems.org"
 gem "rspec"
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="your-first-test">Your First test.</h2>
 <p>Lets say that we want to test a class that adds up numbers and has a function total. That function could look like.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Adder</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Adder</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="vi">@a</span> <span class="o">=</span> <span class="n">a</span>
     <span class="vi">@b</span> <span class="o">=</span> <span class="n">b</span>
@@ -325,24 +327,26 @@ gem "rspec"
     <span class="vi">@a</span> <span class="o">+</span> <span class="vi">@b</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now that we have what we are going to test.  We need to have a basic layout of our test ready.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Adder</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Adder</span> <span class="k">do</span>
   <span class="n">describe</span> <span class="s2">"adds numbers"</span> <span class="k">do</span>
     <span class="n">it</span> <span class="s2">"Adder total returns correct value"</span> <span class="k">do</span>
 
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Notice that RSpec works in a describe and it format.  The first section tells RSpec that we are going to test the Adder function.  The second describe tells a high level story of what it will cover.  Lastly the “it” will test a specific functionality that is a part of the describe.</p>
 
 <p>Next we need to load up a couple of numbers to the Adder function and then create an assertion to what the correct total.</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Adder</span> <span class="k">do</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">RSpec</span><span class="p">.</span><span class="nf">describe</span> <span class="no">Adder</span> <span class="k">do</span>
   <span class="n">describe</span> <span class="s2">"adds numbers"</span> <span class="k">do</span>
     <span class="n">it</span> <span class="s2">"Adder total returns correct value"</span> <span class="k">do</span>
         <span class="n">adder</span> <span class="o">=</span> <span class="no">Adder</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
@@ -350,12 +354,13 @@ gem "rspec"
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>See it all together</p>
 
 <p><strong><em>spec.rb</em></strong></p>
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Adder</span>
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Adder</span>
   <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
     <span class="vi">@a</span> <span class="o">=</span> <span class="n">a</span>
     <span class="vi">@b</span> <span class="o">=</span> <span class="n">b</span>
@@ -374,17 +379,19 @@ gem "rspec"
     <span class="k">end</span>
   <span class="k">end</span>
 <span class="k">end</span>
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <h2 id="run-your-test">Run your test</h2>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rspec spec.rb
+<div class="highlighter-rouge"><pre class="highlight"><code>$ rspec spec.rb
 .
 
 Finished in 0.00091 seconds (files took 0.09214 seconds to load)
 1 example, 0 failures
-</code></pre></div></div>
+</code></pre>
+</div>
 
         </div>
     </div>

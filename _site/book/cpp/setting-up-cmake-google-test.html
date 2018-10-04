@@ -312,8 +312,8 @@ mixed in with Google Test.  So you will be getting both tools on this build.</p>
 
 <p>When we finish we will end up with a structure that looks something like the tree below.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>tree
-<span class="nb">.</span>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>tree
+.
 ├── CMakeLists.txt
 ├── CMakeLists.txt.in
 ├── library.cpp
@@ -323,14 +323,15 @@ mixed in with Google Test.  So you will be getting both tools on this build.</p>
     ├── example.cpp
     ├── main.cpp
     └── simple.cpp
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>To start out lets create a new project folder.  You can name it something like TestExample.  Within it create
 a file “CMakeLists.txt.in”.  This file contains a basic config that we can use to download the latest source 
 code for Google Tests and put it in the right location.</p>
 
 <p><strong>CMakeLists.txt.in</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 2.8.2)
+<div class="highlighter-rouge"><pre class="highlight"><code>cmake_minimum_required(VERSION 2.8.2)
 
 project(googletest-download NONE)
 
@@ -345,11 +346,12 @@ ExternalProject_Add(googletest
   INSTALL_COMMAND   ""
   TEST_COMMAND      ""
 )
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Once we have that file we can move on to the CMakeLists.txt in the root directory of our TestExample project.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+<div class="highlighter-rouge"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
 project(TestExample)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -391,23 +393,26 @@ add_subdirectory(test)
 set(SOURCE_FILES library.cpp library.h)
 add_library(TestExample ${SOURCE_FILES})
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now that we have the CMake config files done in the root directory we need to create a new directory
 to house all of our tests.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir test
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>mkdir test
+</code></pre>
+</div>
 
 <p>Within that directory create another file called CMakeLists.txt and fill in the following.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include_directories("${PROJECT_SOURCE_DIR}")
+<div class="highlighter-rouge"><pre class="highlight"><code>include_directories("${PROJECT_SOURCE_DIR}")
 
 # First Simple Google Test
 add_executable(simple simple.cpp)
 target_link_libraries(simple gtest gmock_main)
 add_test(NAME simple_test COMMAND simple)
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Last but not least you can now create a new file in the test directory called “simple.cpp” and write
 your first test. See writing a <a href="/book/cpp/unit-test-with-google-test.html">unit test with Google Test</a></p>

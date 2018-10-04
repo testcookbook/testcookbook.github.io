@@ -306,8 +306,9 @@
 <hr />
 <p>By far the easiest way to install is if you already have npm installed. If not you can goto the Galen Framework website and download the tool.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo npm install -g galenframework-cli
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo npm install -g galenframework-cli
+</code></pre>
+</div>
 
 <h2 id="config">Config</h2>
 <hr />
@@ -315,8 +316,9 @@
 many of the workings for Galen.  For now lets just set the default browser to
 Chrome.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>galen.default.browser=chrome
-</code></pre></div></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>galen.default.browser=chrome
+</code></pre>
+</div>
 
 <h2 id="your-first-spec">Your first spec</h2>
 <hr />
@@ -343,7 +345,7 @@ make @objects.  These will be html elements that have specific id or class etc.<
 
 <p>To run just this spec we can type the following in the command line.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ galen check home-page.gspec \
+<div class="highlighter-rouge"><pre class="highlight"><code>$ galen check home-page.gspec \
   --url http://samples.galenframework.com/tutorial1/tutorial1.html \
   --size 640x480 --htmlreport ./report
 
@@ -369,7 +371,8 @@ Suite status: PASS
 Total tests: 1
 Total failed tests: 0
 Total failures: 0
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Now that we have a spec lets see if we can build a test around it along with setting up some variables for different browser sizes.</p>
 
@@ -386,7 +389,7 @@ Home page on ${deviceName} device
 
 <p>To run the tests we just need to use Galen test.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ galen test home-page.test --htmlreport ./report
+<div class="highlighter-rouge"><pre class="highlight"><code>$ galen test home-page.test --htmlreport ./report
 
 ========================================
 Test: Home page on Mobile device
@@ -446,7 +449,8 @@ Total failed tests: 2
 Total failures: 2
 There were failures in galen tests
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>You will probably notice some failures this time.  The width changes with the different resolutions.  Lets add some tags to the home-page.gspec.  To do this we will use the @on followed by a tag.  “@on tagname”.</p>
 
@@ -474,7 +478,7 @@ There were failures in galen tests
 
 <p>Running once more</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ galen test home-page.test --htmlreport ./report
+<div class="highlighter-rouge"><pre class="highlight"><code>$ galen test home-page.test --htmlreport ./report
 ========================================
 Test: Home page on Mobile device
 ========================================
@@ -526,7 +530,8 @@ Total tests: 3
 Total failed tests: 0
 Total failures: 0
 
-</code></pre></div></div>
+</code></pre>
+</div>
 
 <p>Thats the very a very basic way to get started with Galen Framework.  There is
 more documentation on their website.

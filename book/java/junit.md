@@ -7,7 +7,7 @@ JUnit is a Java framework for writing repeatable tests. Primarily these would be
 
 ## Getting Started {#getting-started}
 
-When working with most Java projects you generally want to use a build tool. For JUnit tests there are a couple of build tools that you are most likely to see and use. For this exercise feel free to try out either Maven or Gradle. If this is your first Java project check out the section on initializing [Maven](https://www.testcookbook.com/book/programming/java/maven.html) or [Gradle](https://www.testcookbook.com/book/programming/java/gradle.html).  You can view a working [pom.xml](https://github.com/testcookbook/junit5/blob/master/pom.xml)
+When working with most Java projects you generally want to use a build tool. For JUnit tests there are a couple of build tools that you are most likely to see and use. For this exercise feel free to try out either Maven or Gradle. If this is your first Java project check out the section on initializing [Maven](https://www.testcookbook.com/book/programming/java/maven.html) or [Gradle](https://www.testcookbook.com/book/programming/java/gradle.html).  You can view a working [pom.xml](/book/java/junit/junit5-pom.html)
 
 Once you have created a new Java project, create a new file within the ‘src/test/java/path/to/app’ directory called ‘Math.java’.
 
