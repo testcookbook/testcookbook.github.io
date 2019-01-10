@@ -308,7 +308,7 @@
 
 <p>src/test/java/path/to/app/Math.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathTest</span> <span class="o">{</span>
@@ -319,27 +319,25 @@
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You should now be ready to run your tests.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code># Maven User
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Maven User
 $ mvn test
 
 # Gradle User
 $ gradle test
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now that we have a real basic test lets try a small amount of TDD and build a class that adds up 2 numbers. Making some modifications to the MathTest.java so that it looks like.</p>
 
 <p>MathTest.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">static</span> <span class="n">org</span><span class="o">.</span><span class="na">junit</span><span class="o">.</span><span class="na">jupiter</span><span class="o">.</span><span class="na">api</span><span class="o">.</span><span class="na">Assertions</span><span class="o">.</span><span class="na">assertEquals</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">org.junit.jupiter.api.Test</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MathTest</span> <span class="o">{</span>
@@ -351,28 +349,26 @@ $ gradle test
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you were to run the tests now you would get an error since Math has not been created. Lets see if we can make this test pass with some code.</p>
 
 <p>src/main/java/path/to/app/Math.java</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Math</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Math</span> <span class="o">{</span>
 
   <span class="kd">public</span> <span class="kt">int</span> <span class="nf">Add</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">;</span>
   <span class="o">}</span>
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now try running the tests. You should get something like.</p>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[INFO] -------------------------------------------------------
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running MathTest
@@ -389,8 +385,7 @@ $ gradle test
 [INFO] Finished at: 2018-05-07T15:06:27-05:00
 [INFO] Final Memory: 17M/221M
 [INFO] ------------------------------------------------------------------------
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="https://travis-ci.org/testcookbook/junit5.svg?branch=master" alt="Travis Build Icon" /></p>
 

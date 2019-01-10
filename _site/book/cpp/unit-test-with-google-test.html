@@ -300,20 +300,19 @@
 
 <p>Creating your first test.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#include "gtest/gtest.h"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include "gtest/gtest.h"
    
 TEST(One, EqualsOne)
 {
     EXPECT_EQ(1, 1);
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>As far as tests go this one is rather quick and easy to write, but it also doesn’t do much. 
 This particular test checks to see if 1 equals 1.  Let’s see if we can write a test that checks
 if a function called add returns the correct value.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>#include "gtest/gtest.h"
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include "gtest/gtest.h"
 
 int add(int a, int b) {
     return a + b;
@@ -323,8 +322,7 @@ TEST(add_function, Two_Plus_Two_Equals_Four)
 {
     EXPECT_EQ(add(2, 2), 4);
 }
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Want to see it all together to play with check out this example on <a href="https://github.com/testcookbook/google-test">Github</a>.</p>
 

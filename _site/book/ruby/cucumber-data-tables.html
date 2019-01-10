@@ -310,15 +310,14 @@ and full 2D array.</p>
 <h2 id="horizontal-data-table">Horizontal Data Table</h2>
 
 <p><em>features/data-table.feature</em></p>
-<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a horizontal tables
-    <span class="nf">Given</span> a list of numbers horizontally
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a horizontal tables
+    <span class="nf">Given </span>a list of numbers horizontally
         <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span> <span class="nv">3</span> <span class="p">|</span> <span class="nv">5</span> <span class="p">|</span>
     <span class="n">Then</span> <span class="n">the</span> <span class="n">total</span> <span class="n">for</span> <span class="n">the</span> <span class="n">horizontal</span> <span class="n">list</span> <span class="n">is</span> <span class="n">9</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><em>features/step_definitions/data_table.rb</em></p>
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers horizontally"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers horizontally"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
     <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
 <span class="k">end</span>
 
@@ -327,20 +326,18 @@ and full 2D array.</p>
     <span class="vi">@list</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">a</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span>
     <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="vertical-data-table">Vertical Data Table</h2>
-<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a vertical table
-    <span class="nf">Given</span> a list of numbers vertically
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a vertical table
+    <span class="nf">Given </span>a list of numbers vertically
         <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span>
         <span class="p">|</span> <span class="n">2</span> <span class="p">|</span>
         <span class="p">|</span> <span class="n">4</span> <span class="p">|</span>
-    <span class="nf">Then</span> the total for the vertical list is 7
-</code></pre>
-</div>
+    <span class="nf">Then </span>the total for the vertical list is 7
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers vertically"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers vertically"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
     <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
 <span class="k">end</span>
 
@@ -349,20 +346,18 @@ and full 2D array.</p>
   <span class="vi">@list</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">a</span><span class="p">.</span><span class="nf">first</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span>
   <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="2-dimensional">2 Dimensional</h2>
-<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a 2D array
-    <span class="nf">Given</span> a list of numbers in 2D array
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">Scenario</span><span class="p">:</span> Add numbers in a 2D array
+    <span class="nf">Given </span>a list of numbers in 2D array
         <span class="p">|</span> <span class="nv">1</span> <span class="p">|</span> <span class="nv">3</span> <span class="p">|</span> <span class="nv">5</span> <span class="p">|</span>
         <span class="p">|</span> <span class="n">2</span> <span class="p">|</span> <span class="n">6</span> <span class="p">|</span> <span class="n">3</span> <span class="p">|</span>
         <span class="p">|</span> <span class="n">4</span> <span class="p">|</span> <span class="n">2</span> <span class="p">|</span> <span class="n">2</span> <span class="p">|</span>
-    <span class="nf">Then</span> the total for all numbers in 2D array is 28
-</code></pre>
-</div>
+    <span class="nf">Then </span>the total for all numbers in 2D array is 28
+</code></pre></div></div>
 
-<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers in 2D array"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="no">Given</span><span class="p">(</span><span class="s2">"a list of numbers in 2D array"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">table</span><span class="o">|</span>
   <span class="vi">@list</span> <span class="o">=</span> <span class="n">table</span><span class="p">.</span><span class="nf">raw</span>
 <span class="k">end</span>
 
@@ -371,8 +366,7 @@ and full 2D array.</p>
   <span class="vi">@list</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span><span class="p">.</span><span class="nf">each</span> <span class="p">{</span> <span class="o">|</span><span class="n">b</span><span class="o">|</span> <span class="n">total</span> <span class="o">+=</span> <span class="n">b</span><span class="p">.</span><span class="nf">to_i</span> <span class="p">}</span> <span class="p">}</span>
   <span class="n">expect</span><span class="p">(</span><span class="n">total</span><span class="p">).</span><span class="nf">to</span> <span class="n">eq</span><span class="p">(</span><span class="n">int</span><span class="p">)</span>
 <span class="k">end</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If you wanted to <a href="/book/common-automation-concepts/dry.html">DRY</a> this code up a little bit.  You could actually use the same Given 
 statement for all of these 3 scenarios.</p>

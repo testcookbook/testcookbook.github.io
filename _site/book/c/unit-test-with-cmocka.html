@@ -315,7 +315,7 @@
 
 <p>Create a new file called <em>test.c</em>. This will be a simple src file to create a basic test.</p>
 
-<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdarg.h&gt;
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;stdarg.h&gt;
 #include &lt;stddef.h&gt;
 #include &lt;setjmp.h&gt;
 #include &lt;cmocka.h&gt;
@@ -330,23 +330,20 @@
 	<span class="p">};</span>
 	<span class="k">return</span> <span class="n">cmocka_run_group_tests</span><span class="p">(</span><span class="n">tests</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Build your tests</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gcc -o test test.c -l cmocka -L /usr/local/lib
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gcc -o test test.c -l cmocka -L /usr/local/lib
+</code></pre></div></div>
 
 <p>Run your tests</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ./test
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./test
+</code></pre></div></div>
 
 <p><strong>Using a Makefile</strong></p>
-<div class="highlighter-rouge"><pre class="highlight"><code>buildTests : createBuildDir
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buildTests : createBuildDir
 	gcc -o build/test test.c -l cmocka -L /usr/local/lib
 
 createBuildDir :
@@ -357,8 +354,7 @@ test :
 
 clean :
 	rm -Rf build
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>

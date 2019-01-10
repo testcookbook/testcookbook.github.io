@@ -305,34 +305,32 @@
 <p>The first thing you will need is PHPUnit installed locally.  I recommend using
 composer.  This will allow you to download other dependencies if needed.</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testcookbook/phpunit"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"testcookbook/phpunit"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"authors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="w">
+      </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your Name"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"your@email.com"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="nt">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.5"</span><span class="w">
+  </span><span class="s2">"require-dev"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"phpunit/phpunit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^5.5"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"require"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>To install you can run.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ composer install
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ composer install
 $ # or
 $ php composer.phar install
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>After installing your dependencies you can begin to write some tests.  Lets start by writing some unit tests for a class that adds 2 numbers called Adder.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
 
 <span class="k">require</span><span class="p">(</span><span class="s1">'adder.php'</span><span class="p">);</span>
@@ -349,12 +347,11 @@ $ php composer.phar install
   <span class="p">}</span>
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now lets create a basic class to make the test pass.</p>
 
-<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">class</span> <span class="nc">Adder</span>
 <span class="p">{</span>
   <span class="k">private</span> <span class="nv">$a</span><span class="p">;</span>
@@ -373,14 +370,12 @@ $ php composer.phar install
 
 <span class="p">}</span>
 <span class="cp">?&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>To run your tests.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ vendor/bin/phpunit adder_tests.php
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ vendor/bin/phpunit adder_tests.php
+</code></pre></div></div>
 
         </div>
     </div>

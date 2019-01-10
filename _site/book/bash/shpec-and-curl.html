@@ -312,9 +312,8 @@
 
 <p>If you are running a Mac you will need to install coreutils to get the same GNU standard options for date. Recommended Way is to install using homebrew.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>brew install coreutils
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install coreutils
+</code></pre></div></div>
 
 <p><strong>Bake Time</strong></p>
 
@@ -324,14 +323,13 @@
 
 <p>Start by creating a project structure.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir shpec
-mkdir -p shpec/matchers
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir shpec
+mkdir <span class="nt">-p</span> shpec/matchers
+</code></pre></div></div>
 
 <p>Within the matchers directory create a file called_curl_matchers.sh_.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>status_200<span class="o">()</span> <span class="o">{</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>status_200<span class="o">()</span> <span class="o">{</span>
   assert present <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="s2">"HTTP/1.1 200 OK"</span>
 <span class="o">}</span>
 
@@ -339,8 +337,7 @@ content_type<span class="o">()</span> <span class="o">{</span>
   assert present <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="s2">"Content-Type: </span><span class="nv">$2</span><span class="s2">;"</span>
 <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Notice that there are 2 matcher functions one for Status code and one for Content-Type.</p>
 
@@ -350,9 +347,9 @@ content_type<span class="o">()</span> <span class="o">{</span>
 
 <p>Once you have your matchers create a new file called_first_curl_shpec.sh_and put in the following code.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>describe <span class="s2">"SHPEC Curl Endpoint Test"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>describe <span class="s2">"SHPEC Curl Endpoint Test"</span>
   <span class="nv">start</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>date +%s%3N<span class="k">)</span><span class="s2">"</span>
-  <span class="nv">output</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>curl -s -i <span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="k">)</span><span class="s2">"</span>
+  <span class="nv">output</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>curl <span class="nt">-s</span> <span class="nt">-i</span> <span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="k">)</span><span class="s2">"</span>
   <span class="nv">end</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>date +%s%3N<span class="k">)</span><span class="s2">"</span>
   <span class="nv">runtime</span><span class="o">=</span><span class="k">$((</span>end-start<span class="k">))</span>
 
@@ -369,8 +366,7 @@ content_type<span class="o">()</span> <span class="o">{</span>
   end
 end
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>You will notice that immediately after the describe block there is a start, output, end and runtime. The start and end variables get the time before and after the Curl command. This will allow us to calculate the milliseconds that it took to run that specific command. The difference of these 2 values will be stored in runtime.</p>
 
@@ -378,19 +374,18 @@ end
 
 <p>Curl it self has a couple arguments that will help in producing the data we need to create some useful tests.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>curl -s -i some-url
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-s</span> <span class="nt">-i</span> some-url
+</code></pre></div></div>
 
 <p>The_-s_is used to suppress the progress bar from coming back in our data. The_-i_adds header information to the return value. This is where we can see things like Content-Type, Cookies, etc.</p>
 
 <p>This will produce a result like the following and returns it within the output variable.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>curl -s -i <span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-i</span> <span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span>
 HTTP/1.1 200 OK
 Server: GitHub.com
 Date: Mon, 28 Nov 2016 15:40:54 GMT
-Content-Type: application/json; <span class="nv">charset</span><span class="o">=</span>utf-8
+Content-Type: application/json<span class="p">;</span> <span class="nv">charset</span><span class="o">=</span>utf-8
 Content-Length: 25
 Last-Modified: Mon, 28 Nov 2016 11:28:51 GMT
 Access-Control-Allow-Origin: <span class="k">*</span>
@@ -403,8 +398,7 @@ X-GitHub-Request-Id: 2FDE25D5:59A4:126984DF:583C5006
   <span class="s2">"name"</span>: <span class="s2">"John Doe"</span>
 <span class="o">}</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once we have our data we can run asserts on the matchers that we created.</p>
 

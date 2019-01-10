@@ -300,51 +300,46 @@
 
 <p>In a console window initialize a simple npm project.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>mkdir -p firstTest
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p firstTest
 cd firstTest
 mkdir features
 mkdir -p features/step_definitions
 mkdir -p features/support
 npm init -f
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>cd firstTest
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd firstTest
 npm install cucumber assert --save-dev
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
 <p>Updating your package.json file to run the tests. Within the scripts section of the package.json update the object test with the following.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>  "scripts": {
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "scripts": {
     "test": "./node_modules/.bin/cucumber-js"
   },
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you have saved the package.json file you will now be able to run your tests using.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>npm test
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
+</code></pre></div></div>
 
 <p>Create your first feature file written in <a href="/book/common-automation-concepts/gherkin.html">Gherkin</a>.</p>
 
-<div class="language-gherkin highlighter-rouge"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> First Test
+<div class="language-gherkin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">Feature</span><span class="p">:</span> First Test
     <span class="kn">Scenario</span><span class="p">:</span> Adding Numbers
-        <span class="nf">Given</span> numbers 2 and 5
-        <span class="nf">When</span> they are added together
-        <span class="nf">Then</span> the total should be 7
-</code></pre>
-</div>
+        <span class="nf">Given </span>numbers 2 and 5
+        <span class="nf">When </span>they are added together
+        <span class="nf">Then </span>the total should be 7
+</code></pre></div></div>
 
 <p>Build your first step definitions.</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="p">{</span><span class="nx">Given</span><span class="p">,</span> <span class="nx">Then</span><span class="p">,</span> <span class="nx">When</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cucumber'</span><span class="p">);</span>
-<span class="kr">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">Given</span><span class="p">,</span> <span class="nx">Then</span><span class="p">,</span> <span class="nx">When</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cucumber'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">t</span><span class="p">;</span>
 
@@ -360,10 +355,9 @@ npm install cucumber assert --save-dev
 <span class="nx">Then</span><span class="p">(</span><span class="s1">'the total should be {int}'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="kr">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="p">});</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm test
 
 &gt; cucumberjs-sample@1.0.0 test /Users/ben/personal/cucumberjs-sample
 &gt; cucumber-js
@@ -373,8 +367,7 @@ npm install cucumber assert --save-dev
 1 scenario (1 passed)
 3 steps (3 passed)
 0m00.003s
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="https://travis-ci.org/testcookbook/cucumber-js-sample.svg?branch=master" alt="Travis Build Cucumber-Js-Sample" /></p>
 

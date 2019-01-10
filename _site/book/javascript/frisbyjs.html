@@ -304,44 +304,41 @@
 
 <p>As with any framework or testing tool that you may use a little setup is required.  If you haven’t already install NodeJS on your system.  Once that is installed you can create a basic npm project and install some packages.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm install --save-dev frisby jasmine-node
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm install --save-dev frisby jasmine-node
 $ mkdir specs
-</code></pre>
-</div>
+</code></pre></div></div>
 <blockquote>
   <p>On the Frisby.js webpage it says to install jasmine-node like. “npm install -g jasmine-node” The -g means global.  This would allow you to run jasmine-node from anywhere.  I prefer to put it in the save-dev so that all of the packages are contained within the node_modules folder within the project.</p>
 </blockquote>
 
 <p>Since we installed jasmine-node using the –save-dev flag we should update the test task on the package json.  This will allow for a clean way to run the tests.</p>
 
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/jasmine-node specs"</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/jasmine-node specs"</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"frisby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.5"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"jasmine-node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.14.5"</span><span class="w">
+  </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ISC"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"frisby"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^0.8.5"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"jasmine-node"</span><span class="p">:</span><span class="w"> </span><span class="s2">"^1.14.5"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <p>You can now run your specs using npm test.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm test
 &gt; test@1.0.0 test /home/ben/exp/test
 &gt; jasmine-node specs
 
 Finished in 0.001 seconds
 0 tests, 0 assertions, 0 failures, 0 skipped
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Once you have a basic running test suite its time to write our first spec.</p>
 
@@ -351,17 +348,16 @@ Finished in 0.001 seconds
 
 <h2 id="your-first-spec">Your first spec</h2>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">frisby</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'frisby'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">frisby</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'frisby'</span><span class="p">);</span>
 <span class="nx">frisby</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'Get Brightbit Twitter feed'</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="p">)</span>
+  <span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com/lib/REST/test.json'</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">expectStatus</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="p">.</span><span class="nx">toss</span><span class="p">();</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now try running your tests with “npm test”</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ npm test
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm test
 
 &gt; test@1.0.0 test /home/ben/exp/test
 &gt; jasmine-node specs
@@ -370,8 +366,7 @@ Finished in 0.001 seconds
 
 Finished in 0.452 seconds
 1 test, 1 assertion, 0 failures, 0 skipped
-</code></pre>
-</div>
+</code></pre></div></div>
 
         </div>
     </div>

@@ -306,9 +306,8 @@
 
 <h4 id="echo">ECHO</h4>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"Hello World"</span>
-</code></pre>
-</div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"Hello World"</span>
+</code></pre></div></div>
 
 <p>The “echo” statement allows you to write text to the screen.</p>
 
@@ -316,11 +315,10 @@
 
 <h4 id="if">IF</h4>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nb">true</span> <span class="o">]</span>; <span class="k">then
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">[</span> <span class="nb">true</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
   </span><span class="nb">echo</span> <span class="s2">"True"</span>
 <span class="k">fi</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>If statements allow you to have some checks and balances in you code to do different things.  HINT: if you are having issues with the if statement make sure you have the spaces before and after the [] brackets</p>
 
@@ -328,12 +326,11 @@
 
 <h4 id="functions">FUNCTIONS</h4>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">test</span><span class="o">()</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">test</span><span class="o">()</span>
 <span class="o">{</span>
     <span class="nb">echo</span> <span class="s2">"TESTING"</span>
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This is a simple function.  You can use it within your script and it will write “TESTING” to the screen.</p>
 
@@ -343,28 +340,26 @@
 
 <p>Lets put these basic steps for Bash together and make an assert_equal function.  Normally an assert function will take 2 arguments and return true if they are equal and false if they are not. Lets start with a basic declaration of the assert function and some code of how we are going to use it.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assert_equal <span class="o">()</span>
 <span class="o">{</span>
 
 <span class="o">}</span>
 
 assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Now that we have a basic framework you can see that we are sending 2 strings of text to the assert_equal function.  In verifying that we have the proper amount of arguments lets use an if to verify that we have both strings.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assert_equal <span class="o">()</span>
 <span class="o">{</span>
-    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$2</span> <span class="o">]</span>; <span class="k">then
+    <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="nv">$2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
         </span><span class="nb">echo</span> <span class="s2">"Missing Arguments: assert_equal arg1 arg2"</span>
         <span class="k">return </span>99
     <span class="k">fi</span>
 <span class="o">}</span>
 
 assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>There are some new techniques here.  Starting with the if statement.  There is a -z $2 within the brackets.  $2 is how you reference argument 2 from the function call.  When we actually return a proper true false we will use $1 and $2.  The -z is very different from what you would see in other languages.  The -z tells us that the length of the string is zero.  If there is no argument 1 or argument 2 listed after the assert_equal then it will be true and run the code within the if.</p>
 
@@ -372,9 +367,9 @@ assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
 
 <p>We are off to a good start to an assert_equal function.  Now we need to deliver a true or false back.</p>
 
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>assert_equal <span class="o">()</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>assert_equal <span class="o">()</span>
 <span class="o">{</span>
-    <span class="k">if</span> <span class="o">[</span> -z <span class="nv">$2</span> <span class="o">]</span>; <span class="k">then
+    <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="nv">$2</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
         </span><span class="nb">echo</span> <span class="s2">"Missing Arguments: assert_equal arg1 arg2"</span>
         <span class="k">return </span>99
     <span class="k">fi</span>
@@ -382,8 +377,7 @@ assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
 <span class="o">}</span>
 
 assert_equal <span class="s2">"Truth"</span> <span class="s2">"Truth"</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Lastly we fish with the last line of the function returning a conditional that will return either true or false.</p>
 
