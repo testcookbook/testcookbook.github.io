@@ -1,8 +1,38 @@
 <html>
-    <head>
-        <title>Test Cookbook - Simple Test Page</title>
-    </head>
-    <body>
-        <p>This is a simple test page.</p>
-    </body>
+
+<head>
+    <title>Test Cookbook - Simple Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#9b4dca" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/autumn.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Simple</h1>
+
+        <form>
+            <fieldset>
+                <label>InputLabel: </label>
+                <input type="text" />
+
+                <label>CheckboxLabel: </label>
+                <input type="checkbox" />
+
+                <label>RadioLabel: </label>
+                <input type="radio" name="radioQuestion" value="yes" /> Yes
+                <input type="radio" name="radioQuestion" value="no" /> No
+                <input type="radio" name="radioQuestion" value="maybe" /> Maybe
+
+                <label>RangeLabel: </label>
+                <input type="range" />
+
+                <button>Click Me!</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
 </html>
