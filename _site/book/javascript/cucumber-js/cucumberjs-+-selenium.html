@@ -301,13 +301,13 @@
 <h2 id="create-a-cucumberjs-project">Create a CucumberJS project</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install Cucumber and Selenium webdriver</span>
-<span class="nv">$ </span>npm install cucumber selenium-webdriver
+<span class="nv">$ </span>npm <span class="nb">install </span>cucumber selenium-webdriver
 
 <span class="c"># install browser drivers</span>
-<span class="nv">$ </span>npm install chromedriver geckodriver
+<span class="nv">$ </span>npm <span class="nb">install </span>chromedriver geckodriver
 
 <span class="c"># install an assertion tool</span>
-<span class="nv">$ </span>npm install assert
+<span class="nv">$ </span>npm <span class="nb">install </span>assert
 </code></pre></div></div>
 
 <p>If you are using a package.json file you will probably want to save all of these modules to dev dependencies.  to do that when running npm install add a switch –save-dev to the command.</p>
@@ -317,8 +317,8 @@
 </blockquote>
 
 <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/cucumber-js"</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./node_modules/.bin/cucumber-js"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div></div>
@@ -333,23 +333,23 @@
 Gherkin.  Within this folder you will create files with an extension of feature.<br />
 For example “testFile.feature”.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir features
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>features
 </code></pre></div></div>
 
 <p>After creating the features directory we need a place to store our code that runs the features and does the assertions.  We call these step definitions.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>features
-mkdir step_definitions
+<span class="nb">mkdir </span>step_definitions
 </code></pre></div></div>
 
 <p>Last but not least we need to create a support directory that handles initializing the World object for Cucumber and other enhancements for Cucumber.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir support
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>support
 </code></pre></div></div>
 
 <p>Once done you should have a folder stucture like this.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- features
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- features
   - step_definitions
   - support
 </code></pre></div></div>
@@ -360,11 +360,11 @@ mkdir step_definitions
 
 <p>Within the support directory create a file named “world.js”.  In this file we can require some libraries, select browser to test with and set some timeouts.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">seleniumWebdriver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'selenium-webdriver'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">seleniumWebdriver</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">selenium-webdriver</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">function</span> <span class="nx">CustomWorld</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">seleniumWebdriver</span><span class="p">.</span><span class="nx">Builder</span><span class="p">()</span>
-                  <span class="p">.</span><span class="nx">forBrowser</span><span class="p">(</span><span class="s1">'firefox'</span><span class="p">)</span>
+                  <span class="p">.</span><span class="nx">forBrowser</span><span class="p">(</span><span class="dl">'</span><span class="s1">firefox</span><span class="dl">'</span><span class="p">)</span>
                   <span class="p">.</span><span class="nx">build</span><span class="p">();</span>
 <span class="p">}</span>
 
@@ -418,7 +418,7 @@ statement.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://www.testcookbook.com</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="p">};</span>
 </code></pre></div></div>
@@ -440,12 +440,12 @@ statement.</p>
 
 <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://www.testcookbook.com</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">});</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="sr">/^I see title Test Cookbook$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="s2">"Test Cookbook"</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Test Cookbook</span><span class="dl">"</span><span class="p">);</span>
       <span class="k">return</span> <span class="nx">title</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">});</span>
@@ -456,16 +456,16 @@ statement.</p>
 
 <p>UH OH!!  It didn’t work like expected did it? You probably see something that says “ReferenceError: assert is not defined”. CucumberJS needs an extra library in order to assert or expect specific values.  Luckily this is an easy fix. Provided that you installed the assert package at the beginning all we need to do is require assert.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">assert</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="k">this</span><span class="p">.</span><span class="nx">Given</span><span class="p">(</span><span class="sr">/^I visit Test Cookbook website$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="s1">'http://www.testcookbook.com'</span><span class="p">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="dl">'</span><span class="s1">http://www.testcookbook.com</span><span class="dl">'</span><span class="p">);</span>
   <span class="p">});</span>
 
   <span class="k">this</span><span class="p">.</span><span class="nx">Then</span><span class="p">(</span><span class="sr">/^I see title Test Cookbook$/</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">driver</span><span class="p">.</span><span class="nx">getTitle</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">title</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="s2">"Test Cookbook"</span><span class="p">);</span>
+      <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Test Cookbook</span><span class="dl">"</span><span class="p">);</span>
       <span class="k">return</span> <span class="nx">title</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">});</span>

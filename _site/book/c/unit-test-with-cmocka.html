@@ -334,16 +334,16 @@
 
 <p>Build your tests</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gcc -o test test.c -l cmocka -L /usr/local/lib
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gcc -o test test.c -l cmocka -L /usr/local/lib
 </code></pre></div></div>
 
 <p>Run your tests</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ./test
 </code></pre></div></div>
 
 <p><strong>Using a Makefile</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buildTests : createBuildDir
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>buildTests : createBuildDir
 	gcc -o build/test test.c -l cmocka -L /usr/local/lib
 
 createBuildDir :

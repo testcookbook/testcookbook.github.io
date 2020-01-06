@@ -304,23 +304,23 @@
 
 <p>First off we need to setup a little environment stuff.  Hopefully starting out you have some basic Python skills.  Lets install Robot Framework.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install robotframework
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install robotframework
 </code></pre></div></div>
 
 <h2 id="your-first-test">Your First Test.</h2>
 <p>Once it is installed we can now start examining how we can create some tests. Lets assume we want to test adding up a couple of numbers.  For the first test we will focus on a keyword driven development.</p>
 
 <p><strong><em>keyword.robot</em></strong></p>
-<pre><code class="language-robot">*** Settings ***
-Documentation     Example Keyword Test
+<div class="language-robot highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh">*** Settings ***</span><span class="w">
+</span><span class="bp">Documentation</span><span class="w">     </span><span class="s">Example Keyword Test</span><span class="w">
 
-Library    AdderLibrary.py
+</span><span class="bp">Library</span><span class="w">    </span><span class="nf">AdderLibrary.py</span><span class="w">
 
-*** Test Cases ***
-Addition
-    Add input    3    5
-    Total    8
-</code></pre>
+</span><span class="gh">*** Test Cases ***</span><span class="w">
+</span><span class="nl">Addition</span><span class="w">
+    </span><span class="nf">Add input</span><span class="w">    </span><span class="s">3</span><span class="w">    </span><span class="s">5</span><span class="w">
+    </span><span class="nf">Total</span><span class="w">    </span><span class="s">8</span><span class="w">
+</span></code></pre></div></div>
 
 <p>You will notices from the keyword.robot file that there are 2 main headings, surrounded by three asterisks. The first section covers what the settings needed are and the other is a section for test cases.</p>
 
@@ -364,7 +364,7 @@ also have 3 arguments. Self, a and b which will be the numbers that we want to a
 <p>Finally take a look at the total function.  This does 2 distinct things.  First it adds up the 2 numbers and returns the value to “self._result”. Secondly we have an if block. This does a simple comparison to validate if the expected value matches that which we added up.  If it is equal we are fine.  However if things are not equal then we need to assert an error followed by some message that describes what the issue is.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot keyword.robot
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot keyword.robot
 ==============================================================================
 Keyword :: Example Keyword Test                                               
 ==============================================================================
@@ -384,7 +384,7 @@ Report:  /home/user/robotframework/report.html
 <p>You have completed your first test using keywords.  But what if we wanted to write using a style similar to a Gherkin format?  Well your in luck.  Lets create a file called “gherkin.robot”.</p>
 
 <p><strong><em>gherkin.robot</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*** Settings ***
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*** Settings ***
 Documentation     Example Gherkin Style Test
 
 Library    AdderLibrary.py
@@ -408,7 +408,7 @@ total of result is "${total}"
 <p>Once the step definition is described we can then add keyword functions just like we did on the keyword.robot file.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot gherkin.robot
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ robot gherkin.robot
 ==============================================================================
 Gherkin :: Example Gherkin Style Test                                         
 ==============================================================================

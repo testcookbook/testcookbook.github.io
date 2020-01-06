@@ -302,12 +302,12 @@
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lein new funapp
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lein new funapp
 </code></pre></div></div>
 
 <p>Leiningen will create a basic starting project for you that will look like the structure below.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.
 ├── CHANGELOG.md
 ├── LICENSE
 ├── README.md
@@ -327,7 +327,7 @@
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
@@ -374,7 +374,7 @@ Tests failed.
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 
@@ -390,14 +390,14 @@ Ran 1 tests containing 1 assertions.
 
 <p><em>test/funapp/core_test.clj</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(deftest addList-test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(deftest addList-test
   (testing "Function should add up all numbers in the list"
     (is (= 6 (addList [1 2 3])))))
 </code></pre></div></div>
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: addList in this context, compiling:(funapp/core_test.clj:11:14)
 </code></pre></div></div>
 
@@ -407,7 +407,7 @@ Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol:
 
 <p><em>funapp/core.clj</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(ns funapp.core)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(ns funapp.core)
 
 (defn foo
   "I don't do a whole lot."
@@ -419,7 +419,7 @@ Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol:
 
 <p><em>funapp/core.clj</em></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(defn addList
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(defn addList
   "This will add all the numbers in a list"
   [x]
   (reduce + x))
@@ -429,7 +429,7 @@ Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol:
 
 <p>Command Line</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ lein test
 
 lein test funapp.core-test
 

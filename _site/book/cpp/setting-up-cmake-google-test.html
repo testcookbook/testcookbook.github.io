@@ -330,7 +330,7 @@ a file “CMakeLists.txt.in”.  This file contains a basic config that we can u
 code for Google Tests and put it in the right location.</p>
 
 <p><strong>CMakeLists.txt.in</strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 2.8.2)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 2.8.2)
 
 project(googletest-download NONE)
 
@@ -349,7 +349,7 @@ ExternalProject_Add(googletest
 
 <p>Once we have that file we can move on to the CMakeLists.txt in the root directory of our TestExample project.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cmake_minimum_required(VERSION 3.8)
 project(TestExample)
 
 set(CMAKE_CXX_STANDARD 11)
@@ -396,12 +396,12 @@ add_library(TestExample ${SOURCE_FILES})
 <p>Now that we have the CMake config files done in the root directory we need to create a new directory
 to house all of our tests.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir test
 </code></pre></div></div>
 
 <p>Within that directory create another file called CMakeLists.txt and fill in the following.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include_directories("${PROJECT_SOURCE_DIR}")
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>include_directories("${PROJECT_SOURCE_DIR}")
 
 # First Simple Google Test
 add_executable(simple simple.cpp)

@@ -313,20 +313,20 @@
         <span class="k">print</span><span class="p">(</span><span class="s">'DEBUG: JSON data contains an error'</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">False</span>
 
-<span class="c">#will return the data</span>
-<span class="n">data</span> <span class="o">=</span> <span class="s">'{"firstName": "John", "lastName": "Doe"}'</span>
+<span class="c1">#will return the data
+</span><span class="n">data</span> <span class="o">=</span> <span class="s">'{"firstName": "John", "lastName": "Doe"}'</span>
 <span class="k">print</span> <span class="n">validate_json_syntax</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="c">#will return false because JSON not valid</span>
-<span class="c">#missing quotes around lastName</span>
-<span class="n">data</span> <span class="o">=</span> <span class="s">'{"firstName": "John", lastName: "Doe"}'</span>
+<span class="c1">#will return false because JSON not valid
+#missing quotes around lastName
+</span><span class="n">data</span> <span class="o">=</span> <span class="s">'{"firstName": "John", lastName: "Doe"}'</span>
 <span class="k">print</span> <span class="n">validate_json_syntax</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Run the test to see what output looks like.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
 {u'lastName': u'Doe', u'firstName': u'John'}
 DEBUG: JSON data contains an error
 False
@@ -354,8 +354,8 @@ False
       <span class="s">"lastName"</span><span class="p">:</span> <span class="p">{</span> <span class="s">"type"</span><span class="p">:</span> <span class="s">"string"</span><span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="c">#output will be None</span>
-<span class="k">print</span><span class="p">(</span><span class="n">validate</span><span class="p">(</span><span class="n">jsd</span><span class="p">,</span> <span class="n">schema</span><span class="p">))</span>
+<span class="c1">#output will be None
+</span><span class="k">print</span><span class="p">(</span><span class="n">validate</span><span class="p">(</span><span class="n">jsd</span><span class="p">,</span> <span class="n">schema</span><span class="p">))</span>
 
 </code></pre></div></div>
 <p>This just happens to be a happy path example for a JSON schema validation.  But what if for some reason we really wanted the lastName to be a number? Within the schema change type to number.  Then run the program and see what happens.</p>
@@ -372,7 +372,7 @@ False
 <p>You should have some output that looks like.</p>
 
 <p><strong><em>Terminal</em></strong></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ python test.py
 jsonschema.exceptions.ValidationError: u'Doe' is not of type 'number'
 
 Failed validating 'type' in schema['properties']['lastName']:

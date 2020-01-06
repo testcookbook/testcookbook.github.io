@@ -300,13 +300,13 @@
 
 <p>Lets get started very quick an dirty with a new library.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cargo new example_test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cargo new example_test
 Created library `example_test` project
 </code></pre></div></div>
 
 <p>That should give you a new folder in your current directory with a structure like.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tree
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ tree
 .
 ├── Cargo.lock
 ├── Cargo.toml
@@ -317,7 +317,7 @@ Created library `example_test` project
 <p>Now that we have a project let’s start testing.  Take a look at “lib.rs”</p>
 
 <p><strong>lib.rs</strong></p>
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="nf">cfg</span><span class="p">(</span><span class="n">test</span><span class="p">)]</span>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[cfg(test)]</span>
 <span class="k">mod</span> <span class="n">tests</span> <span class="p">{</span>
     <span class="nd">#[test]</span>
     <span class="k">fn</span> <span class="nf">it_works</span><span class="p">()</span> <span class="p">{</span>
@@ -329,7 +329,7 @@ Created library `example_test` project
 Though there is now a simple test it really doesn’t do anything useful.  However if you are new
 to Rust and want to see something run go ahead and watch everything pass.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cargo test
 </code></pre></div></div>
 
 <h2 id="assertions">Assertions</h2>
@@ -346,7 +346,7 @@ assert macros.</p>
 
 <p>In the “it_works” functions try out some examples and run them to see how things work.</p>
 
-<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">#</span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">#[test]</span>
 <span class="k">fn</span> <span class="nf">it_works</span><span class="p">()</span> <span class="p">{</span>
     <span class="c">//Passing Assertion</span>
     <span class="k">assert</span><span class="o">!</span><span class="p">(</span><span class="k">true</span><span class="p">);</span> 
@@ -355,7 +355,7 @@ assert macros.</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cargo test 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cargo test 
 
 Compiling example_test v0.1.0 (file:///working_dir/example_test)
       Finished dev [unoptimized + debuginfo] target(s) in 1.29 secs

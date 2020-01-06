@@ -302,21 +302,21 @@
 
 <p>If you are running from NodeJS you can install via NPM.  There are applications like Postman which already include it for their scripting.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install tv4-node
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install tv4-node
 </code></pre></div></div>
 
 <h3 id="simple-usage">Simple Usage</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tv4</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"tv4-node"</span><span class="p">).</span><span class="nx">tv4</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tv4</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">"</span><span class="s2">tv4-node</span><span class="dl">"</span><span class="p">).</span><span class="nx">tv4</span><span class="p">;</span>
 
 <span class="kd">var</span> <span class="nx">jsonData</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"name"</span><span class="p">:</span> <span class="mi">12345</span>
+    <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="mi">12345</span>
 <span class="p">}</span>
 
 <span class="kd">var</span> <span class="nx">schema</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">"properties"</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">"name"</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"number"</span>
+    <span class="dl">"</span><span class="s2">properties</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="dl">"</span><span class="s2">name</span><span class="dl">"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="dl">"</span><span class="s2">type</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">number</span><span class="dl">"</span>
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">};</span>

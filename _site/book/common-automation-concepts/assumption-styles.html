@@ -306,7 +306,7 @@
 
 <p>Let’s take a look at some pseudo code for each.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let someValue = true
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>let someValue = true
 
 expect(someValue).toBeTrue()
 
@@ -323,7 +323,7 @@ someValue.should.beTrue()
 
 <h3 id="build-your-own-expect-or-assertion">Build your own expect or assertion.</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class expect
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class expect
     
     var expectedValue
 
@@ -347,7 +347,7 @@ end
 
 <p>Should is generally a little different that expect and assert.  It is usually added as a child or prototype to another object or class.  For example lets say you have a Boolean.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class should
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class should
     beTrue()
         if expectedValue == true
             return true

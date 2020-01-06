@@ -300,7 +300,7 @@
 
 <p>In a console window initialize a simple npm project.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p firstTest
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir -p firstTest
 cd firstTest
 mkdir features
 mkdir -p features/step_definitions
@@ -310,21 +310,21 @@ npm init -f
 
 <p>Install cucumber and assert packages and save to package file</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd firstTest
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd firstTest
 npm install cucumber assert --save-dev
 </code></pre></div></div>
 
 <p>Install cucumber and assert packages and save to package file</p>
 
 <p>Updating your package.json file to run the tests. Within the scripts section of the package.json update the object test with the following.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "scripts": {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  "scripts": {
     "test": "./node_modules/.bin/cucumber-js"
   },
 </code></pre></div></div>
 
 <p>Once you have saved the package.json file you will now be able to run your tests using.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm test
 </code></pre></div></div>
 
 <p>Create your first feature file written in <a href="/book/common-automation-concepts/gherkin.html">Gherkin</a>.</p>
@@ -338,26 +338,26 @@ npm install cucumber assert --save-dev
 
 <p>Build your first step definitions.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">Given</span><span class="p">,</span> <span class="nx">Then</span><span class="p">,</span> <span class="nx">When</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'cucumber'</span><span class="p">);</span>
-<span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'assert'</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="p">{</span><span class="nx">Given</span><span class="p">,</span> <span class="nx">Then</span><span class="p">,</span> <span class="nx">When</span><span class="p">}</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">cucumber</span><span class="dl">'</span><span class="p">);</span>
+<span class="kd">const</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">assert</span><span class="dl">'</span><span class="p">);</span>
 
 <span class="kd">let</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">,</span> <span class="nx">t</span><span class="p">;</span>
 
-<span class="nx">Given</span><span class="p">(</span><span class="s1">'numbers {int} and {int}'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="kr">int</span><span class="p">,</span> <span class="nx">int2</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">a</span> <span class="o">=</span> <span class="kr">int</span><span class="p">;</span>
+<span class="nx">Given</span><span class="p">(</span><span class="dl">'</span><span class="s1">numbers {int} and {int}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">int</span><span class="p">,</span> <span class="nx">int2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">=</span> <span class="nx">int</span><span class="p">;</span>
     <span class="nx">b</span> <span class="o">=</span> <span class="nx">int2</span><span class="p">;</span>
 <span class="p">});</span>
 
-<span class="nx">When</span><span class="p">(</span><span class="s1">'they are added together'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">When</span><span class="p">(</span><span class="dl">'</span><span class="s1">they are added together</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">t</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 <span class="p">});</span>
 
-<span class="nx">Then</span><span class="p">(</span><span class="s1">'the total should be {int}'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="kr">int</span><span class="p">)</span> <span class="p">{</span>
+<span class="nx">Then</span><span class="p">(</span><span class="dl">'</span><span class="s1">the total should be {int}</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
 <span class="p">});</span>
 </code></pre></div></div>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm test
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm test
 
 &gt; cucumberjs-sample@1.0.0 test /Users/ben/personal/cucumberjs-sample
 &gt; cucumber-js

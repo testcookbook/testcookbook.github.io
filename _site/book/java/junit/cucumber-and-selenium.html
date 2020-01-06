@@ -337,7 +337,7 @@
 
 <p>Once you have created a pom.xml file the next important step is the Structure of the files. You will need 2 main folders to start out.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/test/java/com/program/test/step_definitions
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/test/java/com/program/test/step_definitions
 src/test/resources/features
 </code></pre></div></div>
 
@@ -387,7 +387,7 @@ src/test/resources/features
 
 <span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
 
-<span class="nd">@RunWith</span><span class="o">(</span><span class="n">Cucumber</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@RunWith</span><span class="o">(</span><span class="nc">Cucumber</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
 <span class="nd">@CucumberOptions</span><span class="o">(</span>
   <span class="n">features</span> <span class="o">=</span> <span class="s">"classpath:features"</span><span class="o">,</span>
   <span class="n">plugin</span> <span class="o">=</span> <span class="o">{</span><span class="s">"pretty"</span><span class="o">,</span> <span class="s">"html:target/cucumber-html-report"</span><span class="o">},</span>
@@ -426,26 +426,26 @@ src/test/resources/features
 <span class="kn">import</span> <span class="nn">cucumber.api.java.Before</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hooks</span><span class="o">{</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="n">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="nc">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
 
 
   <span class="nd">@Before</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openBrowser</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">MalformedURLException</span> <span class="o">{</span>
-    <span class="n">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FirefoxDriver</span><span class="o">();</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openBrowser</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">MalformedURLException</span> <span class="o">{</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">FirefoxDriver</span><span class="o">();</span>
     <span class="n">driver</span><span class="o">.</span><span class="na">manage</span><span class="o">().</span><span class="na">deleteAllCookies</span><span class="o">();</span>
     <span class="n">driver</span><span class="o">.</span><span class="na">manage</span><span class="o">().</span><span class="na">window</span><span class="o">().</span><span class="na">maximize</span><span class="o">();</span>
   <span class="o">}</span>
 
   <span class="nd">@After</span>
-  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">embedScreenshot</span><span class="o">(</span><span class="n">Scenario</span> <span class="n">scenario</span><span class="o">)</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">embedScreenshot</span><span class="o">(</span><span class="nc">Scenario</span> <span class="n">scenario</span><span class="o">)</span> <span class="o">{</span>
 
     <span class="k">if</span><span class="o">(</span><span class="n">scenario</span><span class="o">.</span><span class="na">isFailed</span><span class="o">())</span> <span class="o">{</span>
       <span class="k">try</span> <span class="o">{</span>
         <span class="n">scenario</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="s">"Current Page URL is "</span> <span class="o">+</span> <span class="n">driver</span><span class="o">.</span><span class="na">getCurrentUrl</span><span class="o">());</span>
-        <span class="kt">byte</span><span class="o">[]</span> <span class="n">screenshot</span> <span class="o">=</span> <span class="o">((</span><span class="n">TakesScreenshot</span><span class="o">)</span><span class="n">driver</span><span class="o">).</span><span class="na">getScreenshotAs</span><span class="o">(</span><span class="n">OutputType</span><span class="o">.</span><span class="na">BYTES</span><span class="o">);</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">screenshot</span> <span class="o">=</span> <span class="o">((</span><span class="nc">TakesScreenshot</span><span class="o">)</span><span class="n">driver</span><span class="o">).</span><span class="na">getScreenshotAs</span><span class="o">(</span><span class="nc">OutputType</span><span class="o">.</span><span class="na">BYTES</span><span class="o">);</span>
         <span class="n">scenario</span><span class="o">.</span><span class="na">embed</span><span class="o">(</span><span class="n">screenshot</span><span class="o">,</span> <span class="s">"image/png"</span><span class="o">);</span>
-      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">WebDriverException</span> <span class="n">somePlatformsDontSupportScreenshots</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">somePlatformsDontSupportScreenshots</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">WebDriverException</span> <span class="n">somePlatformsDontSupportScreenshots</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">somePlatformsDontSupportScreenshots</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
       <span class="o">}</span>
 
     <span class="o">}</span>
@@ -480,20 +480,20 @@ src/test/resources/features
 
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestCookbookPage</span> <span class="o">{</span>
-  <span class="kd">public</span> <span class="n">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nc">WebDriver</span> <span class="n">driver</span><span class="o">;</span>
 
   <span class="kd">public</span> <span class="nf">TestCookbookPage</span><span class="o">()</span> <span class="o">{</span>
 
-    <span class="n">driver</span> <span class="o">=</span> <span class="n">Hooks</span><span class="o">.</span><span class="na">driver</span><span class="o">;</span>
+    <span class="n">driver</span> <span class="o">=</span> <span class="nc">Hooks</span><span class="o">.</span><span class="na">driver</span><span class="o">;</span>
   <span class="o">}</span>
 
   <span class="nd">@Given</span><span class="o">(</span><span class="s">"^I visit Test Cookbook website$"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_visit_Test_Cookbook_website</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_visit_Test_Cookbook_website</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
       <span class="n">driver</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"http://www.testcookbook.com"</span><span class="o">);</span>
     <span class="o">}</span>
 
   <span class="nd">@Then</span><span class="o">(</span><span class="s">"^I see title Test Cookbook$"</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_see_title_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Throwable</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">i_see_title_Test_Cookbook</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
       <span class="n">assertTrue</span><span class="o">(</span><span class="n">driver</span><span class="o">.</span><span class="na">getTitle</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"Test Cookbook"</span><span class="o">));</span>
     <span class="o">}</span>
 

@@ -303,18 +303,18 @@
 <h2 id="install">Install</h2>
 <p>The easiest way to get started is to install Lettuce using pip. If you are new to Python, you might want to spend a little time understanding pip and basic Python techniques.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install lettuce
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install lettuce
 </code></pre></div></div>
 
 <blockquote>
   <p>You might have to install python-Levenshtein depending on your Python install.</p>
 </blockquote>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install python-Levenshtein
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ pip install python-Levenshtein
 </code></pre></div></div>
 <p>Now lets create some basic folder structure.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir lettuce
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ mkdir lettuce
 $ cd lettuce
 $ mkdir features
 </code></pre></div></div>
@@ -337,16 +337,16 @@ $ mkdir features
 </blockquote>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">lettuce</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="nd">@step</span><span class="p">(</span><span class="s">u'Given There are numbers 2 and 3'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'Given There are numbers 2 and 3'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">given_there_are_numbers_2_and_3</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
     <span class="n">world</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">world</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 
-<span class="nd">@step</span><span class="p">(</span><span class="s">u'When added together'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'When added together'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">when_added_together</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
     <span class="n">world</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">world</span><span class="o">.</span><span class="n">b</span>
 
-<span class="nd">@step</span><span class="p">(</span><span class="s">u'Then they equal 5'</span><span class="p">)</span>
+<span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'Then they equal 5'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">then_they_equal_5</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">total</span> <span class="o">==</span> <span class="mi">5</span><span class="p">),</span> <span class="s">'Amount should equal 5'</span>
 </code></pre></div></div>
