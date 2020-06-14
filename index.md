@@ -19,9 +19,9 @@ noobies to get started in the world of testing.
 
 ## What is not Test Cookbook
 
-* Not a company: Open Source
-* Not a Product: Yes we have things missing and you are free to add them.
-* There is no budget, or investors.
+* Not a company: open source
+* Not a product: yes we have things missing and you are free to add them.
+* There is no budget or investors.
 * There is no marketing.  Only word of mouth. 
 
 ## Spread the Word
