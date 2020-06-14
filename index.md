@@ -12,7 +12,7 @@ Are you a tester or developer who likes to help train others and share your weal
 TestCookbook is an opensource book on Github. Come on over and add a pull request or open an issue 
 describing what you would like. [https://github.com/testcookbook/testcookbook.github.io](https://github.com/testcookbook/testcookbook.github.io)
 
-## What is a Test Cookbook
+## What is Test Cookbook
 
 Test Cookbook is designed to be an opensource book that can allow other testers, developers or 
 noobies to get started in the world of testing.
