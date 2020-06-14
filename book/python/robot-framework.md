@@ -7,14 +7,14 @@ Robot Framework is a Test driven development framework.  You can utilize it by a
 
 ## Getting started.
 
-First off we need to setup a little environment stuff.  Hopefully starting out you have some basic Python skills.  Lets install Robot Framework.
+First off we need to setup a little environment stuff.  Hopefully starting out you have some basic Python skills.  Let's install Robot Framework.
 
 ```
 $ pip install robotframework
 ```
 
 ## Your First Test.
-Once it is installed we can now start examining how we can create some tests. Lets assume we want to test adding up a couple of numbers.  For the first test we will focus on a keyword driven development.
+Once it is installed we can now start examining how we can create some tests. Let's assume we want to test adding up a couple of numbers.  For the first test we will focus on a keyword-driven development.
 
 ***keyword.robot***
 ```robot
@@ -29,7 +29,7 @@ Addition
     Total    8
 ```
 
-You will notices from the keyword.robot file that there are 2 main headings, surrounded by three asterisks. The first section covers what the settings needed are and the other is a section for test cases.
+You will notice from the keyword.robot file that there are 2 main headings, surrounded by three asterisks. The first section covers what the settings needed are and the other is a section for test cases.
 
 Within the Settings we want to document what the tests are about, and we also need to include a library. This library will be a Python script that will run to automate the specific tests.
 
@@ -39,7 +39,7 @@ The last section is the Test Cases.  Here you can have a descriptive test case. 
 
 ## Define your tests.
 
-Once you have test file to describe what you are doing. Then its time to write code to actually test what was described.  Create a file "AdderLibrary.py". You might remember it from the settings of the robot file we created.
+Once you have test file to describe what you are doing. Then it's time to write code to actually test what was described.  Create a file "AdderLibrary.py". You might remember it from the settings of the robot file we created.
 
 ***AdderLibrary.py***
 
@@ -88,7 +88,7 @@ Report:  /home/user/robotframework/report.html
 
 ## Gherkin
 
-You have completed your first test using keywords.  But what if we wanted to write using a style similar to a Gherkin format?  Well your in luck.  Lets create a file called "gherkin.robot".
+You have completed your first test using keywords.  But what if we wanted to write using a style similar to a Gherkin format?  Well, you're in luck.  Let's create a file called "gherkin.robot".
 
 ***gherkin.robot***
 ```
