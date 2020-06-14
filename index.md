@@ -24,7 +24,7 @@ noobies to get started in the world of testing.
 * There is no budget, or investors.
 * There is no marketing.  Only word of mouth. 
 
-## Spread the Word.
+## Spread the Word
 
 Do you like what you see or find in the Test Cookbook?  Awesome please tell others. Share your
 experience on your favorite social media sites.   
