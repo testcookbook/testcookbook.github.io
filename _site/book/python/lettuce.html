@@ -339,16 +339,16 @@ $ mkdir features
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">lettuce</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'Given There are numbers 2 and 3'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">given_there_are_numbers_2_and_3</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
-    <span class="n">world</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">world</span><span class="o">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">world</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">world</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
 
 <span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'When added together'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">when_added_together</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
-    <span class="n">world</span><span class="o">.</span><span class="n">total</span> <span class="o">=</span> <span class="n">world</span><span class="o">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">world</span><span class="o">.</span><span class="n">b</span>
+    <span class="n">world</span><span class="p">.</span><span class="n">total</span> <span class="o">=</span> <span class="n">world</span><span class="p">.</span><span class="n">a</span> <span class="o">+</span> <span class="n">world</span><span class="p">.</span><span class="n">b</span>
 
 <span class="o">@</span><span class="n">step</span><span class="p">(</span><span class="s">u'Then they equal 5'</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">then_they_equal_5</span><span class="p">(</span><span class="n">step</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="p">(</span><span class="n">world</span><span class="o">.</span><span class="n">total</span> <span class="o">==</span> <span class="mi">5</span><span class="p">),</span> <span class="s">'Amount should equal 5'</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">world</span><span class="p">.</span><span class="n">total</span> <span class="o">==</span> <span class="mi">5</span><span class="p">),</span> <span class="s">'Amount should equal 5'</span>
 </code></pre></div></div>
 
         </div>
