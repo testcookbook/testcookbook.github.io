@@ -42,7 +42,7 @@ lein test funapp.core-test
 lein test :only funapp.core-test/a-test
 
 FAIL in (a-test) (core_test.clj:7)
-FIXME, I fail.
+Intentional failure: 0 is not 1.
 expected: (= 0 1)
   actual: (not (= 0 1))
 
@@ -61,7 +61,7 @@ _test/funapp/core\_test.clj_
             [funapp.core :refer :all]))
 
 (deftest a-test
-  (testing "FIXME, I fail."
+  (testing "Intentional failure: 0 is not 1."
     (is (= 0 1))))
 ```
 
