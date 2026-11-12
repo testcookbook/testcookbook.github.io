@@ -4,15 +4,16 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+Test Cookbook is an open-source book of testing recipes. It covers how to set up and use testing
+tools such as Cucumber, JUnit, RSpec, PHPUnit, Jasmine, and Robot Framework, along with common
+ideas like BDD, DRY, and JSON Schema validation.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+The book is written for testers and developers at any level. Each chapter aims to be short
+enough to follow in one sitting and runnable on your own machine.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+## Contribute
 
-
-[jekyll-organization]: https://github.com/jekyll
+The source is on GitHub:
+[testcookbook/testcookbook.github.io](https://github.com/testcookbook/testcookbook.github.io).
+You can open an issue to suggest a chapter or report a problem, or send a pull request with
+your changes.
