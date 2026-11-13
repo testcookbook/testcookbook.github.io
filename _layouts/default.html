@@ -46,6 +46,23 @@
                 menutoggle();
             }
         }
+
+        // Hide menu entries whose link text does not contain the query.
+        // Section headers stay visible so the list keeps its structure.
+        function filterMenu(query) {
+            var q = query.trim().toLowerCase();
+            var items = document.querySelectorAll('#sidemenu li:not(.header)');
+            items.forEach(function (li) {
+                var link = li.querySelector(':scope > a');
+                if (!link) { return; }
+                var match = q === '' || link.textContent.toLowerCase().indexOf(q) !== -1;
+                // Keep a parent visible when one of its nested chapters matches.
+                var nestedMatch = Array.prototype.some.call(
+                    li.querySelectorAll('a'),
+                    function (a) { return a.textContent.toLowerCase().indexOf(q) !== -1; });
+                li.style.display = (match || nestedMatch) ? '' : 'none';
+            });
+        }
     </script>
 </head>
 <body onload="menu()">
@@ -64,10 +81,18 @@
 <div class="container">
     <div class="row">
         <div id="sidemenu" class="sidemenu column" style="display: none;">
+            <input type="search" id="menu-search" placeholder="Search chapters" aria-label="Search chapters"
+                   oninput="filterMenu(this.value)" style="width: 100%;" />
             {% include menu.html %}
         </div>
         <div id="content" class="column column-100">
             {{ content }}
+            {% if page.path %}
+            <p class="edit-link">
+                <a href="https://github.com/testcookbook/testcookbook.github.io/edit/master/{{ page.path }}"
+                   target="_blank" rel="noopener">Edit this page on GitHub</a>
+            </p>
+            {% endif %}
         </div>
     </div>
 </div>
