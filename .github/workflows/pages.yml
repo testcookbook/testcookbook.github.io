@@ -22,6 +22,9 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
+          # Track the latest 3.3.x patch. The pinned .ruby-version (3.3.6) is no
+          # longer provided on the ubuntu-26.04 runner image.
+          ruby-version: '3.3'
           bundler-cache: true
 
       - name: Build site with Jekyll
