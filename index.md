@@ -2,29 +2,47 @@
 layout: default
 ---
 
-Thank you for taking the time and interest in the Test Cookbook. This book is a work in progress
-describing how to use many different tools, and testing utilities. One day we should have quite
-the portfolio of testing recipes for your enjoyment and learning.
+Thank you for taking the time to look at Test Cookbook. It is an open-source book of recipes for
+testing with many different tools and techniques, and it keeps growing as contributors add
+chapters.
+
+## Start here
+
+New to testing? Read these two short pages first:
+
+* [Gherkin](/book/common-automation-concepts/gherkin.html), a plain-language way to describe
+  behavior.
+* [Assumption Styles](/book/common-automation-concepts/assumption-styles.html), how test
+  assertions read.
+
+Then pick a language you already use from the menu. Some good starting points:
+
+* **Java:** [Intro to Maven](/book/java/intro-to-maven.html), then [JUnit](/book/java/junit.html).
+* **JavaScript:** [First NodeJS Project](/book/javascript/first-nodejs-project.html), then
+  [Jasmine](/book/javascript/jasmine.html).
+* **Python:** [Robot Framework](/book/python/robot-framework.html).
+* **Ruby:** [RSpec Unit Tests](/book/ruby/rspec.html).
 
 ## Contribute
 
-Are you a tester or developer who likes to help train others and share your wealth of knowledge?
-TestCookbook is an opensource book on Github. Come on over and add a pull request or open an issue 
-describing what you would like. [https://github.com/testcookbook/testcookbook.github.io](https://github.com/testcookbook/testcookbook.github.io)
+Are you a tester or developer who likes to help others learn and share what you know?
+Test Cookbook is an open-source book on GitHub. Add a pull request or open an issue describing
+what you would like to add:
+[https://github.com/testcookbook/testcookbook.github.io](https://github.com/testcookbook/testcookbook.github.io)
 
 ## What is Test Cookbook
 
-Test Cookbook is designed to be an opensource book that can allow other testers, developers or 
-noobies to get started in the world of testing.
+Test Cookbook is an open-source book that helps testers, developers, and newcomers get started
+with testing.
 
 ## What is not Test Cookbook
 
-* Not a company: open source
-* Not a product: yes we have things missing and you are free to add them
-* There is no budget or investors
-* There is no marketing.  Only word of mouth 
+* Not a company: it is open source.
+* Not a finished product: some things are missing, and you are free to add them.
+* There is no budget and there are no investors.
+* There is no marketing, only word of mouth.
 
-## Spread the Word
+## Spread the word
 
-Do you like what you see or find in the Test Cookbook?  Awesome please tell others. Share your
-experience on your favorite social media sites.   
+Do you like what you find in Test Cookbook? Please tell others. Share it on your favorite
+social media sites.

@@ -161,6 +161,8 @@ Feature: Test 1
 
 
 
+The `TODO (Cucumber::Pending)` line is expected. Cucumber prints it when a step's code marks the step as not implemented yet. The steps after a pending step are skipped, which is why they show as blue. The next steps replace the placeholder with real code.
+
 This time when you ran cucumber there were step definitions that have some code to them.  Each one of the steps was set to just return pending.  If a step returns pending it will usually be yellow and all the steps below it are a light blue.  They are blue because they could not be run yet.  The scenario ended after the first pending.
 
 We need to define some code rather than return pending.  In the first step we are accepting 2 numbers arg1 and arg2.  For this example we need to make those numbers accessible to other tests. Lets make the function look like.
