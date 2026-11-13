@@ -27,3 +27,5 @@ pull request.
 * Keep chapters short and runnable. Show the commands and the code, then explain what happened.
 * Link to a full example repository when one exists.
 * Add new chapters to the navigation in `_includes/menu.html`.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the chapter template and pull request notes.
